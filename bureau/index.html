@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style Bureau — Redecorating Power</title>
+<meta name="description" content="45 European government websites: original links, measured fonts and colours, layout anatomy, real wording, screenshots and copy-ready style prompts.">
+<link rel="stylesheet" href="../assets/dds.css">
+<style>
+  .hero-side{display:grid;gap:22px;justify-items:start}
+  .stats{display:grid;grid-template-columns:repeat(3,auto);gap:clamp(20px,3vw,48px)}
+  .stats b{display:block;font-size:clamp(40px,4vw,64px);font-weight:500;line-height:1;letter-spacing:-.02em}
+  .stats span{font-size:14px;color:var(--ink-70)}
+
+  /* filter bar */
+  .filters{position:sticky;top:62px;z-index:40;background:var(--white);border-bottom:1px solid var(--line-soft)}
+  .filters-in{max-width:1800px;margin:0 auto;padding:14px var(--gutter);display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:center}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{font:400 14px/1 var(--sans);border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 13px;cursor:pointer;transition:background .25s var(--ease),border-color .25s var(--ease),transform .2s var(--ease)}
+  .chip:hover{border-color:var(--ink)}
+  .chip:active{transform:scale(.96)}
+  .chip.on{background:var(--lime);border-color:var(--lime)}
+  .chip .iso{font-family:var(--mono);font-size:11px;margin-right:6px;opacity:.6}
+  .search{display:flex;align-items:center;gap:8px;border:1px solid var(--ink);border-radius:999px;padding:0 14px;min-width:260px;background:var(--white)}
+  .search input{border:none;outline:none;font:400 15px/1 var(--sans);padding:10px 0;width:100%;background:transparent;color:var(--ink)}
+  .search svg{width:16px;height:16px;flex-shrink:0}
+  .count{font-size:14px;color:var(--ink-70);grid-column:1/-1}
+
+  /* country groups */
+  .group{padding-top:clamp(50px,5vw,80px)}
+  .group-head{display:grid;grid-template-columns:60px 1fr auto;gap:16px;align-items:baseline;padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+  .group-head .iso{font-family:var(--mono);font-size:13px;color:var(--ink-70)}
+  .group-head h2{font-size:clamp(28px,2.6vw,40px);font-weight:500;line-height:1}
+  .group-head a{font-size:15px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:1px;transition:background .2s}
+  .group-head a:hover{background:var(--lime)}
+
+  .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(16px,1.8vw,28px)}
+  .grid.n3 .card:nth-child(1){grid-column:1/8;grid-row:1/3}
+  .grid.n3 .card:nth-child(2){grid-column:8/13;grid-row:1}
+  .grid.n3 .card:nth-child(3){grid-column:8/13;grid-row:2}
+  .grid.n3.flip .card:nth-child(1){grid-column:6/13}
+  .grid.n3.flip .card:nth-child(2),.grid.n3.flip .card:nth-child(3){grid-column:1/6}
+  .grid.n2 .card{grid-column:span 6}
+  .grid.n1 .card{grid-column:1/8}
+  .grid.n1.flip .card{grid-column:6/13}
+
+  .card{display:flex;flex-direction:column;gap:10px;cursor:pointer;text-align:left;background:none;border:none;color:inherit;font:inherit;padding:0}
+  .card .frame{position:relative;overflow:hidden;background:var(--cream);flex:1;min-height:220px;border-radius:2px}
+  .grid.n3 .card:nth-child(1) .frame{min-height:460px}
+  .card .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1s var(--ease),opacity .5s}
+  .card .frame img.loading{opacity:0}
+  .card:hover .frame img{transform:scale(1.025)}
+  .card .frame::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%) var(--cream);background-size:220% 100%;animation:shimmer 1.6s linear infinite}
+  @keyframes shimmer{from{background-position:120% 0}to{background-position:-120% 0}}
+  .card .frame .missing{position:absolute;inset:0;display:grid;place-items:center;font-size:14px;color:var(--ink-70);background:var(--cream)}
+  .card .open{position:absolute;right:14px;bottom:14px;background:var(--ink);color:var(--white);font:500 13px/1 var(--sans);padding:9px 14px;border-radius:999px;opacity:0;transform:translateY(8px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .card:hover .open,.card:focus-visible .open{opacity:1;transform:none}
+  .card .cap{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+  .card .nm{font-size:19px;line-height:1.25}
+  .card .en{font-size:14px;color:var(--ink-70);margin-top:2px}
+  .card .meta{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .strip{display:flex;height:14px;width:150px;border-radius:999px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line-soft)}
+  .strip i{flex:1}
+  .fontline{font-family:var(--mono);font-size:12px;color:var(--ink-70)}
+
+  .empty{padding:100px 0;display:grid;gap:16px;justify-items:start}
+
+  /* detail sheet */
+  .veil{position:fixed;inset:0;z-index:60;background:rgba(11,12,12,.45);opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+  .veil.on{opacity:1;pointer-events:auto}
+  .panel{position:fixed;left:0;right:0;bottom:0;top:4dvh;z-index:61;background:var(--white);border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;transform:translateY(102%);transition:transform .6s var(--ease);display:grid;grid-template-rows:auto 1fr;overflow:hidden}
+  .panel.on{transform:none}
+  .p-head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;padding:clamp(22px,3vw,40px) clamp(20px,3vw,48px) 18px;border-bottom:1px solid var(--line-soft)}
+  .p-head h2{font-size:clamp(26px,3vw,46px);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+  .p-head .sub{font-size:15px;color:var(--ink-70);margin-top:8px}
+  .p-tools{display:flex;gap:8px;align-items:center}
+  .icon-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);background:transparent;display:grid;place-items:center;cursor:pointer;transition:background .2s var(--ease),transform .2s var(--ease)}
+  .icon-btn:hover{background:var(--ink);color:var(--white)}
+  .icon-btn:active{transform:scale(.94)}
+  .icon-btn svg{width:18px;height:18px}
+  .p-body{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);min-height:0}
+  .p-shot{overflow-y:auto;background:var(--cream);border-right:1px solid var(--line-soft)}
+  .p-shot img{width:100%}
+  .p-side{overflow-y:auto;padding:28px clamp(20px,3vw,48px) 60px;display:grid;gap:34px;align-content:start}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .blk .lab{font-size:13px;color:var(--ink-70);margin-bottom:12px;display:flex;justify-content:space-between;gap:10px}
+  .pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+  .sw{display:grid;grid-template-rows:64px auto;border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid var(--line-soft);background:var(--white);transition:transform .2s var(--ease)}
+  .sw:hover{transform:translateY(-2px)}
+  .sw:active{transform:scale(.97)}
+  .sw .c{display:block}
+  .sw .t{padding:8px 10px;font-size:12px;line-height:1.35}
+  .sw .t b{font-family:var(--mono);font-weight:500;display:block;font-size:12.5px}
+  .sw .t span{color:var(--ink-70)}
+  .type-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 0;border-top:1px solid var(--line-soft);align-items:baseline}
+  .type-row:last-child{border-bottom:1px solid var(--line-soft)}
+  .type-row .f{font-size:22px;line-height:1.1}
+  .type-row .u{font-size:13px;color:var(--ink-70)}
+  .pat{list-style:none;display:grid;gap:0}
+  .pat li{padding:11px 0;border-top:1px solid var(--line-soft);font-size:15px;line-height:1.45}
+  .quote{padding:14px 0;border-top:1px solid var(--line-soft)}
+  .quote .o{font-size:18px;line-height:1.35}
+  .quote .e{font-size:14px;color:var(--ink-70);margin-top:4px}
+  .quote .x{font-family:var(--mono);font-size:11px;color:var(--ink-70);margin-top:6px}
+  pre.code{background:var(--ink);color:#E9E7DE;font:400 12px/1.65 var(--mono);padding:18px;border-radius:14px;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+  .note{background:var(--cream);border-radius:14px;padding:14px 16px;font-size:14px;line-height:1.5}
+
+  @media (max-width:900px){
+    .filters{position:static}
+    .filters-in{grid-template-columns:1fr}
+    .search{min-width:0}
+    .grid .card,.grid.n3 .card:nth-child(n),.grid.n3.flip .card:nth-child(n),.grid.n1 .card,.grid.n1.flip .card{grid-column:1/-1!important;grid-row:auto!important}
+    .grid.n3 .card:nth-child(1) .frame{min-height:260px}
+    .p-body{grid-template-columns:minmax(0,1fr);overflow-y:auto;overflow-x:hidden}
+    .p-head{grid-template-columns:minmax(0,1fr) auto;padding:20px}
+    .p-tools{gap:6px}
+    .icon-btn{width:38px;height:38px}
+    .p-side{padding:24px 20px 60px}
+    .pal{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .p-shot{max-height:45dvh;border-right:none}
+    .p-side{overflow:visible}
+    .stats{grid-template-columns:repeat(3,1fr)}
+  }
+</style>
+</head>
+<body data-root="../" data-page="bureau">
+
+<section class="hero">
+  <div>
+    <div class="eyebrow rise"><span class="tag round">Style Bureau</span><span>Register of institutional aesthetics</span></div>
+    <h1 class="h-1 rise" style="--i:1">What authority<br>looks like, in CSS</h1>
+  </div>
+  <div class="hero-side rise" style="--i:2">
+    <p class="lede">Forty-five official websites from fifteen European states. Open any one for its original address, the fonts and colours measured from the live page, the furniture that makes it feel official, its own wording, a full screenshot and a style prompt ready for your coding agent.</p>
+    <div class="stats"><div><b id="sBodies">45</b><span>bodies</span></div><div><b id="sStates">15</b><span>states</span></div><div><b id="sBlue">33</b><span>lead with blue</span></div></div>
+  </div>
+</section>
+
+<div class="filters" id="filters">
+  <div class="filters-in">
+    <div class="chips" id="branchChips" role="group" aria-label="Filter by branch">
+      <button class="chip on" data-g="*">All branches</button>
+      <button class="chip" data-g="parliament">Parliaments</button>
+      <button class="chip" data-g="government">Governments</button>
+      <button class="chip" data-g="enforcement">Police, prosecution &amp; anti-corruption</button>
+    </div>
+    <label class="search"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>
+      <input id="q" type="search" placeholder="Search name, font, hex, pattern" aria-label="Search the register"></label>
+    <div class="chips" id="countryChips" role="group" aria-label="Filter by country"><button class="chip on" data-c="*">All states</button></div>
+    <div class="count" id="count" aria-live="polite"></div>
+  </div>
+</div>
+
+<section class="sheet" style="border-radius:0">
+  <div class="sheet-in" style="padding-top:0" id="list"></div>
+</section>
+
+<div class="veil" id="veil"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="pTitle" aria-hidden="true"></aside>
+
+<script src="../assets/edition.js"></script>
+<script src="../data/styles.js"></script>
+<script src="../assets/qrcode.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+(function(){
+const A = window.ATLAS;
+const list = document.getElementById("list");
+if(!A || !A.length){
+  list.innerHTML = '<div class="empty"><p class="h-2">The register could not be loaded.</p><p class="body">The file data/styles.js is missing or failed to load. Check that the folder structure is intact, then reload.</p><a class="pill" href="../">Back to the kit</a></div>';
+  return;
+}
+
+const ALL = []; A.forEach(d=>d.bodies.forEach((b,i)=>ALL.push({d,b,i})));
+let fG = "*", fC = "*", q = "";
+
+/* stats */
+const isBlue = hex=>{const h=hex.replace("#","");const r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);if(mx-mn<.12)return false;let H;if(mx===b)H=60*((r-g)/(mx-mn))+240;else if(mx===g)H=60*((b-r)/(mx-mn))+120;else H=60*(((g-b)/(mx-mn))%6);H=(H+360)%360;return H>=190&&H<=250};
+const primaryOf = b=>{const p=(b.colors||[]).find(c=>/primary/.test(c.role));return (p||b.colors[0]||{hex:"#999999"}).hex};
+document.getElementById("sBodies").textContent = ALL.length;
+document.getElementById("sStates").textContent = A.length;
+document.getElementById("sBlue").textContent = ALL.filter(x=>isBlue(primaryOf(x.b))).length;
+
+/* country chips */
+const cc = document.getElementById("countryChips");
+A.forEach(d=>{const b=document.createElement("button");b.className="chip";b.dataset.c=d.country;b.innerHTML=`<span class="iso">${d.iso}</span>${d.country}`;cc.appendChild(b)});
+cc.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;cc.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");fC=b.dataset.c;render()});
+const bc = document.getElementById("branchChips");
+bc.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;bc.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));b.classList.add("on");fG=b.dataset.g;render()});
+let qt; document.getElementById("q").addEventListener("input",e=>{clearTimeout(qt);qt=setTimeout(()=>{q=e.target.value.trim().toLowerCase();render()},120)});
+
+const esc = s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const matches = ({d,b})=>{
+  if(fC!=="*" && d.country!==fC) return false;
+  if(fG!=="*" && b.group!==fG) return false;
+  if(!q) return true;
+  const hay=[d.country,d.iso,b.name,b.en,b.typeLabel,b.url,b.layout,(b.fonts||[]).map(f=>f.family).join(" "),(b.colors||[]).map(c=>c.hex+" "+c.role).join(" "),(b.ui_patterns||[]).join(" "),(b.language_samples||[]).map(l=>l.original+" "+l.english).join(" ")].join(" ").toLowerCase();
+  return hay.includes(q);
+};
+
+function card({d,b}){
+  const sw=(b.colors||[]).slice(0,6).map(c=>`<i style="background:${c.hex}"></i>`).join("");
+  const fonts=[...new Set((b.fonts||[]).map(f=>f.family))].slice(0,2).join(" / ");
+  return `<button class="card" data-shot="${b.shot}" aria-label="Open ${esc(b.short)}">
+    <div class="frame"><img class="loading" loading="lazy" src="../screenshots/thumbs/${b.shot}.webp" alt="Homepage of ${esc(b.short)}"
+      onload="this.classList.remove('loading')" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<div class=missing>Screenshot not on file</div>')"><span class="open">Open file</span></div>
+    <div class="cap"><div><div class="nm">${esc(b.short)}</div>${b.en?`<div class="en">${esc(b.en)}</div>`:""}</div>
+      <div class="tags"><span class="tag">${esc(b.typeLabel)}</span></div></div>
+    <div class="meta"><span class="strip">${sw}</span><span class="fontline">${esc(fonts||"system stack")}</span></div>
+  </button>`;
+}
+
+function render(){
+  let html="", n=0, gi=0;
+  A.forEach(d=>{
+    const items = ALL.filter(x=>x.d===d && matches(x));
+    if(!items.length) return;
+    n += items.length;
+    html += `<section class="group" id="c-${d.slug}">
+      <div class="group-head"><span class="iso">${d.iso}</span><h2>${esc(d.country)}</h2><a href="../dossiers/${d.slug}.html">Dossier</a></div>
+      <div class="grid n${items.length} ${gi%2?"flip":""}">${items.map(card).join("")}</div></section>`;
+    gi++;
+  });
+  if(!n){
+    html = `<div class="empty"><p class="h-2">No records match your enquiry.</p><p class="body">Your request has been noted and will be processed in due course. In the meantime, try clearing a filter.</p><button class="pill" id="reset">Clear all filters</button></div>`;
+  }
+  list.innerHTML = html;
+  document.getElementById("count").textContent = n ? `${n} ${n===1?"body":"bodies"} on file` : "";
+  const r=document.getElementById("reset");
+  if(r) r.onclick=()=>{fG="*";fC="*";q="";document.getElementById("q").value="";document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x.dataset.g==="*"||x.dataset.c==="*"));render()};
+}
+list.addEventListener("click",e=>{const c=e.target.closest(".card");if(c) open(c.dataset.shot)});
+render();
+
+/* ---------- prompts & exports ---------- */
+const cssVars = b=>{
+  const lines=[":root{"]; const seen={};
+  (b.colors||[]).forEach(c=>{let k=c.role.replace(/[^a-z-]/gi,"-").toLowerCase();seen[k]=(seen[k]||0)+1;if(seen[k]>1)k+="-"+seen[k];lines.push(`  --gov-${k}: ${c.hex};`)});
+  const head=(b.fonts||[]).find(f=>/head/.test(f.usage))||(b.fonts||[])[0]; const bodyf=(b.fonts||[]).find(f=>/body/.test(f.usage))||(b.fonts||[])[0];
+  if(head) lines.push(`  --gov-font-heading: "${head.family}", Arial, sans-serif;`);
+  if(bodyf) lines.push(`  --gov-font-body: "${bodyf.family}", Arial, sans-serif;`);
+  lines.push("}"); return lines.join("\n");
+};
+const prompt = (d,b)=>`You are cloning the look and the voice of an official government website for a satirical workshop piece.
+
+TARGET: ${b.name} — ${b.typeLabel.toLowerCase()} of ${d.country}
+ORIGINAL: ${b.url}
+I am attaching a full-page screenshot of the original. Treat it as the ground truth for spacing, proportions and hierarchy.
+
+DESIGN TOKENS (measured from the live site)
+${cssVars(b)}
+
+LAYOUT ANATOMY
+${b.layout||""}
+
+SIGNATURE PATTERNS — reproduce each one
+${(b.ui_patterns||[]).map(p=>"- "+p).join("\n")}
+
+THE INSTITUTION'S VOICE — write every label, heading and legal line in this register
+${(b.language_samples||[]).map(l=>`- "${l.original}" (${l.english}) — ${l.context}`).join("\n")}
+
+REFERENCE CSS FROM THE ORIGINAL
+${b.css_snippet||""}
+
+RULES
+1. Build the chrome first: header with the emblem in its original position, main menu, breadcrumb, footer, cookie banner. Placeholder text only for now.
+2. Do not modernise it. Do not make it prettier. No rounded corners, shadows or animations the original doesn't have.
+3. Use a simple placeholder emblem (a plain shield shape) where the official crest goes.
+4. No forms that collect data, no login boxes.
+5. Single self-contained HTML file.
+When the chrome is right, I will give you the content.`;
+
+/* ---------- detail panel ---------- */
+const panel=document.getElementById("panel"), veil=document.getElementById("veil");
+let current=-1, lastFocus=null;
+function open(shot){
+  const idx = ALL.findIndex(x=>x.b.shot===shot); if(idx<0) return;
+  current=idx; const {d,b}=ALL[idx];
+  if(!panel.classList.contains("on")) lastFocus=document.activeElement;
+  const pal=(b.colors||[]).map(c=>`<button class="sw" data-copy="${c.hex}"><span class="c" style="background:${c.hex}"></span><span class="t"><b>${c.hex}</b><span>${esc(c.role)}${c.share?` · ${c.share}%`:""}</span></span></button>`).join("");
+  const fonts=(b.fonts||[]).map(f=>`<div class="type-row"><span class="f" style="font-family:'${esc(f.family)}',var(--sans)">${esc(f.family)}</span><span class="u">${esc(f.usage)}${f.source?` · ${esc(f.source)}`:""}</span></div>`).join("");
+  const pats=(b.ui_patterns||[]).map(p=>`<li>${esc(p)}</li>`).join("");
+  const voice=(b.language_samples||[]).map(l=>`<div class="quote"><div class="o">“${esc(l.original)}”</div><div class="e">${esc(l.english)}</div><div class="x">${esc(l.context)}</div></div>`).join("");
+  const src = b.tokens_source==="measured" ? "Measured from the live page with a headless browser, October 2026. Shares are by on-screen area for colours and by amount of text for fonts." : "Fonts and colours read from the site's branding and screenshot; the live page could not be measured. Check against the screenshot.";
+  panel.innerHTML = `
+    <div class="p-head">
+      <div><div class="tags" style="margin-bottom:12px"><span class="tag round">${d.iso}</span><span class="tag round">${esc(b.typeLabel)}</span></div>
+        <h2 id="pTitle">${esc(b.short)}</h2><div class="sub">${esc(b.en||d.country)}</div></div>
+      <div class="p-tools">
+        <button class="icon-btn" id="pPrev" aria-label="Previous body"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4L6 9l5 5"/></svg></button>
+        <button class="icon-btn" id="pNext" aria-label="Next body"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 4l5 5-5 5"/></svg></button>
+        <button class="icon-btn" id="pClose" aria-label="Close"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l10 10M14 4L4 14"/></svg></button>
+      </div>
+    </div>
+    <div class="p-body">
+      <div class="p-shot"><img src="../screenshots/${b.shot}.webp" alt="Full screenshot of ${esc(b.short)}" onerror="this.outerHTML='<p style=padding:40px>Screenshot not on file.</p>'"></div>
+      <div class="p-side">
+        <div class="actions">
+          <button class="pill lime" id="aPrompt">Copy style prompt</button>
+          <a class="pill" href="${b.url}" target="_blank" rel="noopener">Visit original <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></a>
+          <a class="pill" href="../screenshots/${b.shot}.webp" download>Screenshot</a>
+          <button class="pill" id="aVars">CSS variables</button>
+          <a class="pill" href="../dossiers/${d.slug}.html">${esc(d.country)} dossier</a>
+        </div>
+        <div class="blk"><div class="lab"><span>Palette</span><span>click to copy</span></div><div class="pal">${pal}</div></div>
+        <div class="blk"><div class="lab"><span>Typography</span></div>${fonts||'<p class="body">System stack</p>'}</div>
+        <div class="note">${src}${b.note?`<br><br>${esc(b.note)}`:""}</div>
+        <div class="blk"><div class="lab"><span>Layout anatomy</span></div><p class="body" style="color:var(--ink)">${esc(b.layout)}</p></div>
+        <div class="blk"><div class="lab"><span>Signature patterns</span></div><ul class="pat">${pats}</ul></div>
+        <div class="blk"><div class="lab"><span>The official voice</span></div>${voice}</div>
+        <div class="blk"><div class="lab"><span>Reference CSS</span><button class="tag round" id="aCss" style="cursor:pointer;background:none">Copy</button></div><pre class="code">${esc(b.css_snippet||"")}</pre></div>
+      </div>
+    </div>`;
+  panel.classList.add("on"); veil.classList.add("on"); panel.setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden";
+  if(location.hash.slice(1)!==shot) history.replaceState(null,"","#"+shot);
+  panel.querySelector("#pClose").onclick=close;
+  panel.querySelector("#pPrev").onclick=()=>step(-1);
+  panel.querySelector("#pNext").onclick=()=>step(1);
+  panel.querySelector("#aPrompt").onclick=()=>copyText(prompt(d,b),"Style prompt copied. Paste it with the screenshot.");
+  panel.querySelector("#aVars").onclick=()=>copyText(cssVars(b),"CSS variables copied");
+  panel.querySelector("#aCss").onclick=()=>copyText(b.css_snippet||"","Reference CSS copied");
+  panel.querySelectorAll(".sw").forEach(s=>s.onclick=()=>copyText(s.dataset.copy,s.dataset.copy+" copied"));
+  panel.querySelector("#pClose").focus();
+}
+function step(k){ if(current<0) return; open(ALL[(current+k+ALL.length)%ALL.length].b.shot); }
+function close(){
+  panel.classList.remove("on"); veil.classList.remove("on"); panel.setAttribute("aria-hidden","true");
+  document.body.style.overflow=""; current=-1;
+  history.replaceState(null,"",location.pathname+location.search);
+  if(lastFocus) lastFocus.focus();
+}
+veil.addEventListener("click",close);
+document.addEventListener("keydown",e=>{
+  if(!panel.classList.contains("on")) return;
+  if(e.key==="Escape") close();
+  if(e.key==="ArrowRight") step(1);
+  if(e.key==="ArrowLeft") step(-1);
+});
+if(location.hash.length>1) open(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>
