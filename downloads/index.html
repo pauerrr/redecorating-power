@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Downloads — Redecorating Power</title>
+<link rel="stylesheet" href="../assets/dds.css">
+<link rel="stylesheet" href="../assets/doc.css">
+<style>
+  .dl-row{grid-template-columns:minmax(0,3fr) minmax(0,4fr) 110px auto}
+  .dl-row .name{font-size:clamp(20px,1.8vw,28px);font-weight:500}
+  .dl-row .what{font-size:15px;color:var(--ink-70)}
+  .dl-row .size{font-family:var(--mono);font-size:13px;color:var(--ink-70);text-align:right}
+  @media (max-width:900px){.dl-row{grid-template-columns:1fr auto}.dl-row .what,.dl-row .size{display:none}}
+</style>
+</head>
+<body data-root="../" data-page="downloads">
+<section class="hero doc-hero">
+  <div>
+    <div class="eyebrow rise"><span class="tag round">Downloads</span><span>Everything, offline</span></div>
+    <h1 class="h-1 rise" style="--i:1">Take it with you</h1>
+  </div>
+  <div class="hero-side rise" style="--i:2">
+    <p class="lede">For venues with bad wifi, facilitators who like files, and anyone who wants to feed the whole register to an agent at once.</p>
+  </div>
+</section>
+<section class="sheet">
+  <div class="sheet-in">
+    <div class="rows">
+      <a class="row dl-row" href="redecorating-power-deck.pptx" download><span class="name">The deck, as PowerPoint</span><span class="what">36 slides with speaker notes, built from the same script as the browser deck. Set in Roobert; falls back to your system sans if it isn't installed.</span><span class="size" data-size="redecorating-power-deck.pptx"></span><svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M11 4v12M5 11l6 6 6-6"/></svg></a>
+      <a class="row dl-row" href="dossiers-markdown.zip" download><span class="name">All 15 dossiers</span><span class="what">Markdown, one file per country. Drop the folder into your agent's context.</span><span class="size" data-size="dossiers-markdown.zip"></span><svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M11 4v12M5 11l6 6 6-6"/></svg></a>
+      <a class="row dl-row" href="../data/styles.json" download><span class="name">Style tokens</span><span class="what">All 45 bodies as one JSON file: URL, measured fonts and colours, layout, patterns, wording, reference CSS.</span><span class="size" data-size="../data/styles.json"></span><svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M11 4v12M5 11l6 6 6-6"/></svg></a>
+      <a class="row dl-row" href="screenshots.zip" download><span class="name">All 45 screenshots</span><span class="what">Full-page captures at 1440 px wide, WebP.</span><span class="size" data-size="screenshots.zip"></span><svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M11 4v12M5 11l6 6 6-6"/></svg></a>
+      <a class="row dl-row" href="../exercises/"><span class="name">Exercise sheets</span><span class="what">Print from the Exercises page: one sheet per A4 page, with your edition details in the header.</span><span class="size">print</span><svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17L17 5M7 5h10v10"/></svg></a>
+    </div>
+    <p class="body" style="margin-top:40px">Running your own edition? Fork the repository instead; the README explains the five-minute setup.</p>
+  </div>
+</section>
+<script src="../assets/edition.js"></script>
+<script src="../assets/qrcode.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+document.querySelectorAll("[data-size]").forEach(el=>{
+  fetch(el.dataset.size,{method:"HEAD"}).then(r=>{ const n=+r.headers.get("content-length"); if(n) el.textContent=(n/1048576>=1?(n/1048576).toFixed(1)+" MB":Math.round(n/1024)+" KB"); }).catch(()=>{});
+});
+</script>
+</body>
+</html>
