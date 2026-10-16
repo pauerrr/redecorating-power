@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercises — Redecorating Power</title>
+<link rel="stylesheet" href="../assets/dds.css">
+<style>
+  .hero-side{display:grid;gap:20px;justify-items:start}
+  .cta{display:flex;gap:10px;flex-wrap:wrap}
+  .idx-row{grid-template-columns:70px minmax(0,3fr) minmax(0,2fr) minmax(0,2fr) auto}
+  .idx-row .n{font-family:var(--mono);font-size:13px}
+  .idx-row .name{font-size:clamp(20px,1.8vw,28px);font-weight:500}
+  .idx-row .m{font-size:14px;color:var(--ink-70)}
+  .sw{width:14px;height:14px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:-1px}
+
+  .ws{border-top:1px solid var(--ink);padding:clamp(40px,5vw,80px) 0 clamp(50px,6vw,100px);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(24px,4vw,80px)}
+  .ws-side{display:grid;gap:18px;align-content:start;position:sticky;top:90px}
+  .ws-num{display:flex;align-items:center;gap:12px}
+  .ws-num .big{font-size:clamp(56px,6vw,96px);font-weight:500;line-height:.9;letter-spacing:-.02em}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;border-top:1px solid var(--line);padding-top:14px}
+  .facts dt{color:var(--ink-70)}
+  .why{font-size:clamp(20px,1.6vw,24px);line-height:1.35}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:0;margin-bottom:34px;border-top:1px solid var(--line)}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.5}
+  .steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:13px;color:var(--ink-70);padding-top:4px}
+  .card{background:var(--cream);border-radius:24px;padding:clamp(20px,2.4vw,34px);display:grid;gap:18px}
+  .card h4{font-size:15px;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .field{display:grid;gap:6px}
+  .field label{font-size:13px;font-weight:500}
+  .field .help{font-size:12.5px;color:var(--ink-70)}
+  .field input,.field textarea,.field select{font:400 16px/1.4 var(--sans);color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:10px;padding:11px 13px;width:100%;transition:border-color .2s}
+  .field textarea{min-height:76px;resize:vertical}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--ink)}
+  .field input:invalid:not(:placeholder-shown){border-color:var(--red)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid-t{display:grid;gap:8px}
+  .grid-t .r{display:grid;gap:8px;align-items:start}
+  .grid-t .hd{font-size:12px;color:var(--ink-70)}
+  .inv .r{grid-template-columns:2fr 1.3fr 2fr 70px}
+  .people .r{grid-template-columns:1.6fr 1.2fr 1.6fr 2fr}
+  .ledger .r{grid-template-columns:2.2fr 2fr 1.2fr}
+  .grid-t input,.grid-t select{font:400 14px/1.3 var(--sans);border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 10px;width:100%;color:var(--ink)}
+  .checks{display:grid;gap:8px}
+  .checks label{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-size:15px;line-height:1.4;cursor:pointer}
+  .checks input{width:18px;height:18px;accent-color:var(--ink);margin-top:2px}
+  .go{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;padding:10px 14px;border-radius:999px;background:var(--white);width:max-content}
+  .go i{width:10px;height:10px;border-radius:50%;background:var(--red);transition:background .3s}
+  .go.ok i{background:#2BB24C}
+  .tip{font-size:14px;color:var(--ink-70);border-left:2px solid var(--lime);padding-left:12px}
+  .card-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .small{font-size:13px;padding:9px 14px}
+  .print-head{display:none}
+
+  @media (max-width:900px){
+    .idx-row{grid-template-columns:44px 1fr auto}
+    .idx-row .hide-m{display:none}
+    .ws{grid-template-columns:1fr}
+    .ws-side{position:static}
+    .two,.inv .r,.people .r,.ledger .r{grid-template-columns:1fr}
+    .grid-t .hd{display:none}
+  }
+  @media print{
+    @page{size:A4;margin:14mm}
+    .hero,.index-wrap,.card-actions,.no-print{display:none!important}
+    .sheet{background:#fff}
+    .sheet-in{padding:0}
+    .ws{break-after:page;border-top:none;padding:0;grid-template-columns:1fr 1.6fr;gap:8mm;font-size:10pt}
+    .ws-side{position:static}
+    .print-head{display:flex;justify-content:space-between;grid-column:1/-1;font-size:9pt;border-bottom:1px solid #000;padding-bottom:3mm}
+    .card{background:#fff;border:1px solid #999;border-radius:4mm}
+    .field input,.field textarea,.grid-t input,.grid-t select{border:none;border-bottom:1px solid #999;border-radius:0;min-height:8mm}
+    .steps li{font-size:10pt;padding:2mm 0}
+    .ws-num .big{font-size:40pt}
+  }
+</style>
+</head>
+<body data-root="../" data-page="exercises">
+
+<section class="hero">
+  <div>
+    <div class="eyebrow rise"><span class="tag round">Exercises</span><span>Seven worksheets, one per phase</span></div>
+    <h1 class="h-1 rise" style="--i:1">Paperwork, but<br>for the other side</h1>
+  </div>
+  <div class="hero-side rise" style="--i:2">
+    <p class="lede">Fill them in on a laptop or print them. On screen, your answers stay in this browser until you clear them, and the two big ones copy straight into your coding agent as markdown.</p>
+    <div class="cta"><button class="pill solid" onclick="window.print()">Print all sheets</button><button class="pill" id="clearAll">Clear my answers</button></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="sheet-in">
+    <div class="index-wrap" style="margin-bottom:clamp(50px,6vw,100px)">
+      <div class="rows" id="index"></div>
+    </div>
+    <div id="sheets"></div>
+  </div>
+</section>
+
+<script src="../assets/edition.js"></script>
+<script src="../assets/qrcode.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+(function(){
+const ANGLES = ["The receipt — one transaction, full institutional treatment","The org chart — the connection map as an 'Our structure' page","The timeline — the scandal as 'Our history'","The press release that should have existed","The monument — a convicted figure honoured like a founder"];
+const PHASE = {"00":"var(--lime)","01":"var(--sky)","02":"var(--yellow)","03":"var(--lilac)","04":"var(--red)","05":"var(--blue)","06":"var(--ink)"};
+const rows = (n, cols, cls) => `<div class="grid-t ${cls}"><div class="r hd">${cols.map(c=>`<span>${c.h}</span>`).join("")}</div>${Array.from({length:n},(_,i)=>`<div class="r">${cols.map((c,j)=>c.opts?`<select data-k="${cls}-${i}-${j}" aria-label="${c.h} ${i+1}"><option value=""></option>${c.opts.map(o=>`<option>${o}</option>`).join("")}</select>`:`<input data-k="${cls}-${i}-${j}" ${c.type?`type="${c.type}"`:""} placeholder="${c.ph||""}" aria-label="${c.h} ${i+1}">`).join("")}</div>`).join("")}</div>`;
+const f = (k,label,opts={}) => `<div class="field"><label for="${k}">${label}</label>${opts.area?`<textarea id="${k}" data-k="${k}" placeholder="${opts.ph||""}"></textarea>`:opts.sel?`<select id="${k}" data-k="${k}"><option value=""></option>${opts.sel.map(o=>`<option>${o}</option>`).join("")}</select>`:`<input id="${k}" data-k="${k}" ${opts.type?`type="${opts.type}"`:""} placeholder="${opts.ph||""}">`}${opts.help?`<span class="help">${opts.help}</span>`:""}</div>`;
+const checks = (k, items) => `<div class="checks">${items.map((t,i)=>`<label><input type="checkbox" data-k="${k}-${i}"><span>${t}</span></label>`).join("")}</div>`;
+
+const W = [
+ {id:"e0",ph:"00",name:"First impressions",time:"5 min",who:"Everyone",out:"One word each",
+  why:"Before anyone explains anything, notice what the design is already doing to you.",
+  steps:["Look at the homepage on the wall for sixty seconds. Don't read it. Feel it.","Write one word for what it wants you to feel.","Read the words out. Keep them on the wall; we'll come back to them in the debrief."],
+  card:`<h4>Your word</h4>${f("e0w","One word",{ph:"e.g. inevitable"})}${f("e0b","Which detail made you feel that?",{ph:"e.g. the crest, the grey, the passive voice"})}`},
+ {id:"e1",ph:"01",name:"Authority inventory",time:"15 min",who:"Pairs",out:"Six devices, scored",
+  why:"Authority is assembled from parts. Find the parts.",
+  steps:["Open any body in the Style Bureau. Look at the screenshot, then the original.","List six things that make it look official. Sort each one: colour, type, furniture or voice.","Score each from 1 to 5 for how much authority it adds.","Report the single strongest device to the room in one sentence."],
+  card:`<h4>Body</h4>${f("e1b","Which body?",{ph:"e.g. Direcția Națională Anticorupție"})}<h4>The inventory</h4>${rows(6,[{h:"Device",ph:"crest top-left"},{h:"Category",opts:["Colour","Type","Furniture","Voice"]},{h:"What it signals",ph:"continuity"},{h:"1–5",type:"number"}],"inv")}${f("e1s","The strongest device, in one sentence",{area:1})}`,
+  tip:"Furniture is the easiest to miss: breadcrumbs, accessibility statements, reference numbers, the cookie banner citing a law."},
+ {id:"e2",ph:"02",name:"Case card",time:"25 min",who:"Team",out:"One case, one angle, every name checked",copy:true,
+  why:"Specific beats loud. One sourced number in an official typeface does more than a page of outrage.",
+  steps:["Pick a country and one body from the Style Bureau.","Open that country's dossier. Read it properly; skimming is how you end up with nothing.","Choose one case and one angle.","Fill the card. Every person you plan to name gets a status line and a source.","Show the card to a facilitator. Go / no-go before you leave this phase."],
+  card:`<div class="two">${f("e2c","Country")}${f("e2b","Body you will clone")}</div>${f("e2case","Case")}${f("e2a","Angle",{sel:ANGLES})}<div class="two">${f("e2n","The number that hurts",{ph:"amount, sentence length, count",help:"Exactly as the source states it."})}${f("e2ns","Source for that number",{type:"url",ph:"https://"})}</div><div class="two">${f("e2d","Key date")}${f("e2court","Court or institution that established it")}</div><h4>People you will name</h4>${rows(3,[{h:"Name"},{h:"Status",opts:["Convicted — final","Resigned"]},{h:"Court / year or resignation date"},{h:"Source",type:"url",ph:"https://"}],"people")}<h4>Go / no-go</h4>${checks("e2g",["Every named person is convicted (final) or resigned, per the dossier.","Every number on this card has a source link.","Anyone else involved appears by role only (‘a regional minister’), never by name."])}<div class="go" id="go2"><i></i><span>Not cleared yet</span></div>`,
+  tip:"Chase the number, the date and the court. 'Corruption happened' is boring. A treasurer, a parallel ledger and a sentence confirmed by the Supreme Court on a given day is a website."},
+ {id:"e3",ph:"03",name:"Chrome before content",time:"45 min",who:"Team",out:"An empty shell a civil servant would sign off",
+  why:"The authority lives in the chrome. Get it right before you write a word.",
+  steps:["In the Style Bureau, open your body and press Copy style prompt. Paste it into your agent.","Ask for the empty shell only: header, emblem, menu, breadcrumb, footer, cookie banner. Placeholder text.","Drop the full screenshot into the chat. Ask the agent to list every difference, then fix them.","At minute 35, swap screens with the next table for two minutes. They name the one thing that gives you away. Fix it.","Tick the list below. Anything unticked is your next prompt."],
+  card:`<h4>The furniture checklist</h4>${checks("e3c",["Emblem or crest in its original position (placeholder shape is fine)","Utility bar: languages, accessibility, search, as on the original","Main menu labels in the original language","Breadcrumb starting from Home","A news or announcements module with dates in the local format","A document or PDF list with reference numbers","Accessibility statement link","Cookie banner that cites a law by article number","Footer with the legal links (privacy, legal notice, sitemap)","Font weights and spacing match the screenshot, not a modern template"])}<h4>Swap test</h4>${f("e3g","What gave it away?",{area:1})}${f("e3f","What you changed",{area:1})}`,
+  tip:"If the agent keeps making it pretty, paste: 'Do not modernise it. Remove every rounded corner, shadow and animation the original does not have.'"},
+ {id:"e4",ph:"04",name:"Deadpan rewrite & fact ledger",time:"45 min",who:"Team",out:"A page with every fact sourced and no winks",copy:true,
+  why:"The more damning the fact, the more boring the delivery. The gap does the work.",
+  steps:["Write the page content in the institution's voice. Steal its phrases from the Style Bureau.","Every hard fact on the page gets a row in the ledger: the claim as it appears, the source, the legal status.","Keep the institution's own words where you can. Their euphemisms are funnier than yours.","Minute 40: wink audit. Find your funniest line. Rewrite it more boringly.","Add a footnotes or 'Sources' section to the page from the ledger."],
+  card:`<h4>Fact ledger</h4>${rows(6,[{h:"Claim as it appears on the page"},{h:"Source",type:"url",ph:"https://"},{h:"Status",opts:["Court ruling — final","Resignation","Official statistic","Institutional finding","Quote"]}],"ledger")}<h4>Wink audit</h4>${f("e4w","Your funniest line",{area:1})}${f("e4b","The same line, more boring",{area:1,help:"Read both out loud. The second one should hurt more."})}`,
+  tip:"Example, from the Spain dossier. Winking: 'LOL the ruling party had a secret piggy bank.' Deadpan: 'Notice 10/2020. The Tribunal Supremo has confirmed sentences of up to 51 years and 11 months in the Gürtel case. No action is required from citizens.'"},
+ {id:"e5",ph:"05",name:"Spokesperson",time:"90 seconds per team",who:"Team, in character",out:"A launch, not an explanation",
+  why:"If you have to explain the joke, the site didn't land. Stay in role.",
+  steps:["One person is the institution's press officer. Everyone else stands behind them looking serious.","Launch the site as if it were a real service update.","No stepping out of character. No 'so basically what we did was…'.","The room answers two questions afterwards, nothing else."],
+  card:`<h4>Script</h4>${f("e5o","Opening line",{ph:"Good morning. Today the Directorate is pleased to present…"})}${f("e5f","The one fact you will say out loud")}${f("e5c","Closing line, in their voice",{ph:"We thank citizens for their continued confidence."})}<h4>The room scores</h4><div class="two">${f("e5a","Did the look sell the authority? (1–5)",{type:"number"})}${f("e5g","Did the gap land? (1–5)",{type:"number"})}</div>`},
+ {id:"e6",ph:"06",name:"Spot it in the wild",time:"5 min",who:"Everyone",out:"One example each",
+  why:"The tricks aren't only governmental. Once you see them you see them everywhere.",
+  steps:["Name one interface outside government that uses the same authority devices.","Say which device, and what it was protecting.","Go back to the wall of words from the first exercise. Did any of them change?"],
+  card:`${f("e6i","The interface",{ph:"e.g. an airline's cancellation flow"})}${f("e6d","The device and what it hides",{area:1})}`}
+];
+
+/* index */
+document.getElementById("index").innerHTML = W.map(w=>`<a class="row idx-row" href="#${w.id}"><span class="n">E${w.ph.slice(1)}</span><span class="name"><span class="sw" style="background:${PHASE[w.ph]}"></span>${w.name}</span><span class="m hide-m">Phase ${w.ph} · ${w.time}</span><span class="m hide-m">${w.who}</span><svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17L17 5M7 5h10v10"/></svg></a>`).join("");
+
+/* sheets */
+const ed = (window.editionLine && editionLine()) || "";
+document.getElementById("sheets").innerHTML = W.map(w=>`
+<article class="ws" id="${w.id}">
+  <div class="print-head"><span>Redecorating Power · E${w.ph.slice(1)} ${w.name}</span><span>${ed}</span><span>Team: ____________________</span></div>
+  <div class="ws-side">
+    <div class="ws-num"><span class="big">E${w.ph.slice(1)}</span><span class="sw" style="background:${PHASE[w.ph]};width:22px;height:22px"></span></div>
+    <h2 class="h-2">${w.name}</h2>
+    <p class="why">${w.why}</p>
+    <dl class="facts"><dt>Phase</dt><dd>${w.ph}</dd><dt>Time</dt><dd>${w.time}</dd><dt>Who</dt><dd>${w.who}</dd><dt>You hand in</dt><dd>${w.out}</dd></dl>
+    <div class="card-actions no-print"><button class="pill small" onclick="printOne('${w.id}')">Print this sheet</button>${w.copy?`<button class="pill small solid" data-copy="${w.id}">Copy for my agent</button>`:""}</div>
+  </div>
+  <div>
+    <ol class="steps">${w.steps.map(s=>`<li>${s}</li>`).join("")}</ol>
+    <div class="card">${w.card}</div>
+    ${w.tip?`<p class="tip" style="margin-top:20px">${w.tip}</p>`:""}
+  </div>
+</article>`).join("");
+
+/* persistence (browser-local, optional) */
+const KEY="rp-exercises-v1"; let store={};
+try{ store = JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){ store={}; }
+const save=()=>{ try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){} };
+document.querySelectorAll("[data-k]").forEach(el=>{
+  const k=el.dataset.k;
+  if(store[k]!==undefined){ if(el.type==="checkbox") el.checked=!!store[k]; else el.value=store[k]; }
+  el.addEventListener(el.type==="checkbox"?"change":"input",()=>{ store[k]= el.type==="checkbox"?el.checked:el.value; save(); goCheck(); });
+});
+document.getElementById("clearAll").onclick=()=>{
+  if(!Object.keys(store).length){ toast("Nothing to clear"); return; }
+  store={}; save(); document.querySelectorAll("[data-k]").forEach(el=>{ if(el.type==="checkbox") el.checked=false; else el.value=""; }); goCheck(); toast("Answers cleared");
+};
+
+/* go / no-go indicator for E2 */
+function goCheck(){
+  const g=document.getElementById("go2"); if(!g) return;
+  const ok=[0,1,2].every(i=>store["e2g-"+i]);
+  g.classList.toggle("ok",ok); g.querySelector("span").textContent= ok?"Cleared — show a facilitator":"Not cleared yet";
+}
+goCheck();
+
+/* print a single sheet */
+window.printOne=id=>{
+  const all=[...document.querySelectorAll(".ws")];
+  all.forEach(s=>{ if(s.id!==id) s.classList.add("no-print"); });
+  window.print();
+  setTimeout(()=>all.forEach(s=>s.classList.remove("no-print")),400);
+};
+
+/* markdown export */
+const v=k=>(store[k]||"").toString().trim();
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{
+  let md="";
+  if(b.dataset.copy==="e2"){
+    md=`# Case card\n\n- Country: ${v("e2c")}\n- Body to clone: ${v("e2b")}\n- Case: ${v("e2case")}\n- Angle: ${v("e2a")}\n- The number: ${v("e2n")} (source: ${v("e2ns")})\n- Key date: ${v("e2d")} — ${v("e2court")}\n\n## People named\n`;
+    for(let i=0;i<3;i++){ const n=v(`people-${i}-0`); if(n) md+=`- ${n} — ${v(`people-${i}-1`)}, ${v(`people-${i}-2`)} (source: ${v(`people-${i}-3`)})\n`; }
+    md+=`\nRule: only name people listed above. Everyone else appears by role only. Every number must link to its source.`;
+  } else {
+    md=`# Fact ledger — every claim on the page must come from this list\n\n| Claim | Source | Status |\n|---|---|---|\n`;
+    for(let i=0;i<6;i++){ const c=v(`ledger-${i}-0`); if(c) md+=`| ${c} | ${v(`ledger-${i}-1`)} | ${v(`ledger-${i}-2`)} |\n`; }
+    md+=`\nWrite all copy in the institution's own voice. Deadpan. No jokes, no winks. Add a 'Sources' section at the foot of the page built from this ledger.`;
+  }
+  if(md.replace(/[^a-z0-9]/gi,"").length<60){ toast("Fill in the card first"); return; }
+  copyText(md,"Copied. Paste it into your agent with the dossier.");
+});
+})();
+</script>
+</body>
+</html>
