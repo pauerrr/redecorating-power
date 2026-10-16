@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck — Redecorating Power</title>
+<link rel="stylesheet" href="../assets/dds.css">
+<style>
+  html,body{height:100%;overflow:hidden;background:#0B0C0C}
+  body{display:grid;place-items:center}
+  #viewport{position:fixed;inset:0;display:grid;place-items:center}
+  #stage{width:1600px;height:900px;position:relative;transform-origin:center center;flex-shrink:0}
+  .slide{position:absolute;inset:0;background:var(--cream);color:var(--ink);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .45s var(--ease)}
+  .slide.on{opacity:1;pointer-events:auto}
+  .slide .in{position:absolute;inset:0;padding:64px 72px}
+  .slide .rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0) * 70ms + 120ms)}
+  .slide.on .rv{opacity:1;transform:none}
+  .wm{position:absolute;top:44px;left:72px;font-size:14px;font-weight:500;letter-spacing:.26em;text-transform:uppercase}
+  .pg{position:absolute;bottom:34px;right:72px;font-family:var(--mono);font-size:13px;opacity:.6}
+  .phl{position:absolute;bottom:34px;left:72px;font-size:14px;display:flex;gap:10px;align-items:center;opacity:.75}
+  .phl i{width:12px;height:12px;border-radius:50%}
+  .white{background:var(--white)}
+  .inkbg{background:var(--ink);color:var(--cream)}
+  .sheet-top{position:absolute;left:0;right:0;bottom:0;background:var(--white);border-radius:96px 96px 0 0}
+
+  /* cover */
+  .cover h1{position:absolute;left:72px;bottom:210px;font-size:178px;line-height:.9;font-weight:500;letter-spacing:-.03em}
+  .cover .sub{position:absolute;left:72px;bottom:120px;font-size:30px;max-width:900px;line-height:1.25}
+  .cover .ed{position:absolute;left:72px;bottom:64px;font-size:20px;display:flex;gap:10px;align-items:center}
+  .cover .qrc{position:absolute;right:72px;top:150px;width:300px;background:var(--white);border-radius:28px;padding:22px;display:grid;gap:14px}
+  .qr svg{width:100%;height:auto;display:block}
+  .cover .qrc .u{font-family:var(--mono);font-size:13px;word-break:break-all}
+
+  /* join */
+  .join h2{font-size:120px;font-weight:500;line-height:.95;letter-spacing:-.02em;position:absolute;left:72px;top:150px}
+  .join .url{position:absolute;left:72px;top:440px;font-family:var(--mono);font-size:34px;max-width:820px;word-break:break-all;line-height:1.3}
+  .join .wifi{position:absolute;left:72px;bottom:110px;font-size:24px;display:grid;gap:6px}
+  .join .wifi b{font-weight:500}
+  .join .bigqr{position:absolute;right:72px;top:120px;width:560px;height:560px;background:#fff;border-radius:36px;padding:28px}
+
+  /* phase */
+  .phase .num{position:absolute;left:58px;top:40px;font-size:440px;line-height:.85;font-weight:500;letter-spacing:-.05em}
+  .phase h2{position:absolute;left:72px;bottom:150px;font-size:110px;line-height:.95;font-weight:500;letter-spacing:-.02em;max-width:1300px}
+  .phase .line{position:absolute;left:72px;bottom:80px;font-size:30px}
+  .phase .mins{position:absolute;right:72px;top:64px;font-size:26px;border:1.5px solid currentColor;border-radius:999px;padding:10px 22px}
+
+  /* question */
+  .question .shot{position:absolute;left:0;top:0;bottom:0;width:860px;overflow:hidden;background:#ddd}
+  .question .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .question .q{position:absolute;left:940px;right:72px;top:180px;font-size:76px;line-height:1.02;font-weight:500;letter-spacing:-.02em}
+  .question .cap{position:absolute;left:940px;bottom:90px;font-size:18px;opacity:.7}
+
+  /* exercise */
+  .ex .card{position:absolute;inset:44px;background:var(--white);border-radius:56px;padding:60px 64px;display:grid;grid-template-columns:600px 1fr;gap:72px}
+  .ex .tagrow{display:flex;gap:10px;align-items:center;margin-bottom:28px}
+  .ex .tag{font-size:16px;padding:7px 14px}
+  .ex h2{font-size:84px;line-height:.98;font-weight:500;letter-spacing:-.02em}
+  .ex dl{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;font-size:22px;margin-top:40px;border-top:1px solid var(--line);padding-top:22px}
+  .ex dt{opacity:.6}
+  .ex .lnk{position:absolute;left:64px;bottom:54px;font-family:var(--mono);font-size:15px;opacity:.7}
+  .ex ol{list-style:none;counter-reset:s;border-top:1px solid var(--line);align-self:start}
+  .ex li{counter-increment:s;display:grid;grid-template-columns:64px 1fr;padding:20px 0;border-bottom:1px solid var(--line);font-size:27px;line-height:1.3}
+  .ex li::before{content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:17px;opacity:.55;padding-top:6px}
+  .ex .dotp{width:18px;height:18px;border-radius:50%}
+
+  /* statement */
+  .st .big{position:absolute;left:72px;top:150px;max-width:1360px;font-size:104px;line-height:1.0;font-weight:500;letter-spacing:-.02em}
+  .st .small{position:absolute;left:72px;bottom:100px;max-width:980px;font-size:28px;line-height:1.35;opacity:.8}
+
+  /* timeline */
+  .tl h2,.gen h2{position:absolute;left:72px;top:120px;font-size:72px;font-weight:500;letter-spacing:-.02em;line-height:1}
+  .tl .bar{position:absolute;left:72px;right:72px;top:290px;height:64px;display:flex;border-radius:999px;overflow:hidden}
+  .tl .bar div{height:100%;border-right:3px solid var(--white)}
+  .tl .rows{position:absolute;left:72px;right:72px;top:400px;display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px;border-top:none}
+  .tl .r{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-size:24px}
+  .tl .r i{width:20px;height:20px;border-radius:50%}
+  .tl .r span:last-child{font-family:var(--mono);font-size:17px;opacity:.7}
+
+  /* rule */
+  .rule h2{position:absolute;left:72px;top:140px;width:740px;font-size:96px;line-height:1.06;font-weight:500;letter-spacing:-.02em}
+  .rule h2 em{font-style:normal;background:var(--lime);color:var(--ink);padding:2px 14px 8px;display:inline-block;margin-top:18px}
+  .rule ul{position:absolute;left:880px;right:72px;top:150px;list-style:none;border-top:1px solid rgba(240,238,229,.3)}
+  .rule li{padding:24px 0;border-bottom:1px solid rgba(240,238,229,.3);font-size:26px;line-height:1.38}
+
+  /* palette */
+  .pal .stat{position:absolute;left:72px;top:250px;font-size:250px;font-weight:500;line-height:.85;letter-spacing:-.04em}
+  .pal .statl{position:absolute;left:80px;top:480px;font-size:30px;max-width:360px;line-height:1.2}
+  .pal .grid{position:absolute;left:520px;right:72px;top:250px;display:grid;grid-template-columns:110px repeat(15,1fr);gap:8px 8px;align-items:center}
+  .pal .grid .lab{font-size:15px;opacity:.65}
+  .pal .grid .iso{font-family:var(--mono);font-size:13px;text-align:center;opacity:.6}
+  .pal .sw{aspect-ratio:1;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(11,12,12,.12)}
+  .pal .sw.not{box-shadow:0 0 0 3px var(--white),0 0 0 5px var(--ink)}
+  .pal .note{position:absolute;left:520px;bottom:90px;font-size:20px;opacity:.7}
+  .gen .line{position:absolute;left:72px;top:210px;font-size:24px;opacity:.7}
+
+  /* fonts */
+  .fo .fhero{position:absolute;left:72px;top:300px;font-size:190px;font-weight:500;line-height:.9;letter-spacing:-.03em;font-family:Roboto,"Geist",sans-serif}
+  .fo .fheron{position:absolute;left:80px;top:520px;font-size:28px;max-width:560px;line-height:1.3}
+  .fo .bars{position:absolute;left:780px;right:72px;top:300px;display:grid;gap:18px}
+  .fo .b{display:grid;grid-template-columns:230px 1fr 50px;gap:18px;align-items:center;font-size:24px}
+  .fo .b .t{height:34px;border-radius:999px;background:var(--ink);transform-origin:left;transform:scaleX(0);transition:transform 1s var(--ease);transition-delay:calc(var(--i) * 90ms + 300ms)}
+  .slide.on .fo .b .t,.fo.on .b .t{transform:scaleX(1)}
+  .fo .b span:last-child{font-family:var(--mono);font-size:20px;text-align:right}
+
+  /* systems */
+  .sy .cards{position:absolute;left:72px;right:72px;top:280px;display:grid;grid-template-columns:1.25fr 1fr 1fr 1.25fr;gap:24px}
+  .sy .c{display:grid;gap:12px}
+  .sy .c .f{height:300px;border-radius:24px;overflow:hidden;background:#ddd}
+  .sy .c:nth-child(even) .f{height:240px;margin-top:60px}
+  .sy .c img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .sy .c .n{font-size:24px;font-weight:500;line-height:1.15}
+  .sy .c .m{font-size:18px;opacity:.7;display:flex;gap:10px;align-items:center}
+  .sy .c .m i{width:18px;height:18px;border-radius:50%}
+
+  /* annotate */
+  .an .shot{position:absolute;left:0;top:0;bottom:0;width:900px;overflow:hidden}
+  .an .shot img{width:100%;object-fit:cover;object-position:top}
+  .an h2{position:absolute;left:970px;right:72px;top:96px;font-size:60px;font-weight:500;line-height:1;letter-spacing:-.02em}
+  .an ol{position:absolute;left:970px;right:72px;top:250px;list-style:none;counter-reset:a;border-top:1px solid var(--line)}
+  .an li{counter-increment:a;display:grid;grid-template-columns:48px 1fr;padding:15px 0;border-bottom:1px solid var(--line);font-size:23px;line-height:1.3}
+  .an li::before{content:counter(a);width:30px;height:30px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-size:15px;font-weight:500}
+  .an .cap{position:absolute;left:970px;bottom:80px;font-size:16px;opacity:.6}
+
+  /* voice */
+  .vo .rows{position:absolute;left:72px;right:72px;top:236px;border-top:1px solid var(--line)}
+  .vo .q{display:grid;grid-template-columns:1fr 300px;gap:40px;padding:17px 0;border-bottom:1px solid var(--line);align-items:start}
+  .vo .o{font-size:26px;line-height:1.24}
+  .vo .e{font-size:17px;opacity:.65;margin-top:6px}
+  .vo .s{font-size:17px;text-align:right;line-height:1.35}
+  .vo .s b{display:block;font-weight:500}
+
+  /* list */
+  .ls .k{position:absolute;left:72px;top:110px;font-size:20px;display:flex;gap:10px;align-items:center}
+  .ls h2{position:absolute;left:72px;top:156px;width:520px;font-size:68px;font-weight:500;line-height:1;letter-spacing:-.02em}
+  .ls ol{position:absolute;left:680px;right:72px;top:150px;list-style:none;counter-reset:l;border-top:1px solid var(--line)}
+  .ls li{counter-increment:l;display:grid;grid-template-columns:60px 1fr;gap:6px 0;padding:22px 0;border-bottom:1px solid var(--line)}
+  .ls li::before{content:counter(l,decimal-leading-zero);font-family:var(--mono);font-size:16px;opacity:.55;padding-top:8px;grid-row:span 2}
+  .ls li b{font-size:30px;font-weight:500;line-height:1.15}
+  .ls li span{font-size:21px;line-height:1.38;opacity:.72}
+
+  /* ladder */
+  .ld h2{position:absolute;left:72px;top:110px;font-size:72px;font-weight:500;letter-spacing:-.02em}
+  .ld .r{position:absolute;left:72px;right:72px;display:grid;grid-template-columns:90px 1fr;align-items:baseline}
+  .ld .r span{font-family:var(--mono);font-size:16px;opacity:.55}
+  .ld .r1{top:250px;font-size:30px;opacity:.38}
+  .ld .r2{top:330px;font-size:38px;opacity:.6}
+  .ld .r3{top:450px;font-size:44px;line-height:1.22;font-weight:500;max-width:1440px}
+  .ld .src{position:absolute;left:162px;bottom:90px;font-size:18px;opacity:.6}
+
+  /* compare */
+  .cp h2{position:absolute;left:72px;top:100px;font-size:80px;font-weight:500;letter-spacing:-.02em}
+  .cp .l,.cp .r{position:absolute;top:260px;bottom:120px}
+  .cp .l{left:72px;width:560px;display:grid;align-content:start;gap:20px}
+  .cp .l .lab,.cp .r .lab{font-size:18px;display:flex;gap:10px;align-items:center}
+  .cp .l p{font-size:40px;line-height:1.2;opacity:.55;text-decoration:line-through;text-decoration-thickness:2px}
+  .cp .r{left:700px;right:72px;display:grid;align-content:start;gap:20px}
+  .cp .notice{background:#fff;border:1px solid #c9ccd1;font-family:Arial,Helvetica,sans-serif;color:#1d1d1b}
+  .cp .notice .hd{background:#0D357B;color:#fff;font-size:20px;font-weight:700;padding:14px 22px;letter-spacing:.02em}
+  .cp .notice .bd{padding:24px 22px 26px;font-size:28px;line-height:1.38}
+  .cp .notice .ft{border-top:1px solid #e2e4e8;padding:12px 22px;font-size:14px;color:#5e5e5e}
+  .cp .src{position:absolute;left:700px;bottom:70px;font-size:17px;opacity:.6}
+
+  /* break */
+  .bk{background:var(--lime)}
+  .bk h2{position:absolute;left:72px;top:170px;font-size:300px;font-weight:500;line-height:.85;letter-spacing:-.04em}
+  .bk .mins{position:absolute;left:80px;top:470px;font-size:54px;font-weight:500}
+  .bk .line{position:absolute;left:80px;bottom:110px;font-size:30px}
+  .bk .clock{position:absolute;right:72px;bottom:90px;font-family:var(--mono);font-size:140px;letter-spacing:-.02em}
+
+  /* close */
+  .cl h2{position:absolute;left:72px;top:150px;font-size:170px;font-weight:500;line-height:.9;letter-spacing:-.03em}
+  .cl .sub{position:absolute;left:72px;top:520px;font-size:30px;max-width:800px;line-height:1.3;opacity:.85}
+  .cl .meta{position:absolute;left:72px;bottom:80px;font-size:20px;display:grid;gap:6px;opacity:.75}
+  .cl .qrc{position:absolute;right:72px;top:150px;width:380px;background:var(--white);border-radius:32px;padding:26px;color:var(--ink);display:grid;gap:12px}
+  .cl .qrc .u{font-family:var(--mono);font-size:14px;word-break:break-all}
+
+  /* chrome: notes, grid, qr overlay, hint */
+  #notes{position:fixed;left:0;right:0;bottom:0;background:rgba(11,12,12,.94);color:var(--cream);padding:22px 32px 26px;font-size:18px;line-height:1.5;transform:translateY(100%);transition:transform .4s var(--ease);z-index:20;display:grid;grid-template-columns:1fr auto;gap:30px}
+  #notes.on{transform:none}
+  #notes .k{font-size:13px;opacity:.6;margin-bottom:6px}
+  #notes .timer{font-family:var(--mono);font-size:28px;text-align:right;white-space:nowrap}
+  #notes .timer small{display:block;font-size:12px;opacity:.6}
+  #grid{position:fixed;inset:0;background:var(--ink);z-index:30;overflow-y:auto;padding:40px;display:none;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;align-content:start}
+  #grid.on{display:grid}
+  #grid button{background:var(--cream);border:none;border-radius:14px;padding:16px;text-align:left;cursor:pointer;font:400 15px/1.3 var(--sans);min-height:110px;display:grid;gap:8px;align-content:start;transition:transform .2s var(--ease)}
+  #grid button:hover{transform:translateY(-3px)}
+  #grid button.cur{outline:3px solid var(--lime)}
+  #grid button b{font-family:var(--mono);font-size:12px;font-weight:400;opacity:.6}
+  #qrov{position:fixed;inset:0;background:rgba(11,12,12,.86);z-index:25;display:none;place-items:center}
+  #qrov.on{display:grid}
+  #qrov .box{background:#fff;border-radius:36px;padding:34px;width:min(70vh,560px);display:grid;gap:16px;text-align:center}
+  #qrov .box .u{font-family:var(--mono);font-size:16px;word-break:break-all}
+  #hint{position:fixed;top:14px;left:50%;transform:translateX(-50%);background:rgba(240,238,229,.95);color:var(--ink);font-size:13px;padding:9px 16px;border-radius:999px;z-index:40;transition:opacity .6s;pointer-events:none}
+  #hint.off{opacity:0}
+  #err{position:fixed;inset:0;display:none;place-items:center;color:var(--cream);font-size:20px;text-align:center;padding:40px;z-index:50}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage" aria-live="polite"></div></div>
+<div id="notes"><div><div class="k" id="nk"></div><div id="nt"></div></div><div class="timer" id="timer">00:00<small>T to start / reset</small></div></div>
+<div id="grid" aria-label="All slides"></div>
+<div id="qrov"><div class="box"><div class="qr" id="qrbig"></div><div class="u" id="qrurl"></div></div></div>
+<div id="hint">← → to move · N notes · G grid · Q QR code · F full screen</div>
+<div id="err"></div>
+
+<script src="../assets/edition.js"></script>
+<script src="../data/styles.js"></script>
+<script src="../assets/qrcode.js"></script>
+<script src="slides.js"></script>
+<script>
+(function(){
+const E = window.EDITION || {}, A = window.ATLAS || [], D = window.DECK;
+const err = document.getElementById("err");
+if(!D || !D.SLIDES){ err.style.display="grid"; err.textContent="The slide script (deck/slides.js) did not load. Check the folder is complete and reload."; return; }
+const S = D.SLIDES, PH = D.PHASES;
+const C = {lime:"#C5FF71",sky:"#A9EAFF",yellow:"#FBE965",lilac:"#E1BCE0",red:"#FF3F25",blue:"#3F5DFE",ink:"#0B0C0C"};
+const darkPh = c => ["red","blue","ink"].includes(c);
+const esc = s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* kit url + qr */
+const kitUrl = (p="") => { let b=(E.siteUrl||"").trim(); if(!b) b=new URL("../",location.href).href; if(!b.endsWith("/")) b+="/"; return b+p; };
+const shortUrl = u => u.replace(/^https?:\/\//,"").replace(/\/$/,"");
+function qrSvg(url){
+  if(typeof qrcode!=="function") return `<div style="font:16px var(--mono)">${esc(url)}</div>`;
+  const q=qrcode(0,"M"); q.addData(url); q.make(); const n=q.getModuleCount(); let p="";
+  for(let r=0;r<n;r++) for(let c=0;c<n;c++) if(q.isDark(r,c)) p+=`M${c},${r}h1v1h-1z`;
+  return `<svg viewBox="-2 -2 ${n+4} ${n+4}" shape-rendering="crispEdges" role="img" aria-label="QR code for ${esc(url)}"><rect x="-2" y="-2" width="${n+4}" height="${n+4}" fill="#fff"/><path d="${p}" fill="#0B0C0C"/></svg>`;
+}
+const edLine = [E.event,E.venue,E.city,E.date,E.time].filter(Boolean).join(" · ");
+
+/* data helpers */
+const ALL=[]; A.forEach(d=>d.bodies.forEach(b=>ALL.push({d,b})));
+const byShot = s => ALL.find(x=>x.b.shot===s);
+const primary = b => { const p=(b.colors||[]).find(c=>c.role==="primary"); return (p||b.colors[0]||{hex:"#999"}).hex; };
+const isBlue = hex=>{const h=hex.replace("#","");const r=parseInt(h.slice(0,2),16)/255,g=parseInt(h.slice(2,4),16)/255,b=parseInt(h.slice(4,6),16)/255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);if(mx-mn<.12)return false;let H;if(mx===b)H=60*((r-g)/(mx-mn))+240;else if(mx===g)H=60*((b-r)/(mx-mn))+120;else H=60*(((g-b)/(mx-mn))%6);H=(H+360)%360;return H>=190&&H<=250};
+const shotSrc = s => `../screenshots/${s}.webp`;
+
+/* phase of each slide (for footer label) */
+let curPh = null; const slidePh = S.map(s=>{ if(s.ph) curPh=s.ph; return curPh; });
+
+const R = {
+  cover: s=>`<div class="in cover">
+      <div class="wm">Domestic Data Streamers</div>
+      <div class="qrc rv" style="--i:3"><div class="qr">${qrSvg(kitUrl())}</div><div class="u">${esc(shortUrl(kitUrl()))}</div></div>
+      <h1 class="rv" style="--i:1">Redecorating<br>Power</h1>
+      <p class="sub rv" style="--i:2">A workshop on bureaucratic aesthetics and the stories they hide.</p>
+      <div class="ed rv" style="--i:3">${edLine?`<span class="dot"></span>${esc(edLine)}`:`<span style="opacity:.6">Education &amp; Tools</span>`}</div></div>`,
+  join: s=>`<div class="in join white">
+      <div class="wm">Redecorating Power</div>
+      <h2 class="rv">Open<br>the kit</h2>
+      <div class="url rv" style="--i:1">${esc(shortUrl(kitUrl()))}</div>
+      <div class="wifi rv" style="--i:2">${E.wifi&&E.wifi.network?`<span>Wifi <b>${esc(E.wifi.network)}</b></span>${E.wifi.password?`<span>Password <b>${esc(E.wifi.password)}</b></span>`:""}`:`<span>Style Bureau · Dossiers · Exercises · this deck</span>`}</div>
+      <div class="bigqr rv" style="--i:2">${qrSvg(kitUrl())}</div></div>`,
+  phase: s=>{ const c=PH[s.ph].color; const dk=darkPh(c); const mins=phaseMins(s.ph);
+    return `<div class="in phase" style="background:${C[c]};color:${dk?"#F0EEE5":"#0B0C0C"}">
+      <div class="num rv">${s.ph}</div>${mins?`<div class="mins rv" style="--i:1">${mins} min</div>`:""}
+      <h2 class="rv" style="--i:1">${esc(s.title)}</h2><div class="line rv" style="--i:2">${esc(s.line||"")}</div></div>`; },
+  question: s=>`<div class="in question white">
+      <div class="shot"><img src="${shotSrc(s.shot)}" alt=""></div>
+      <div class="q rv">${esc(s.q)}</div><div class="cap rv" style="--i:2">${esc(s.caption)}</div></div>`,
+  exercise: s=>{ const c=PH[s.ph].color; return `<div class="in ex">
+      <div class="card"><div>
+        <div class="tagrow rv"><span class="tag round fill">Exercise ${esc(s.id)}</span><span class="dotp" style="background:${C[c]}"></span><span style="font-size:16px;opacity:.7">Phase ${s.ph}</span></div>
+        <h2 class="rv" style="--i:1">${esc(s.title)}</h2>
+        <dl class="rv" style="--i:2"><dt>Time</dt><dd>${esc(s.time)}</dd><dt>Who</dt><dd>${esc(s.who)}</dd><dt>Hand in</dt><dd>${esc(s.out)}</dd></dl>
+        <div class="lnk">Sheet: ${esc(shortUrl(kitUrl(s.link)))}</div></div>
+        <ol>${s.steps.map((x,i)=>`<li class="rv" style="--i:${i+2}">${esc(x)}</li>`).join("")}</ol></div></div>`; },
+  statement: s=>`<div class="in st ${s.dark?"inkbg":""}">
+      <div class="big rv">${esc(s.big)}</div>${s.small?`<p class="small rv" style="--i:2">${esc(s.small)}</p>`:""}</div>`,
+  timeline: s=>{ const fm=D.FORMATS[E.format]||D.FORMATS["3h30"]; const tot=fm.reduce((a,b)=>a+b,0);
+    let start=null; const m=(E.time||"").match(/(\d{1,2})[:.h](\d{2})/); if(m) start=+m[1]*60+ +m[2];
+    const fmt=t=>`${String(Math.floor(t/60)%24).padStart(2,"0")}:${String(t%60).padStart(2,"0")}`;
+    let acc=0; const rows=[], segs=[];
+    D.BLOCKS.forEach((b,i)=>{ const mins=fm[i]; if(!mins) return; const col=b.ph==="—"?"#D7D5CC":b.ph==="07"?"#0B0C0C":C[PH[b.ph].color];
+      segs.push(`<div style="flex:${mins};background:${col}" title="${esc(b.name)}"></div>`);
+      rows.push(`<div class="r"><i style="background:${col}"></i><span>${b.ph!=="—"?b.ph+" · ":""}${esc(b.name)}</span><span>${start!=null?fmt(start+acc):mins+" min"}</span></div>`); acc+=mins; });
+    return `<div class="in tl white"><div class="wm">Run of show · ${Math.floor(tot/60)}h${tot%60?String(tot%60).padStart(2,"0"):""}</div>
+      <h2 class="rv">${esc(s.title)}</h2><div class="bar rv" style="--i:1">${segs.join("")}</div>
+      <div class="rows rv" style="--i:2">${rows.join("")}</div></div>`; },
+  rule: s=>`<div class="in rule inkbg"><div class="wm">The rule</div>
+      <h2 class="rv">Convicted or resigned. <em>Nothing else.</em></h2>
+      <ul>${s.points.map((p,i)=>`<li class="rv" style="--i:${i+1}">${esc(p)}</li>`).join("")}</ul></div>`,
+  palette: s=>{ const n=ALL.filter(x=>isBlue(primary(x.b))).length;
+    const rowsLab=["Parliament","Government","Enforcement"];
+    let g=`<span></span>${A.map(d=>`<span class="iso">${d.iso}</span>`).join("")}`;
+    for(let r=0;r<3;r++){ g+=`<span class="lab">${rowsLab[r]}</span>`+A.map(d=>{ const b=d.bodies[r]; if(!b) return "<span></span>"; const h=primary(b); return `<span class="sw ${isBlue(h)?"":"not"}" style="background:${h}" title="${esc(b.short)} ${h}"></span>`; }).join(""); }
+    return `<div class="in pal gen white"><h2 class="rv">${esc(s.title)}</h2><div class="line rv" style="--i:1">${esc(s.line)}</div>
+      <div class="stat rv" style="--i:2">${n}</div><div class="statl rv" style="--i:3">of ${ALL.length} lead with a navy or royal blue</div>
+      <div class="grid rv" style="--i:3">${g}</div><div class="note rv" style="--i:4">Ringed: the ones that didn't.</div></div>`; },
+  fonts: s=>{ const cnt={}, disp={}; ALL.forEach(({b})=>{ const f=(b.fonts||[]).find(x=>/body/.test(x.usage))||b.fonts[0]; if(!f) return; const k=f.family.toLowerCase(); cnt[k]=(cnt[k]||0)+1; if(!disp[k]||/[A-Z]/.test(f.family[0])) disp[k]=f.family; });
+    const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,6); const mx=top[0]?top[0][1]:1;
+    return `<div class="in fo gen white"><h2 class="rv">${esc(s.title)}</h2><div class="line rv" style="--i:1">${esc(s.line)}</div>
+      <div class="fhero rv" style="--i:2">${esc(disp[top[0][0]])}</div><div class="fheron rv" style="--i:3">Google's house typeface. Body text on ${top[0][1]} of the ${ALL.length} sites, ahead of Arial.</div>
+      <div class="bars">${top.map(([k,v],i)=>`<div class="b" style="--i:${i}"><span>${esc(disp[k])}</span><span class="t" style="width:${Math.round(v/mx*100)}%"></span><span>${v}</span></div>`).join("")}</div></div>`; },
+  systems: s=>`<div class="in sy gen"><h2 class="rv">${esc(s.title)}</h2>
+      <div class="cards">${s.items.map((it,i)=>{ const x=byShot(it.shot); const h=x?primary(x.b):"#999"; return `<div class="c rv" style="--i:${i+1}"><div class="f"><img src="${shotSrc(it.shot)}" alt=""></div><div class="n">${esc(it.name)}</div><div class="m"><i style="background:${h}"></i>${esc(it.country)} · ${esc(it.font)}</div></div>`; }).join("")}</div></div>`,
+  annotate: s=>`<div class="in an white"><div class="shot"><img src="${shotSrc(s.shot)}" alt=""></div>
+      <h2 class="rv">${esc(s.title)}</h2><ol>${s.points.map((p,i)=>`<li class="rv" style="--i:${i+1}">${esc(p)}</li>`).join("")}</ol><div class="cap">${esc(s.caption)}</div></div>`,
+  voice: s=>`<div class="in vo gen white"><h2 class="rv">${esc(s.title)}</h2><div class="line rv" style="--i:1">Real wording, taken from the sites in the Style Bureau.</div>
+      <div class="rows">${s.picks.map(([sh,ix],i)=>{ const x=byShot(sh); if(!x) return ""; const l=(x.b.language_samples||[])[ix]; if(!l) return ""; return `<div class="q rv" style="--i:${i+2}"><div><div class="o">“${esc(l.original)}”</div><div class="e">${esc(l.english)}</div></div><div class="s"><b>${esc(x.b.short)}</b>${esc(x.d.country)} · ${esc(l.context.split(/[,(]/)[0])}</div></div>`; }).join("")}</div></div>`,
+  list: s=>`<div class="in ls white"><div class="k rv"><span class="tag round">${esc(s.kicker)}</span></div><h2 class="rv" style="--i:1">${esc(s.title)}</h2>
+      <ol>${s.items.map((it,i)=>`<li class="rv" style="--i:${i+2}"><b>${esc(it.h)}</b><span>${esc(it.d)}</span></li>`).join("")}</ol></div>`,
+  ladder: s=>`<div class="in ld white"><h2 class="rv">${esc(s.title)}</h2>
+      ${s.rungs.map((r,i)=>`<div class="r r${i+1} rv" style="--i:${i*3+1}"><span>0${i+1}</span><div>${esc(r)}</div></div>`).join("")}<div class="src rv" style="--i:9">${esc(s.source)}</div></div>`,
+  compare: s=>`<div class="in cp white"><h2 class="rv">${esc(s.title)}</h2>
+      <div class="l rv" style="--i:1"><div class="lab"><span class="tag round ghost">${esc(s.left.label)}</span></div><p>${esc(s.left.text)}</p></div>
+      <div class="r rv" style="--i:3"><div class="lab"><span class="tag round lime">${esc(s.right.label)}</span></div>
+        <div class="notice"><div class="hd">${esc(s.right.head)}</div><div class="bd">${esc(s.right.text)}</div><div class="ft">Inicio › Sala de Prensa › Notas informativas</div></div></div>
+      <div class="src">${esc(s.source)}</div></div>`,
+  brk: s=>{ const m=(D.FORMATS[E.format]||D.FORMATS["3h30"])[3]; return `<div class="in bk"><div class="wm">Redecorating Power</div><h2 class="rv">${esc(s.title)}</h2><div class="mins rv" style="--i:1">${m||10} minutes</div><div class="line rv" style="--i:2">${esc(s.line)}</div><div class="clock" id="brclock"></div></div>`; },
+  close: s=>`<div class="in cl inkbg"><div class="wm">Domestic Data Streamers</div>
+      <h2 class="rv">Case<br>closed.</h2><p class="sub rv" style="--i:1">The kit stays online. Take it home, run it again, send us what you make.</p>
+      <div class="qrc rv" style="--i:2"><div class="qr">${qrSvg(kitUrl())}</div><div class="u">${esc(shortUrl(kitUrl()))}</div></div>
+      <div class="meta rv" style="--i:3">${E.submitUrl?`<span>Post your site: ${esc(shortUrl(E.submitUrl))}</span>`:""}${E.hashtag?`<span>${esc(E.hashtag)}</span>`:""}<span>hello@domesticstreamers.com</span></div></div>`
+};
+function phaseMins(ph){ const fm=D.FORMATS[E.format]||D.FORMATS["3h30"]; const map={"00":[0],"01":[1],"02":[2],"03":[4],"04":[5],"05":[6],"06":[7]}; return (map[ph]||[]).reduce((a,i)=>a+fm[i],0); }
+
+/* build */
+const stage=document.getElementById("stage");
+S.forEach((s,i)=>{
+  const el=document.createElement("section"); el.className="slide"; el.setAttribute("aria-label",`Slide ${i+1}`);
+  let html=""; try{ html=(R[s.t]||(()=>`<div class="in"><p>Unknown slide type: ${esc(s.t)}</p></div>`))(s); }catch(e){ html=`<div class="in"><p>This slide could not be drawn (${esc(e.message)}).</p></div>`; }
+  const ph=slidePh[i]; const showChrome=!["cover","phase","brk","close"].includes(s.t);
+  el.innerHTML = html + (showChrome?`${ph?`<div class="phl"><i style="background:${C[PH[ph].color]}"></i>${ph} · ${esc(PH[ph].name)}</div>`:""}<div class="pg">${i+1} / ${S.length}</div>`:"");
+  stage.appendChild(el);
+});
+const slides=[...stage.children];
+
+/* scale */
+function fit(){ const k=Math.min(innerWidth/1600, innerHeight/900); stage.style.transform=`scale(${k})`; }
+addEventListener("resize",fit); fit();
+
+/* nav */
+let cur=0;
+function go(n){
+  n=Math.max(0,Math.min(S.length-1,n)); slides[cur].classList.remove("on"); cur=n; slides[cur].classList.add("on");
+  history.replaceState(null,"","#"+(cur+1));
+  document.getElementById("nk").textContent=`Slide ${cur+1} of ${S.length} · speaker notes`;
+  document.getElementById("nt").textContent=S[cur].notes||"";
+  [...grid.children].forEach((b,i)=>b.classList.toggle("cur",i===cur));
+}
+const grid=document.getElementById("grid");
+S.forEach((s,i)=>{ const b=document.createElement("button"); const label=s.title||s.q||s.big||(s.t==="cover"?"Cover":s.t==="join"?"Open the kit":s.t==="close"?"Case closed":s.t); b.innerHTML=`<b>${i+1} · ${s.t}${s.ph?" · "+s.ph:""}</b>${esc(label)}`; b.onclick=()=>{go(i);grid.classList.remove("on")}; grid.appendChild(b); });
+const start=parseInt((location.hash||"#1").slice(1),10); go(isNaN(start)?0:start-1);
+
+addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT") return;
+  const k=e.key;
+  if(["ArrowRight","PageDown"," ","Enter"].includes(k)){ e.preventDefault(); go(cur+1); }
+  else if(["ArrowLeft","PageUp","Backspace"].includes(k)){ e.preventDefault(); go(cur-1); }
+  else if(k==="Home") go(0); else if(k==="End") go(S.length-1);
+  else if(k==="n"||k==="N") document.getElementById("notes").classList.toggle("on");
+  else if(k==="g"||k==="G") grid.classList.toggle("on");
+  else if(k==="q"||k==="Q") document.getElementById("qrov").classList.toggle("on");
+  else if(k==="f"||k==="F"){ if(!document.fullscreenElement) document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+  else if(k==="t"||k==="T"){ t0 = t0 ? null : Date.now(); }
+  else if(k==="Escape"){ grid.classList.remove("on"); document.getElementById("qrov").classList.remove("on"); }
+});
+document.getElementById("viewport").addEventListener("click",e=>{ if(grid.classList.contains("on")) return; (e.clientX>innerWidth/2)?go(cur+1):go(cur-1); });
+let tx=null; addEventListener("touchstart",e=>tx=e.touches[0].clientX,{passive:true});
+addEventListener("touchend",e=>{ if(tx==null) return; const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50) go(cur+(dx<0?1:-1)); tx=null; });
+
+/* qr overlay */
+document.getElementById("qrbig").innerHTML=qrSvg(kitUrl()); document.getElementById("qrurl").textContent=shortUrl(kitUrl());
+document.getElementById("qrov").onclick=()=>document.getElementById("qrov").classList.remove("on");
+
+/* timers: session timer in notes, countdown on break slide */
+let t0=null, brk0=null;
+const fm2=n=>String(n).padStart(2,"0");
+setInterval(()=>{
+  const el=document.getElementById("timer");
+  if(t0){ const s=Math.floor((Date.now()-t0)/1000); el.innerHTML=`${fm2(Math.floor(s/3600))}:${fm2(Math.floor(s/60)%60)}:${fm2(s%60)}<small>T to reset</small>`; }
+  const bc=document.getElementById("brclock");
+  if(bc){ if(S[cur].t==="brk"){ if(!brk0) brk0=Date.now(); const total=((D.FORMATS[E.format]||D.FORMATS["3h30"])[3]||10)*60; const left=Math.max(0,total-Math.floor((Date.now()-brk0)/1000)); bc.textContent=`${fm2(Math.floor(left/60))}:${fm2(left%60)}`; } else brk0=null; }
+},500);
+setTimeout(()=>document.getElementById("hint").classList.add("off"),4000);
+})();
+</script>
+</body>
+</html>
