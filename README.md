@@ -6,6 +6,14 @@ Same font. Same blue. Same cookie banner. Opposite content.
 
 The room already knows how to vibe-code. What the session teaches is how to read design as an argument, and how to answer it in its own language.
 
+**Live kit:** https://pauerrr.github.io/redecorating-power/
+
+| | |
+|---|---|
+| ![Kit home](preview/home.jpg) | ![Style Bureau](preview/bureau.jpg) |
+| ![A Style Bureau file](preview/bureau-file.jpg) | ![Dossier](preview/dossier-spain.jpg) |
+| ![Deck cover](preview/deck-cover.jpg) | ![Deck: the colour of the state](preview/deck-colour.jpg) |
+
 ## What's in the kit
 
 | Page | What it does |
