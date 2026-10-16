@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redecorating Power — workshop kit | Domestic Data Streamers</title>
+<meta name="description" content="A workshop kit: 45 European government web styles, 15 corruption dossiers, exercises and a deck. Clone the look of power, fill it with the record.">
+<meta property="og:title" content="Redecorating Power — workshop kit">
+<meta property="og:description" content="Clone the look of European government websites. Fill them with the documented record.">
+<link rel="stylesheet" href="assets/dds.css">
+<style>
+  .hero-side{display:grid;gap:22px;justify-items:start}
+  .qr-box{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+  .qr-box .qr{width:120px;height:120px;background:#fff;border-radius:10px;padding:6px}
+  .qr-box .qr svg{width:100%;height:100%}
+  .cta{display:flex;gap:10px;flex-wrap:wrap}
+
+  .kit-row{grid-template-columns:70px minmax(0,3fr) minmax(0,4fr) auto}
+  .kit-row .n{font-family:var(--mono);font-size:13px;color:var(--ink-70)}
+  .kit-row .name{font-size:clamp(22px,2vw,32px);font-weight:500;line-height:1.1}
+  .kit-row .what{font-size:16px;color:var(--ink-70);max-width:52ch}
+
+  .phases{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+  .ph{padding:22px 18px 26px 0;border-bottom:1px solid var(--line);display:grid;gap:10px;align-content:start}
+  .ph + .ph{padding-left:18px;border-left:1px solid var(--line)}
+  .ph .t{font-family:var(--mono);font-size:12px;color:var(--ink-70)}
+  .ph .nm{font-size:20px;font-weight:500;line-height:1.15}
+  .ph .ds{font-size:14px;color:var(--ink-70);line-height:1.45}
+  .ph .sw{width:28px;height:28px;border-radius:50%}
+
+  .rule{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:clamp(30px,5vw,90px);align-items:end}
+  .rule .h-1{max-width:14ch}
+  .rule p{color:rgba(240,238,229,.75);font-size:18px;line-height:1.55;max-width:50ch}
+  .rule p + p{margin-top:14px}
+
+  .gallery{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(16px,2vw,28px)}
+  .gallery .stack{display:grid;gap:clamp(16px,2vw,28px)}
+  .gallery .big .frame{aspect-ratio:4/3.4}
+  .gallery .stack .frame{aspect-ratio:16/10}
+
+  .now{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+  .now > div{padding:26px 26px 30px 0;border-bottom:1px solid var(--line)}
+  .now > div + div{padding-left:26px;border-left:1px solid var(--line)}
+  .now .k{font-family:var(--mono);font-size:12px;color:var(--ink-70);margin-bottom:22px}
+  .now .h-3{margin-bottom:8px}
+
+  @media (max-width:900px){
+    .kit-row{grid-template-columns:44px 1fr auto}
+    .kit-row .what{display:none}
+    .phases{grid-template-columns:1fr}
+    .ph,.ph + .ph{grid-column:auto!important;border-left:none;padding-left:0}
+    .rule,.gallery,.now{grid-template-columns:1fr}
+    .now > div + div{border-left:none;padding-left:0}
+  }
+</style>
+</head>
+<body data-root="./" data-page="home">
+
+<section class="hero">
+  <div>
+    <div class="eyebrow rise" style="--i:0"><span class="tag round">Workshop kit</span><span>Education &amp; Tools</span></div>
+    <h1 class="h-display rise" style="--i:1">Redecorating<br>Power</h1>
+  </div>
+  <div class="hero-side">
+    <p class="statement rise" style="--i:2">Clone the look of European government websites. Fill them with the corruption those same institutions would rather you scrolled past.</p>
+    <div class="edition rise" style="--i:3" data-edition></div>
+    <div class="cta rise" style="--i:4">
+      <a class="pill solid" href="bureau/">Open the Style Bureau
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></a>
+      <a class="pill" href="deck/">Start the deck</a>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="sheet-in">
+    <div class="sec-head">
+      <div class="num">01 — The kit</div>
+      <h2 class="h-2">Everything a room needs, at one public address. No logins, no installs.</h2>
+    </div>
+    <div class="rows">
+      <a class="row kit-row" href="bureau/">
+        <span class="n">01</span><span class="name">Style Bureau</span>
+        <span class="what">45 government bodies across 15 states. Original link, fonts, palette, layout anatomy, the institution's own wording, full screenshot and a one-click style prompt for your coding agent.</span>
+        <svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17L17 5M7 5h10v10"/></svg>
+      </a>
+      <a class="row kit-row" href="dossiers/">
+        <span class="n">02</span><span class="name">Dossiers</span>
+        <span class="what">One file per country: cases, amounts, sentences, connection maps and the official language of denial. Every claim sourced. Readable here, copyable as markdown for your agent.</span>
+        <svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17L17 5M7 5h10v10"/></svg>
+      </a>
+      <a class="row kit-row" href="exercises/">
+        <span class="n">03</span><span class="name">Exercises</span>
+        <span class="what">Seven worksheets, one per phase. Print them or keep them open on a laptop. Each one says how long, how many people and what you hand in.</span>
+        <svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17L17 5M7 5h10v10"/></svg>
+      </a>
+      <a class="row kit-row" href="deck/">
+        <span class="n">04</span><span class="name">Deck</span>
+        <span class="what">The presentation that runs the session, phase by phase, with speaker notes. Opens in any browser; a PowerPoint copy sits in downloads.</span>
+        <svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17L17 5M7 5h10v10"/></svg>
+      </a>
+      <a class="row kit-row" href="facilitator/">
+        <span class="n">05</span><span class="name">Facilitator guide</span>
+        <span class="what">Setup checklist, timings for 2h, 3h30 and full-day formats, failure modes and fixes, and the list of court cases to recheck before every edition.</span>
+        <svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17L17 5M7 5h10v10"/></svg>
+      </a>
+      <a class="row kit-row" href="data/styles.json">
+        <span class="n">06</span><span class="name">Raw data</span>
+        <span class="what">All design tokens as one JSON file. Feed it straight to an agent, or build your own browser on top of it.</span>
+        <svg class="arrow" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 17L17 5M7 5h10v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sheet cream">
+  <div class="sheet-in">
+    <div class="sec-head">
+      <div class="num">02 — How the session runs</div>
+      <h2 class="h-2">Six phases. You already know how to vibe-code, so we spend the time on what code can't tell you.</h2>
+    </div>
+    <div class="phases">
+      <div class="ph" style="grid-column:span 2"><span class="sw" style="background:var(--lime)"></span><span class="t">00 · 20 min</span><span class="nm">Boot</span><span class="ds">A real homepage on the wall. What is it trying to make you feel?</span></div>
+      <div class="ph" style="grid-column:span 2"><span class="sw" style="background:var(--sky)"></span><span class="t">01 · 30 min</span><span class="nm">Read the grammar</span><span class="ds">Colour, type, furniture, voice. How authority gets rendered in CSS.</span></div>
+      <div class="ph" style="grid-column:span 2"><span class="sw" style="background:var(--yellow)"></span><span class="t">02 · 25 min</span><span class="nm">Pick a target</span><span class="ds">One body, one dossier, one case, one angle.</span></div>
+      <div class="ph" style="grid-column:span 2"><span class="sw" style="background:var(--lilac)"></span><span class="t">03 · 45 min</span><span class="nm">Clone the skin</span><span class="ds">Chrome before content. Pass the civil-servant test.</span></div>
+      <div class="ph" style="grid-column:span 2"><span class="sw" style="background:var(--red)"></span><span class="t">04 · 45 min</span><span class="nm">Pour in the story</span><span class="ds">Tonal deadpan. Every fact sourced. Never wink.</span></div>
+      <div class="ph" style="grid-column:span 2"><span class="sw" style="background:var(--blue)"></span><span class="t">05–06 · 35 min</span><span class="nm">Register &amp; debrief</span><span class="ds">90 seconds each, in character. Then: where else do you see these tricks?</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet ink">
+  <div class="sheet-in rule">
+    <h2 class="h-1">Convicted or resigned. Nothing else.</h2>
+    <div>
+      <p>Every person named in this kit holds a final criminal conviction for a corruption offence, or resigned over a documented scandal and is described only as having resigned. People on trial, acquitted, or cleared on appeal are left out. We pulled several during research for exactly that reason.</p>
+      <p>Truth is a defence, and the public record holds up where rumour doesn't. It also makes the work sharper: when you can't exaggerate, you have to be precise, and precision set in a ministry's own typeface does more damage than any insult.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="sheet-in">
+    <div class="sec-head">
+      <div class="num">03 — If you're a participant</div>
+      <h2 class="h-2">Three things to do before we start.</h2>
+    </div>
+    <div class="now">
+      <div><div class="k">A</div><h3 class="h-3">Open the Style Bureau</h3><p class="body">Click through a few bodies. Notice how many of them are blue. That's lesson one, for free.</p></div>
+      <div><div class="k">B</div><h3 class="h-3">Have your agent ready</h3><p class="body">Claude, Cursor, v0, Lovable, Bolt — whatever you ship with. You'll paste a style prompt into it within the hour.</p></div>
+      <div><div class="k">C</div><h3 class="h-3">Keep this address</h3><p class="body" style="margin-bottom:16px">The kit stays online after the session. Take it home.</p>
+        <div class="qr-box"><div class="qr" data-qr=""></div><span class="mono" data-kiturl=""></span></div>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:clamp(70px,8vw,130px)">
+      <div class="num">04 — From the register</div>
+      <h2 class="h-2">A few of the 45. Every one of them is real and online right now.</h2>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<script src="assets/edition.js"></script>
+<script src="data/styles.js"></script>
+<script src="assets/qrcode.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  (function(){
+    const pick = [["Romania","anti-corruption"],["Netherlands","central-government"],["Spain","parliament"],["Poland","anti-corruption"]];
+    const all = []; (window.ATLAS||[]).forEach(d=>d.bodies.forEach(b=>all.push([d,b])));
+    const chosen = pick.map(([c,t])=>all.find(([d,b])=>d.country===c&&b.type===t)).filter(Boolean);
+    const card = ([d,b],cls)=>`<a class="media ${cls||''}" href="bureau/#${b.shot}">
+        <div class="frame"><img loading="lazy" src="screenshots/thumbs/${b.shot}.webp" alt="Homepage of ${b.short}"></div>
+        <div class="cap"><span>${d.country}</span><span class="tags"><span class="tag">${b.typeLabel}</span></span></div>
+        <div class="title">${b.short}</div></a>`;
+    const g = document.getElementById("gallery");
+    if(chosen.length < 4){ g.innerHTML = '<div class="state"><p class="h-3">The register is temporarily unavailable.</p><a class="pill" href="bureau/">Try the Style Bureau directly</a></div>'; return; }
+    g.innerHTML = card(chosen[0],"big") + `<div class="stack">${card(chosen[1])}${card(chosen[2])}</div>`;
+  })();
+</script>
+</body>
+</html>
