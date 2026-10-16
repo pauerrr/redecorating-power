@@ -1,0 +1,251 @@
+{
+  "country": "Czechia",
+  "flag": "🇨🇿",
+  "bodies": [
+    {
+      "name": "Poslanecká sněmovna Parlamentu České republiky",
+      "type": "parliament",
+      "url": "https://www.psp.cz",
+      "fonts": [
+        {
+          "family": "Arial",
+          "usage": "body + headings",
+          "source": "system",
+          "share": 78
+        },
+        {
+          "family": "Georgia",
+          "usage": "secondary",
+          "source": "system",
+          "share": 22
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#3C71AC",
+          "role": "primary",
+          "share": 1
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 43
+        },
+        {
+          "hex": "#EFEFEF",
+          "role": "surface",
+          "share": 22
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        },
+        {
+          "hex": "#2E2E2E",
+          "role": "link"
+        }
+      ],
+      "layout": "A dense, old-style institutional layout dominated by a top logo bar bearing the official Poslanecká sněmovna emblem, followed by a horizontal main menu with multi-level flyout submenus. The homepage body is organized into a three-column grid: a rotating hero/carousel of top stories (Předseda, Sněmovní tisky, Jednání) on the left/center, a running news list (Aktuality) below, and a narrow right-hand sidebar for calendar widgets, session (schůze) status cards, and quick links. The layout is heavily text- and link-dense, reflecting decades-old legacy CMS architecture (URLs still use .sqw query-string routing), with a large collapsible sitemap-style mega-footer listing every subsection. Overall visual density is very high with minimal whitespace and small serif/sans body text typical of a legislative record-keeping site.",
+      "ui_patterns": [
+        "legacy query-string based routing (.sqw endpoints) exposed in all links",
+        "multi-level dense dropdown/flyout menu mega-menu",
+        "live session status widgets (Svolána/Probíhá/Přerušeno/Ukončeno) for each schůze",
+        "embedded calendar grid with colored day-highlighting for sitting weeks",
+        "full sitemap replicated in footer (Mapa webu)",
+        "livestream links to multiple parallel video channels (Stream 1-5)",
+        "accessibility features: skip-to-content links, Czech sign language (znakový jazyk) info page, accessibility statement",
+        "official document repositories (sněmovní tisky, stenoprotokoly, digitální repozitář) as core menu items",
+        "English-language mirror site link (pspen.psp.cz)"
+      ],
+      "language_samples": [
+        {
+          "original": "Přejít na hlavní navigaci",
+          "english": "Skip to main menu",
+          "context": "accessibility skip-link near top of page"
+        },
+        {
+          "original": "Poslanci budou tento týden pokračovat ve 24. schůzi",
+          "english": "Deputies will continue the 24th session this week",
+          "context": "homepage news headline (Aktuality)"
+        },
+        {
+          "original": "Sněmovní tisky jsou dokumenty, o kterých se ve Sněmovně jedná, debatuje a hlasuje.",
+          "english": "Chamber prints are documents that the Chamber discusses, debates, and votes on.",
+          "context": "homepage description of the 'Sněmovní tisky' (bill documents) section"
+        },
+        {
+          "original": "Ochrana osobních údajů (GDPR)",
+          "english": "Personal data protection (GDPR)",
+          "context": "footer/legal menu link"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Arial\", Arial, sans-serif; color: #000000; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Arial\", Arial, sans-serif; }\na { color: #2E2E2E; }\n.site-header, .main-menu { background: #3C71AC; color: #FFFFFF; }\n.footer { background: #3C71AC; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Úřad vlády České republiky (Vláda České republiky)",
+      "type": "central-government",
+      "url": "https://vlada.gov.cz",
+      "fonts": [
+        {
+          "family": "Martel",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "Roboto",
+          "usage": "body",
+          "source": "web font",
+          "share": 50
+        },
+        {
+          "family": "Helvetica",
+          "usage": "secondary",
+          "source": "system",
+          "share": 20
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#1F2046",
+          "role": "primary",
+          "share": 35
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 39
+        },
+        {
+          "hex": "#F5F5F5",
+          "role": "surface",
+          "share": 23
+        },
+        {
+          "hex": "#3B3B3B",
+          "role": "text"
+        },
+        {
+          "hex": "#001A4F",
+          "role": "secondary",
+          "share": 3
+        },
+        {
+          "hex": "#143B88",
+          "role": "accent",
+          "share": 0
+        }
+      ],
+      "layout": "A modern, image-forward government news portal. The header is a slim white bar with the official 'Vláda České republiky' wordmark/logo (linking home), an EN language switch, and a hamburger-style 'Menu' plus search icon rather than a fully exposed nav bar. The hero area is a large full-width photo of the Prime Minister with a dated caption and headline linking to the full press release. Below the hero, an 'Aktuálně' (Currently) section presents a responsive grid/masonry of recent news cards, each with a photo, headline, and date, echoing a press-office aesthetic more than a legislative-archive one. Further down, dedicated modules highlight the Prime Minister, the government's 'Programové prohlášení' (policy statement), a grid of minister headshot cards with portfolios, a ministries link list, and a 'Důležité dokumenty' document block. The footer is a multi-column 'Patička' mega-footer organized by section (Vláda, Média centrum, Pracovní a poradní orgány, Úřad vlády) plus social links and legal/privacy links.",
+      "ui_patterns": [
+        "large photographic hero banner of the Prime Minister with caption/date",
+        "card-based news grid ('Aktuálně') with photo + headline + date + 'Celý článek' link",
+        "minister/cabinet member grid with headshot photo, name, and portfolio title",
+        "structured document highlight blocks with 'Publikováno [date]' metadata and 'Zjistit více' CTA",
+        "EN language switcher in header",
+        "official press/media center hub ('Média centrum') separated from general news",
+        "multi-column mega-footer ('Patička') organized by top-level section",
+        "cookie/privacy and accessibility statement links in footer (Ochrana osobních údajů, Prohlášení o přístupnosti)",
+        "RSS feed subscription link"
+      ],
+      "language_samples": [
+        {
+          "original": "Vláda Andreje Babiše navrhuje zmrazit cenu dálniční známky a chce podpořit lokální producenty potravin",
+          "english": "Andrej Babiš's government proposes freezing the highway toll sticker price and wants to support local food producers",
+          "context": "homepage hero headline (news of the day)"
+        },
+        {
+          "original": "Vláda České republiky přebírá odpovědnost s vědomím, že mnozí lidé čelí nejistotě, rostoucím životním nákladům...",
+          "english": "The Government of the Czech Republic assumes responsibility aware that many people face uncertainty, rising living costs...",
+          "context": "'Programové prohlášení' (Policy Statement) homepage excerpt"
+        },
+        {
+          "original": "Předseda vlády organizuje činnost vlády, řídí její schůze, vystupuje jejím jménem...",
+          "english": "The Prime Minister organizes the government's activities, chairs its meetings, and represents it...",
+          "context": "description under 'Premiér' section on homepage"
+        },
+        {
+          "original": "Ochrana osobních údajů",
+          "english": "Personal data protection",
+          "context": "footer legal/privacy link"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: 'Roboto', Arial, sans-serif;\n  background-color: #ffffff;\n  color: #1a1a1a;\n  margin: 0;\n}\nheader.site-header {\n  background-color: #ffffff;\n  border-bottom: 1px solid #e0e0e0;\n  padding: 12px 24px;\n}\n.hero-aktualne {\n  position: relative;\n  color: #ffffff;\n}\n.hero-aktualne .caption {\n  background: rgba(13, 44, 84, 0.85);\n  padding: 16px;\n}\n.news-card {\n  background-color: #f5f5f5;\n  border-radius: 4px;\n  overflow: hidden;\n}\n.news-card .date {\n  color: #1c4e8a;\n  font-size: 12px;\n}\n.minister-card h3 a {\n  color: #0d2c54;\n  font-weight: 600;\n}\n.footer-patička {\n  background-color: #0d2c54;\n  color: #ffffff;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Policie České republiky",
+      "type": "police",
+      "url": "https://www.policie.cz",
+      "fonts": [
+        {
+          "family": "Roboto",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#015EBC",
+          "role": "primary",
+          "share": 0
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 35
+        },
+        {
+          "hex": "#F6F6F6",
+          "role": "surface",
+          "share": 25
+        },
+        {
+          "hex": "#262626",
+          "role": "text"
+        }
+      ],
+      "layout": "A wide, utilitarian institutional homepage anchored by a strong police-blue color identity matching the Czech police uniform/vehicle livery. The top bar offers accessibility skip-links (přejdi na obsah/hlavní menu/podmenu), a search box, and a 'Rychlé menu' (quick menu) that expands into a full list of regional police headquarters (KŘP) links. A tall horizontal main menu (Úvod, O nás, Útvary Policie ČR, Informační servis, Dopravní servis, Databáze, Nabídky a zakázky, Prevence, eKomunikace, Kontakty) sits below, each with deep multi-item dropdown submenus. The body centers on a 'Zpravodajství' (news) grid of thumbnail-image news cards with dates, followed by an 'INFORMACE' promotional block (recruitment, legal changes, podcast) and a large interactive map-based 'Kontakty' unit locator. The footer stacks quick-link icons (traffic info, missing persons search, official notice boards, victim support), social media icons, sister-site links (Ministry of Interior, Fire Rescue Service), promotional banners, and standard legal/copyright/accessibility/RSS links.",
+      "ui_patterns": [
+        "accessibility skip-links (přejdi na obsah/hlavní menu/podmenu) at page top",
+        "expandable 'quick menu' listing all 14 regional police headquarters (KŘP)",
+        "deep multi-level dropdown mega-menu across 10 top-level sections",
+        "public safety database tools (pátrání po osobách/vozidlech, crime maps, stolen phone/ID registries)",
+        "news card grid with thumbnail image, teaser text, and publish date",
+        "emergency/tip-line call-to-action banners (158 emergency line, anonymous crime tips)",
+        "interactive nationwide map for locating police units/stations",
+        "official social media icon row (Facebook, Instagram, X, YouTube) in footer",
+        "accessibility statement and RSS feed links in footer",
+        "text-only ('Textová verze') alternate site version link"
+      ],
+      "language_samples": [
+        {
+          "original": "Naším cílem je Vaše bezpečí",
+          "english": "Our goal is your safety",
+          "context": "homepage tagline/slogan"
+        },
+        {
+          "original": "Letní prázdniny přinášejí více cest i větší rizika na silnicích",
+          "english": "Summer holidays bring more travel and greater risks on the roads",
+          "context": "homepage news headline (Zpravodajství)"
+        },
+        {
+          "original": "Práce 158x jinak - přidej se k nám!",
+          "english": "A job, 158 times different — join us!",
+          "context": "recruitment promotional block (INFORMACE section), referencing the 158 emergency number"
+        },
+        {
+          "original": "Zpracování osobních údajů Policií České republiky",
+          "english": "Processing of personal data by the Police of the Czech Republic",
+          "context": "footer/informational-servis privacy policy link"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: Arial, Helvetica, sans-serif;\n  background-color: #ffffff;\n  color: #1a1a1a;\n  margin: 0;\n}\n.hlavni-menu {\n  background-color: #003da5;\n}\n.hlavni-menu > ul > li > a {\n  color: #ffffff;\n  padding: 10px 14px;\n  text-transform: uppercase;\n  font-size: 12px;\n}\n.hlavni-menu ul ul {\n  background-color: #ffffff;\n  border: 1px solid #e6edf7;\n  box-shadow: 0 2px 6px rgba(0,0,0,0.15);\n}\n.zpravodajstvi .card {\n  background-color: #e6edf7;\n  border-radius: 2px;\n}\n.zpravodajstvi .card .date {\n  color: #003da5;\n  font-weight: bold;\n}\n.rychla-linka {\n  background-color: #c8102e;\n  color: #ffffff;\n  padding: 8px 12px;\n}\nfooter a {\n  color: #0056b3;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

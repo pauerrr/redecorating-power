@@ -1,0 +1,282 @@
+{
+  "country": "Romania",
+  "flag": "🇷🇴",
+  "bodies": [
+    {
+      "name": "Camera Deputaților (Chamber of Deputies)",
+      "type": "parliament",
+      "url": "https://www.cdep.ro",
+      "fonts": [
+        {
+          "family": "Roboto Serif",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "Roboto",
+          "usage": "body",
+          "source": "web font",
+          "share": 44
+        },
+        {
+          "family": "open_sansregular",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 25
+        },
+        {
+          "family": "Helvetica",
+          "usage": "secondary",
+          "source": "system",
+          "share": 13
+        },
+        {
+          "family": "Georgia",
+          "usage": "secondary",
+          "source": "system",
+          "share": 7
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#551043",
+          "role": "primary",
+          "share": 10
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 25
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        },
+        {
+          "hex": "#333333",
+          "role": "link"
+        },
+        {
+          "hex": "#42133C",
+          "role": "secondary",
+          "share": 5
+        },
+        {
+          "hex": "#EAC246",
+          "role": "accent",
+          "share": 1
+        },
+        {
+          "hex": "#730A48",
+          "role": "accent",
+          "share": 1
+        }
+      ],
+      "layout": "A legacy Oracle APEX (ORDS) application built on a URL scheme still exposing 'ords/pls' PL/SQL procedure calls, reflecting decades-old government IT infrastructure. The homepage stacks a masthead with the Chamber's coat-of-arms crest and social icons, a slim RO/EN/FR language switcher, and a sprawling multi-column flyout mega-menu ('Structuri parlamentare', 'Activitate parlamentară', 'Informaţii publice'). Below a rotating photo slider of the plenary hall sits a three-column 'Actualitate parlamentară / Resurse parlamentare / Anunţuri' block, a parliamentary-group membership grid with logos and seat counts, and a dense 'Ştiri' (News) river of press-release cards tied to individual deputies. The page closes with a legislative-resources block, a media gallery, and a footer linking to sister institutions (Senate, Presidency, Government, Constitutional Court).",
+      "ui_patterns": [
+        "legacy PL/SQL / Oracle APEX URL structure (ords/pls/...) exposed directly in menu links",
+        "parliamentary-group grid showing party logos with live seat counts (e.g. '91 Membri')",
+        "individual deputy press-release cards with headshot thumbnails ('Comunicat de presa')",
+        "alphabetical deputy directory paginated by first letter of surname",
+        "electronic voting record archive (Votul electronic) as a top-level nav item",
+        "session transcript archive (Stenogramele şedinţelor) alongside audio-video recordings",
+        "declarations-of-wealth/interest disclosure section (Declaraţii de avere şi interese) as mandated transparency feature",
+        "sitemap link labeled 'Hartă site' in the footer, a holdover from 2000s-era portal conventions"
+      ],
+      "language_samples": [
+        {
+          "original": "Ordinea de zi din 29 iunie 2026",
+          "english": "Agenda for June 29, 2026",
+          "context": "homepage hero headline linking to the plenary session agenda"
+        },
+        {
+          "original": "Urmărirea procesului legislativ",
+          "english": "Tracking the legislative process",
+          "context": "main menu item and homepage resource link"
+        },
+        {
+          "original": "Declaraţii de avere şi interese",
+          "english": "Declarations of wealth and interests",
+          "context": "public-information section link for MP financial disclosure"
+        },
+        {
+          "original": "Statul încasează cel mai mult din majorarea salariului minim, nu românii",
+          "english": "The state collects the most from the minimum wage increase, not Romanians",
+          "context": "front-page press-release headline from an AUR deputy"
+        }
+      ],
+      "css_snippet": "div#olddiv {\n  font: 100% \"open_sansregular\", sans-serif, Arial, Verdana, Helvetica;\n  background-color: white;\n  color: #2a2a2a;\n  margin: 0;\n  padding: 0;\n  line-height: 125%;\n}\ndiv#olddiv table.tip01 tr.rowh td {\n  background-color: #2a2a2a;\n  color: #ffffff;\n  font-weight: bold;\n}\ndiv#olddiv table.tip01 tr.rowt td {\n  background-color: #e7c24f;\n  color: #730a49;\n  font-weight: bold;\n  padding: 5px;\n}\ndiv#olddiv a {\n  color: #2a2a2a;\n  background-color: transparent;\n  text-decoration: none;\n}\ndiv#olddiv a:hover {\n  color: #0000FF;\n  text-decoration: underline;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Guvernul României (Government of Romania / PM Office)",
+      "type": "central-government",
+      "url": "https://gov.ro",
+      "fonts": [
+        {
+          "family": "Trebuchet MS",
+          "usage": "body + headings",
+          "source": "system",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#990000",
+          "role": "primary",
+          "share": 2
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 95
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        },
+        {
+          "hex": "#004990",
+          "role": "link"
+        },
+        {
+          "hex": "#0C64B9",
+          "role": "secondary",
+          "share": 0
+        },
+        {
+          "hex": "#0079C2",
+          "role": "accent",
+          "share": 0
+        },
+        {
+          "hex": "#222222",
+          "role": "dark band",
+          "share": 1
+        }
+      ],
+      "layout": "An early-2010s-era XHTML Transitional site (visible in its DOCTYPE) built on a fixed 960px-wide layout with a repeating textured background image behind a centered white content well. The header holds a small PM/Government logo top-left, a RO/EN language toggle, a site-search flyout, and a dark-blue dropdown mega-menu (Prim-ministru, Guvern, Obiective, Media, Contact) with rich preview panels showing a photo and description per section. The homepage body runs a three-column 'teme' (themes) box grid and an 'actualitate' (current affairs) news grid, each capped at exactly 32.3% width with hard-coded pixel borders, styled in the site's signature red section-labels over blue headline links. The footer is a tall dark band with white link columns, a Facebook icon, and copyright text, sitting beneath a thin yellow-on-hover menu accent carried through from the main nav.",
+      "ui_patterns": [
+        "dropdown mega-menu panels with an embedded photo, description, and 'Află mai multe' CTA per top-level item",
+        "fixed 960px legacy layout with repeating background-image chrome (bgbody.jpg, bgwindex.jpg)",
+        "three-column 'teme'/'actualitate' news boxes hard-capped at 32.3% width with pixel-perfect borders",
+        "red all-caps section eyebrow labels (color #990000) above blue headline links",
+        "flowplayer-based embedded video player (legacy Flash/HTML5 hybrid, flowplayer-3.2.6)",
+        "RO/EU co-branding ribbon element (roue2019 logo strip) fixed above the main header",
+        "government-session communique archive (Comunicate şi acte şedinţă de guvern) as a dedicated Media sub-item",
+        "accessibility-era font-size toggle absent, but a distinct 480px/800px/980px responsive breakpoint CSS cascade"
+      ],
+      "language_samples": [
+        {
+          "original": "Discursul susținut de prim-ministrul desemnat al României, Ilie Bolojan, în plenul Parlamentului, înaintea votului de învestitură",
+          "english": "The speech delivered by Romania's prime-minister-designate, Ilie Bolojan, in the Parliament plenary before the investiture vote",
+          "context": "og:title meta description of the featured homepage story"
+        },
+        {
+          "original": "Guvernul este autoritatea publică a puterii executive, care funcționează în baza votului de încredere acordat de Parlament",
+          "english": "The Government is the public authority of the executive power, which functions based on the vote of confidence granted by Parliament",
+          "context": "descriptive text inside the 'Guvern' mega-menu preview panel"
+        },
+        {
+          "original": "Cabinetul de miniștri",
+          "english": "The Cabinet of Ministers",
+          "context": "sub-menu link under the 'Guvern' menu"
+        },
+        {
+          "original": "Programul de Guvernare",
+          "english": "The Governing Program",
+          "context": "sub-menu link under the 'Obiective' (Objectives) menu"
+        }
+      ],
+      "css_snippet": "body {\n  background: url('../img/bgbody.jpg') repeat;\n  font-size: 11px;\n}\n#page {\n  width: 100%;\n  max-width: 960px;\n  min-width: 320px;\n  margin: 0 auto;\n}\na {\n  color: #2f598c;\n  font-size: 13px;\n  text-decoration: none;\n}\n.menuTop li a {\n  color: #ffffff;\n  font-family: \"Trebuchet MS\", Helvetica, sans-serif;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n.menuTop li a:hover {\n  color: #ffe118;\n}\n.temeIndex h2 {\n  color: #990000;\n  font-size: 13px;\n  font-family: \"Trebuchet MS\";\n}\n.temeIndex h3 a {\n  color: #004990;\n  font-weight: bold;\n}\n.temeIndex h3 a:hover {\n  color: #0079c2;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Direcția Națională Anticorupție (DNA — National Anticorruption Directorate)",
+      "type": "anti-corruption",
+      "url": "https://www.pna.ro",
+      "fonts": [
+        {
+          "family": "Arial",
+          "usage": "body + headings",
+          "source": "system",
+          "share": 96
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#002C53",
+          "role": "primary",
+          "share": 23
+        },
+        {
+          "hex": "#FCFDFD",
+          "role": "background",
+          "share": 72
+        },
+        {
+          "hex": "#D7D7D7",
+          "role": "surface",
+          "share": 3
+        },
+        {
+          "hex": "#111111",
+          "role": "text"
+        },
+        {
+          "hex": "#002B7F",
+          "role": "secondary",
+          "share": 0
+        },
+        {
+          "hex": "#FCD116",
+          "role": "accent",
+          "share": 0
+        },
+        {
+          "hex": "#CE1126",
+          "role": "accent",
+          "share": 0
+        }
+      ],
+      "layout": "The site (pna.ro redirects permanently to www.dna.ro) runs on a Java Server Faces / PrimeFaces stack, exposing '.xhtml' view-state URLs and JSF ViewState hidden fields rather than a modern CMS. The header is dominated by a large serif Times New Roman institutional title 'DIRECȚIA NAȚIONALĂ ANTICORUPȚIE' beneath a thin Romanian tricolor stripe (blue/yellow/red bars) and the motto 'IMPARȚIALITATE·INTEGRITATE·EFICIENȚĂ' in tracked capitals. Below a rotating photo galleria of the headquarters building, the homepage splits into three 'section' columns — comunicate (press releases), condamnări definitive (final convictions), and evenimente (events) — each a chronological list of case-outcome headlines. A prominent teal-to-cyan gradient 'blue-band' banner runs the width of the page with a single stark call-to-action, 'Sesizați o faptă de corupție' (Report an act of corruption), and the footer repeats the full menu as plain pipe-separated text links.",
+      "ui_patterns": [
+        "JSF/PrimeFaces server-rendered forms with ViewState tokens embedded in page markup",
+        "tricolor (blue/yellow/red) flag-stripe header band echoing the national flag directly below the masthead",
+        "prominent full-width gradient banner with a single anti-corruption reporting CTA ('Sesizați o faptă de corupție')",
+        "three-column chronological case-outcome feed segmented into comunicate / condamnări definitive / evenimente",
+        "case headlines phrased as institutional-role outcomes rather than named individuals (e.g. 'Condamnare primar comună pentru luare de mită')",
+        "accessibility font-size stepper (A- / (normal) / A+) built into the top utility bar",
+        "pipe-separated plain-text footer menu with no visual button styling",
+        "institutional motto rendered as a tracked-letter-spacing all-caps banner beneath the header crest"
+      ],
+      "language_samples": [
+        {
+          "original": "IMPARȚIALITATE·INTEGRITATE·EFICIENȚĂ",
+          "english": "IMPARTIALITY · INTEGRITY · EFFICIENCY",
+          "context": "institutional motto banner beneath the site header"
+        },
+        {
+          "original": "Sesizați o faptă de corupție",
+          "english": "Report an act of corruption",
+          "context": "primary call-to-action button in the homepage gradient banner"
+        },
+        {
+          "original": "Condamnare primar comună pentru luare de mită și abuz în serviciu – cu suspendare",
+          "english": "Conviction of a commune mayor for bribery and abuse of office – suspended sentence",
+          "context": "case-outcome headline in the 'condamnări definitive' (final convictions) news column"
+        },
+        {
+          "original": "Cum este protejat cel care denunță?",
+          "english": "How is the whistleblower protected?",
+          "context": "FAQ-style link under the 'sesizați-ne' (report to us) mobile submenu"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: Arial, sans-serif, Helvetica;\n  text-align: left;\n  background-color: rgba(238, 238, 238, 0.44);\n}\ndiv.top1, div.top2 {\n  background-color: #002c53;\n}\n.top-text {\n  font-family: 'Times New Roman', 'Times';\n  font-size: 46px;\n}\n.blue-band-comunicate {\n  background: linear-gradient(90deg, rgb(0,139,139) 0%, #00aef0 100%);\n}\ndiv.titlu_dna .lang-holder2 {\n  color: #002c53;\n}\n.gold2 {\n  background-color: #74aef8;\n}\ntr.par {\n  background-color: #E0E0E0;\n}\n.cap {\n  font-size: 12pt;\n  font-weight: bold;\n  text-indent: 0.5cm;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

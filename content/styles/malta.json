@@ -1,0 +1,231 @@
+{
+  "country": "Malta",
+  "flag": "🇲🇹",
+  "bodies": [
+    {
+      "name": "Parlament ta' Malta (Parliament of Malta)",
+      "type": "parliament",
+      "url": "https://www.parlament.mt",
+      "fonts": [
+        {
+          "family": "Segoe UI",
+          "usage": "body + headings",
+          "source": "system",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#1B594A",
+          "role": "primary",
+          "share": 7
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 86
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        }
+      ],
+      "layout": "Header has a small language-switcher/utility bar (Maltese flag icon link, 'Contact Us', 'Search') above a logo row showing the 'Parlament ta' Malta' wordmark linking home. Below that sits a mega-menu style horizontal nav with top-level items Home, Mr Speaker, About Parliament, Parliamentary Business, Committees/Delegations, Reference Material, Get Involved — each with deep multi-column dropdown flyouts listing sub-pages (e.g. Composition of Parliament, Standing Committees list, Acts of Parliament). The homepage hero is a rotating slideshow/carousel banner followed by a mission statement paragraph. Below the hero are widgetized dashboard blocks for 'Business before the House', live tables for Motions/Orders of the Day, a 'Follow Parliament' live-streaming panel, a Parliament TV schedule table, 'Latest activities of the Speaker' and 'Latest press releases' card grids, a Vacancies/Public Procurement two-column table section, and a sidebar Parliamentary Calendar widget. Footer is a thin utility bar with Privacy/Copyright/Disclaimer/Sitemap/Contact links plus social share icons and a copyright line.",
+      "ui_patterns": [
+        "AngularJS templating artifacts visibly leaking into rendered markup when JS/data doesn't load, a classic legacy-gov-CMS symptom",
+        "Bilingual language toggle via small flag icon (mt/en) present on every page in the utility bar",
+        "Deeply nested multi-level dropdown mega-menu for menu reflecting parliamentary/legislative hierarchy",
+        "Legislature-numbered URL and content structure (e.g. '15th-leg') baked into permalinks",
+        "Live broadcast / TV schedule module embedded directly in the homepage",
+        "Standing error-boundary messages shown inline when widgets fail to load data",
+        "Committee and archive listings organized as long flat bulleted lists rather than cards",
+        "Downloadable/legal document links (Acts, Bills, Standing Orders) treated as first-class nav items"
+      ],
+      "language_samples": [
+        {
+          "original": "The primary objective of this website is to promote Parliamentary openness by facilitating access to documents published by this Institution and by enabling the public to follow more closely what is going on in Parliament.",
+          "english": "(already English)",
+          "context": "Homepage mission statement below the hero carousel"
+        },
+        {
+          "original": "The House of Representatives, Malta makes every effort to maintain the accuracy of the information on this website but cannot accept responsibility for any prejudice, loss or damage which may occur from use of the information.",
+          "english": "(already English)",
+          "context": "Disclaimer page legal notice"
+        },
+        {
+          "original": "The House of Representatives, Malta does not provide quality control of external links; the inclusion of any company's or trader's name within the pages should not be construed as a recommendation of that company's or trader's products and/or services.",
+          "english": "(already English)",
+          "context": "Disclaimer page, external-links clause"
+        },
+        {
+          "original": "If you find anything on this website that causes concern please contact us",
+          "english": "(already English)",
+          "context": "Disclaimer page closing call-to-action"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Segoe UI\", Arial, sans-serif; color: #000000; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Segoe UI\", Arial, sans-serif; }\na { color: #1B594A; }\n.site-header, .main-menu { background: #1B594A; color: #FFFFFF; }\n.footer { background: #1B594A; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "gov.mt (Central Government of Malta / Office of the Prime Minister portal)",
+      "type": "central-government",
+      "url": "https://www.gov.mt",
+      "fonts": [
+        {
+          "family": "Raleway",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "Helvetica",
+          "usage": "body",
+          "source": "system",
+          "share": 47
+        },
+        {
+          "family": "Segoe UI Light",
+          "usage": "secondary",
+          "source": "web font / local",
+          "share": 8
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#36445F",
+          "role": "primary",
+          "share": 27
+        },
+        {
+          "hex": "#FEFEFE",
+          "role": "background",
+          "share": 36
+        },
+        {
+          "hex": "#333333",
+          "role": "text"
+        },
+        {
+          "hex": "#4AA9FF",
+          "role": "secondary",
+          "share": 0
+        }
+      ],
+      "layout": "Site runs on Microsoft SharePoint (confirmed via meta generator tag) with a classic SharePoint ribbon/ARIA skip-link structure ('Skip Ribbon Commands', 'Skip to main content', accessibility toggles for 'more accessible mode' and 'Turn off Animations'). Header row shows a text-zoom control (A A A), the 'gov.mt' wordmark plus a linked 'servizz' logo to the public-service portal, and a horizontal quicklinks nav: Dħul (Home), Avvenimenti (Events/Life Events), Dwar Malta (About Malta), Fittex (Search), Il-Gvern (The Government, with sub-items for Department of Information, Government Gazette, Media in Malta, Press Releases, Ministries and Entities), Public Consultation, and Servizzi u Informazzjoni (Services and Information). Below the nav is a full-width head-banner image and an emblem/coat-of-arms graphic block, followed by a grid of icon tiles linking out to service categories. The page defaults to the Maltese-language version at /mt/Pages/home.aspx unless an English path is explicitly requested.",
+      "ui_patterns": [
+        "Built on Microsoft SharePoint publishing infrastructure, giving it classic ribbon/ARIA skip-link markup uncommon on modern gov sites",
+        "Explicit accessibility toggles exposed in the chrome itself: 'Turn on more accessible mode' and 'Turn off Animations'",
+        "Font-size stepper control (A A A) for text scaling, a hallmark of older public-sector accessibility compliance",
+        "JavaScript-gated content warning shown verbatim in markup indicating heavy client-side rendering of search/quicklinks",
+        "Maltese set as the default locale (redirects bare URL to /mt/Pages/home.aspx) with English as an alternate path",
+        "Government emblem/coat-of-arms rendered as a small favicon-adjacent image asset in the header",
+        "Portal-of-portals pattern: homepage mainly links out to satellite domains for actual tasks (servizz.gov.mt for services, recruitment.gov.mt for jobs, publicservice.gov.mt)",
+        "Deep breadcrumb trail rendered even on 404/error pages"
+      ],
+      "language_samples": [
+        {
+          "original": "Dħul",
+          "english": "Home / Entry",
+          "context": "primary menu label for the homepage link"
+        },
+        {
+          "original": "Sorry. The page you are looking for does not exist. We may have removed a page to which you found a link, or you may have the wrong address for the page you are looking for.",
+          "english": "(already English)",
+          "context": "404 error page body copy"
+        },
+        {
+          "original": "If you are looking for information about a Ministry, department or any other public sector entity, start at the 'Ministries and Entities page' here.",
+          "english": "(already English)",
+          "context": "404 page 'Recommended actions' section"
+        },
+        {
+          "original": "Fittex",
+          "english": "Search",
+          "context": "primary menu label"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Helvetica\", Arial, sans-serif; color: #333333; background: #FEFEFE; }\nh1, h2, h3 { font-family: \"Raleway\", Arial, sans-serif; }\na { color: #36445F; }\n.site-header, .main-menu { background: #36445F; color: #FFFFFF; }\n.footer { background: #36445F; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Pulizija ta' Malta (Malta Police Force)",
+      "type": "police",
+      "url": "https://www.pulizija.gov.mt",
+      "fonts": [
+        {
+          "family": "Montserrat",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 86
+        },
+        {
+          "family": "Roboto Slab",
+          "usage": "secondary",
+          "source": "web font / local",
+          "share": 14
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#202020",
+          "role": "primary",
+          "share": 1
+        },
+        {
+          "hex": "#E0E6E9",
+          "role": "background",
+          "share": 43
+        },
+        {
+          "hex": "#F3F7F7",
+          "role": "surface",
+          "share": 29
+        },
+        {
+          "hex": "#7A7A7A",
+          "role": "text"
+        },
+        {
+          "hex": "#54595F",
+          "role": "link"
+        }
+      ],
+      "layout": "A light grey-blue page with the police crest and the pulizija.gov.mt wordmark top-left, a text-size switcher (A A A) and a flat main menu: The Department, Services, Victim Support, Resources, Police Notices, Contact. Below sits a wide photographic carousel whose every slide says the same thing ('File A Police Report… CLICK HERE TO START'), then a row of public-service links (consultations, join, rate the service) and a tab strip: Welcome, File A Report, Tell Us About, Apply / Register, Thanks & Complaints. A long welcoming paragraph, a recruitment block and a press-release list follow.",
+      "ui_patterns": [
+        "Carousel with three identical slides",
+        "Text-size switcher (A A A) in the header",
+        "Tab strip of citizen services under the hero",
+        "'Rate Our Service' satisfaction prompt",
+        "Recruitment block written in second person",
+        "Press releases list with dates",
+        "GDPR cookie banner offering Accept, Reject and Settings"
+      ],
+      "language_samples": [
+        {
+          "original": "File A Police Report. Now you can effortlessly file reports from the comfort of your home or workplace using the devices you’re already familiar with.",
+          "english": "(original in English)",
+          "context": "homepage hero carousel, repeated across three slides"
+        },
+        {
+          "original": "As the guardians of peace and public order within the Maltese Islands, we are committed to ensuring the safety and security of all residents and visitors.",
+          "english": "(original in English)",
+          "context": "'Welcome' introduction block"
+        },
+        {
+          "original": "We are here to serve and protect, and we strive to build a safer Malta for everyone.",
+          "english": "(original in English)",
+          "context": "closing line of the welcome text"
+        },
+        {
+          "original": "We are using cookies to give you the best experience on our website.",
+          "english": "(original in English)",
+          "context": "GDPR cookie banner, with Accept / Reject / Settings"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Montserrat\", Arial, sans-serif; color: #7A7A7A; background: #E0E6E9; }\nh1, h2, h3 { font-family: \"Montserrat\", Arial, sans-serif; }\na { color: #54595F; }\n.site-header, .main-menu { background: #202020; color: #FFFFFF; }\n.footer { background: #202020; color: #FFFFFF; }",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

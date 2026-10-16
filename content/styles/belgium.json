@@ -1,0 +1,231 @@
+{
+  "country": "Belgium",
+  "flag": "🇧🇪",
+  "bodies": [
+    {
+      "name": "De Kamer van volksvertegenwoordigers / La Chambre des représentants (Belgian House of Representatives)",
+      "type": "parliament",
+      "url": "https://www.dekamer.be",
+      "fonts": [
+        {
+          "family": "Arial",
+          "usage": "body + headings",
+          "source": "system",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#F4F4F4",
+          "role": "background",
+          "share": 27
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "surface",
+          "share": 26
+        },
+        {
+          "hex": "#313131",
+          "role": "text"
+        }
+      ],
+      "layout": "A dense, functionally-driven ColdFusion (.cfm) site that reads like a legislative database front end rather than a modern marketing homepage. A slim top bar carries FAQ/Contact/Sitemap and NL/FR language-switcher links above a banner logo. Below, a horizontal dropdown mega-menu (De Kamerleden, De Kamer, Documenten, U en de Kamer, Publicaties, Bezoek ons) exposes dozens of PDF-icon-flagged sub-links to legislative registers, statistics, and archives. The body centers on a same-day session agenda strip ('DONDERDAG 2 JULI 2026') linking to a live video stream, a two-column 'NIEUWS' grid of thumbnail news items, a 'DE LEDEN' section with a hemicycle seat-distribution diagram, and a persistent full-text/database search toolbox offering four distinct search modes. The footer is a long vertical stack of icon-linked institutional shortcuts (history, library, lobby register, ethics committee, archive, whistleblower policy) plus social media icons.",
+      "ui_patterns": [
+        "PDF-icon markers (pictos_pdf.gif) prefixing every document-download link across the mega-menu",
+        "same-day sitting agenda strip with direct link to live video stream ('De Kamer Live')",
+        "hemicycle seat-distribution diagram image (halfrond) visualizing party composition",
+        "four parallel search-tool variants (database search, full-text search, combined search, keyword-in-document search)",
+        "'info' icon buttons linking to PDF explainer fact-sheets next to major menu sections",
+        "sign-language interpreted question-hour announcement as a standing news tile",
+        "whistleblower policy PDF linked directly in the footer (Klokkenluiders)",
+        "NL/FR/DE trilingual switcher plus a dedicated 'Informationen auf Deutsch' footer shortcut"
+      ],
+      "language_samples": [
+        {
+          "original": "Het vragenuurtje op donderdag wordt vertaald naar gebarentaal.",
+          "english": "Thursday's question hour is translated into sign language.",
+          "context": "homepage news tile under 'NIEUWS'"
+        },
+        {
+          "original": "Staatsbezoek van Zijne Majesteit de keizer van Japan",
+          "english": "State visit of His Majesty the Emperor of Japan",
+          "context": "homepage news tile headline with linked photo gallery"
+        },
+        {
+          "original": "Hoe dien ik een verzoekschrift in?",
+          "english": "How do I submit a petition?",
+          "context": "nav link under 'U en de Kamer' (You and the Chamber)"
+        },
+        {
+          "original": "Verdeling in het halfrond",
+          "english": "Distribution in the hemicycle",
+          "context": "label above the seat-distribution diagram in the 'DE LEDEN' (The Members) section"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #222222;\n  background-color: #FFFFFF;\n  margin: 0;\n}\n.top-bar {\n  background-color: #F1F1F1;\n  font-size: 11px;\n  padding: 4px 12px;\n}\n.mega-menu {\n  background-color: #00205B;\n}\n.mega-menu > li > a {\n  color: #FFFFFF;\n  font-size: 13px;\n  padding: 8px 14px;\n  text-transform: uppercase;\n}\n.agenda-strip {\n  background-color: #FDDA24;\n  color: #00205B;\n  font-weight: 700;\n  padding: 6px 16px;\n}\n.news-tile {\n  border: 1px solid #F1F1F1;\n  padding: 10px;\n}\na {\n  color: #00205B;\n  text-decoration: underline;\n}\n.pdf-icon {\n  width: 14px;\n  height: 14px;\n  vertical-align: middle;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Eerste Minister van België / Premier ministre de Belgique (Prime Minister of Belgium)",
+      "type": "central-government",
+      "url": "https://www.premier.be",
+      "fonts": [
+        {
+          "family": "Catamaran",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 80
+        },
+        {
+          "family": "Arial",
+          "usage": "secondary",
+          "source": "system",
+          "share": 16
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#3D7E97",
+          "role": "primary"
+        },
+        {
+          "hex": "#FEFEFE",
+          "role": "background",
+          "share": 56
+        },
+        {
+          "hex": "#0A0A0A",
+          "role": "text"
+        },
+        {
+          "hex": "#363544",
+          "role": "dark band",
+          "share": 16
+        }
+      ],
+      "layout": "A minimal, Drupal 11-powered biography-and-news site personally branded to the sitting Prime Minister (Bart De Wever) rather than the institution itself, reflected in the page's own metadata title 'Bart De Wever'. A slim top strip offers NL/FR/DE/EN language links and a cross-link disclaimer pointing to the umbrella portal www.belgium.be for official services. The header centers a large portrait photo, the PM's name in oversized type, his title 'Eerste minister van België', and a row of personal social-media icons (X, Facebook, Instagram, LinkedIn). A compact three-item nav (Nieuws, Biografie, Contact) sits above a simple single-column 'Nieuws' feed of dated press items and a 'Samenstelling regering' block linking out to the separate federal-government composition microsite. The footer is sparse: only Persoonsgegevens (privacy) and Toegankelijkheidsverklaring (accessibility statement) links plus a repeated Belgian 'be' logo mark and high-contrast toggle.",
+      "ui_patterns": [
+        "personally-branded site design centered on the sitting PM's name/photo rather than an institutional identity",
+        "official-services disclaimer bar linking out to the umbrella belgium.be portal",
+        "high-contrast accessibility toggle exposed directly in the footer",
+        "minimal three-item top nav (Nieuws, Biografie, Contact) with almost no sub-menu",
+        "cross-link to a separate federal-government composition microsite (federale-regering.be) rather than embedding cabinet info",
+        "personal social-media icon row treated as primary header content, not relegated to the footer",
+        "Drupal 11 generator meta tag exposed in page source",
+        "four-language switcher (NL/FR/DE/EN) reflecting Belgium's three official languages plus English"
+      ],
+      "language_samples": [
+        {
+          "original": "Eerste minister van België",
+          "english": "Prime Minister of Belgium",
+          "context": "title caption directly under the PM's name in the header"
+        },
+        {
+          "original": "Officiële informatie en diensten: www.belgium.be",
+          "english": "Official information and services: www.belgium.be",
+          "context": "disclaimer bar at the very top of the page directing users to the official federal portal"
+        },
+        {
+          "original": "De ministerraad vergaderde in de Wetstraat 16 op vrijdag 26 juni 2026 onder het voorzitterschap van eerste minister Bart De Wever.",
+          "english": "The Council of Ministers met at Wetstraat 16 on Friday 26 June 2026 under the chairmanship of Prime Minister Bart De Wever.",
+          "context": "lede paragraph of a 'Nieuws' press item summarizing a cabinet meeting"
+        },
+        {
+          "original": "Raadpleeg de samenstelling van de federale regering",
+          "english": "Consult the composition of the federal government",
+          "context": "call-to-action link under the 'Samenstelling regering' homepage section"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #1A1A1A;\n  background-color: #FFFFFF;\n  margin: 0;\n}\n.disclaimer-bar {\n  background-color: #F5F5F5;\n  font-size: 12px;\n  padding: 6px 16px;\n  text-align: right;\n}\n.main-nav {\n  background-color: #FFFFFF;\n  border-bottom: 1px solid #E0E0E0;\n}\n.main-nav a {\n  color: #000000;\n  font-weight: 600;\n  padding: 14px 18px;\n}\n.pm-header h1 {\n  font-size: 32px;\n  font-weight: 700;\n  margin: 0;\n}\n.news-item {\n  border-bottom: 1px solid #F5F5F5;\n  padding: 16px 0;\n}\na {\n  color: #00205B;\n  text-decoration: underline;\n}\n.high-contrast-toggle {\n  background-color: #FFD200;\n  color: #000000;\n  padding: 4px 10px;\n  font-size: 11px;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Police.be / Police Fédérale (Belgian Integrated Police)",
+      "type": "police",
+      "url": "https://www.police.be",
+      "fonts": [
+        {
+          "family": "Helvetica",
+          "usage": "body + headings",
+          "source": "system",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#004D9F",
+          "role": "primary",
+          "share": 12
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 68
+        },
+        {
+          "hex": "#EFEFEF",
+          "role": "surface",
+          "share": 15
+        },
+        {
+          "hex": "#222222",
+          "role": "text"
+        },
+        {
+          "hex": "#0C207E",
+          "role": "secondary",
+          "share": 2
+        },
+        {
+          "hex": "#99CCCC",
+          "role": "accent",
+          "share": 1
+        },
+        {
+          "hex": "#CC6600",
+          "role": "accent",
+          "share": 1
+        }
+      ],
+      "layout": "A clean, service-oriented Drupal portal (theme-color meta confirms #004d9f) built around a single high-priority action: reporting to police. A cookie-consent modal covers the page on first load. Below it, a slim NL/FR/DE/EN language bar and a link out to the belgium.be umbrella portal precede a bold red-toned 'Demandez 101' emergency-call banner. The body opens with a 'digital counter' CTA for non-urgent declarations, followed by two feature cards ('Avis de recherche' / Wanted notices and 'Un job à la police?' recruitment), then a full-width 'Ma Police Locale' geolocation module letting citizens find their nearest local police zone by city or postal code, and a 'Police Fédérale' feature card. The footer lists statistics, an explainer on the two-tier 'Police Intégrée' (Integrated Police) structure, the Permanent Commission of the Local Police, and communication-campaign archives.",
+      "ui_patterns": [
+        "prominent emergency-hotline call-to-action banner ('Demandez 101 une assistance policière urgente') fixed near the top",
+        "geolocation-based 'find your nearest local police zone' tool with postal-code fallback input",
+        "non-urgent digital reporting counter CTA (my.police.be) distinguished from the emergency hotline",
+        "explainer link on the two-tier federal/local 'Police Intégrée' governance structure",
+        "wanted-notices ('Avis de recherche') treated as a top-level homepage feature card, not buried in menu",
+        "recruitment microsite cross-link (jobpol.be) surfaced as a homepage card",
+        "granular cookie-consent modal with 'essential only' vs 'accept all' choices on every visit",
+        "four-language switcher (NL/FR/DE/EN) matching Belgium's federal linguistic structure"
+      ],
+      "language_samples": [
+        {
+          "original": "Demandez 101 une assistance policière urgente",
+          "english": "Dial 101 for urgent police assistance",
+          "context": "persistent emergency-call banner near the top of the homepage"
+        },
+        {
+          "original": "Pour une déclaration non urgente, utilisez notre guichet digital",
+          "english": "For a non-urgent report, use our digital counter",
+          "context": "call-to-action beneath the emergency banner directing users to the online reporting portal"
+        },
+        {
+          "original": "Rendez-vous dans la zone de police la plus proche",
+          "english": "Go to the nearest police zone",
+          "context": "heading above the 'Ma Police Locale' geolocation search tool"
+        },
+        {
+          "original": "Bienvenue sur le site Portail. Pour une aide policière urgente, formez le 101",
+          "english": "Welcome to the Portal site. For urgent police assistance, dial 101",
+          "context": "meta description summarizing the site's core purpose"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #1A1A1A;\n  background-color: #FFFFFF;\n  margin: 0;\n}\n.emergency-banner {\n  background-color: #004D9F;\n  color: #FFFFFF;\n  font-weight: 700;\n  text-align: center;\n  padding: 10px;\n}\n.lang-bar {\n  background-color: #F2F2F2;\n  font-size: 12px;\n  padding: 4px 16px;\n}\n.feature-card {\n  background-color: #FFFFFF;\n  border: 1px solid #F2F2F2;\n  border-radius: 4px;\n  padding: 20px;\n}\n.locate-tool input {\n  border: 1px solid #2B5797;\n  padding: 8px 12px;\n  width: 100%;\n}\na {\n  color: #004D9F;\n  text-decoration: none;\n}\n.locate-tool button {\n  background-color: #004D9F;\n  color: #FFFFFF;\n  border: none;\n  padding: 8px 16px;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "country": "Poland",
+  "flag": "🇵🇱",
+  "bodies": [
+    {
+      "name": "Sejm Rzeczypospolitej Polskiej (Sejm of the Republic of Poland)",
+      "type": "parliament",
+      "url": "https://www.sejm.gov.pl",
+      "fonts": [
+        {
+          "family": "trebuchet ms",
+          "usage": "headings",
+          "source": "system"
+        },
+        {
+          "family": "tahoma",
+          "usage": "body",
+          "source": "system",
+          "share": 84
+        },
+        {
+          "family": "FuturaDem",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 7
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#2E5785",
+          "role": "primary"
+        },
+        {
+          "hex": "#FAFAFA",
+          "role": "background",
+          "share": 66
+        },
+        {
+          "hex": "#3A3A3A",
+          "role": "text"
+        },
+        {
+          "hex": "#000000",
+          "role": "dark band",
+          "share": 3
+        }
+      ],
+      "layout": "A narrow, centred legacy layout on a pale grey page. The header carries the eagle crest, 'Sejm Rzeczypospolitej Polskiej', the term number ('X kadencja') and a constitutional motto, with font-size (A, A+, A++) and contrast toggles plus social icons on the right. A dark horizontal menu in capitals sits below (Strona główna, Prace Sejmu, Posłowie, Dla mediów, O Sejmie, Publikacje, Archiwum). The body splits into a 'Prace bieżące' list of sittings, agendas and votes, a month calendar widget with keyboard instructions, and a dated news list. A capitalised link footer closes the page.",
+      "ui_patterns": [
+        "Term number ('X kadencja') under the institution name",
+        "Constitutional motto in quotation marks in the header",
+        "A / A+ / A++ font-size and yellow-on-black contrast toggles",
+        "All-caps dark main menu",
+        "Calendar widget with written keyboard shortcuts",
+        "Dated news list (DD.MM.YYYY - headline)",
+        "Cookie notice where not blocking counts as consent",
+        "Footer of capitalised links (Marszałek Sejmu, Wicemarszałkowie…)"
+      ],
+      "language_samples": [
+        {
+          "original": "Wszelka władza społeczności ludzkiej początek swój bierze z woli narodu",
+          "english": "All authority of human society originates in the will of the nation",
+          "context": "motto under the header (from the Constitution of 3 May 1791)"
+        },
+        {
+          "original": "Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie.",
+          "english": "We use cookies to make the site easier for you to use and for statistical purposes. If you do not block these files, you agree to their use.",
+          "context": "cookie notice: consent by not objecting"
+        },
+        {
+          "original": "Sprawozdania stenograficzne z posiedzeń Sejmu",
+          "english": "Stenographic reports of Sejm sittings",
+          "context": "'Prace bieżące' (current work) list"
+        },
+        {
+          "original": "kontrast żółto-czarny",
+          "english": "yellow-on-black contrast",
+          "context": "accessibility toolbar label next to A / A+ / A++ font sizes"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"tahoma\", Arial, sans-serif; color: #3A3A3A; background: #FAFAFA; }\nh1, h2, h3 { font-family: \"trebuchet ms\", Arial, sans-serif; }\na { color: #2E5785; }\n.site-header, .main-menu { background: #2E5785; color: #FFFFFF; }\n.footer { background: #2E5785; color: #FFFFFF; }",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Kancelaria Prezesa Rady Ministrów (Chancellery of the Prime Minister) - gov.pl/premier",
+      "type": "central-government",
+      "url": "https://www.gov.pl/web/premier",
+      "fonts": [
+        {
+          "family": "Open Sans",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#0052A5",
+          "role": "primary",
+          "share": 17
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 73
+        },
+        {
+          "hex": "#F1F1F1",
+          "role": "surface",
+          "share": 10
+        },
+        {
+          "hex": "#1B1B1B",
+          "role": "text"
+        }
+      ],
+      "layout": "The gov.pl portal uses a unified template shared across all ministries, with a slim top utility bar containing the mObywatel login, EU flag icon, sign-language interpreter toggle, BIP icon, and language switcher. Below sits the Kancelaria Prezesa Rady Ministrow masthead with a hamburger-triggered mega-menu covering Premier, O Kancelarii, O Radzie Ministrow, Expose, Aktualnosci and Kontakt. The homepage body is organized into modular card sections (Zapowiedzi, Aktualnosci, Komunikaty CIR, Decyzje rzadu, Informacja publiczna, Rada Ministrow) each rendered as a horizontally scrollable row of image-led news cards with dates and Warsaw/city datelines. A photo grid of all Council of Ministers members with portrait thumbnails and titles appears mid-page, and the footer carries the KPRM address, RODO/GDPR clause link, accessibility declaration, and the standard gov.pl multi-column footer with EU funding logos and the Polish eagle godlo icon.",
+      "ui_patterns": [
+        "unified gov.pl mega-menu template shared across all ministries",
+        "mObywatel (digital citizen ID app) login button in header",
+        "sign-language interpreter widget link (tlumacz jezyka migowego)",
+        "BIP (Biuletyn Informacji Publicznej) icon link",
+        "EN/PL and Ukrainian-language switcher with Ukraine flag icon for refugee content",
+        "horizontally scrollable news-card carousels grouped by category (Zapowiedzi, Aktualnosci, Komunikaty CIR)",
+        "Council of Ministers photo directory grid with round/square portrait thumbnails",
+        "cookie/privacy settings link and RODO clause in footer",
+        "EU funding co-financing logos in footer (Fundusze Europejskie)"
+      ],
+      "language_samples": [
+        {
+          "original": "Przejdź do sekcji Aktualności",
+          "english": "Skip to the News section",
+          "context": "accessibility skip-link at top of page"
+        },
+        {
+          "original": "Rosja największym zagrożeniem. Razem jesteśmy silniejsi",
+          "english": "Russia is the greatest threat. Together we are stronger",
+          "context": "news headline in the Aktualnosci (News) section"
+        },
+        {
+          "original": "Strony dostępne w domenie www.gov.pl mogą zawierać adresy skrzynek mailowych. Użytkownik korzystający z odnośnika będącego adresem e-mail zgadza się na przetwarzanie jego danych...",
+          "english": "Pages available on the www.gov.pl domain may contain email addresses. A user who uses a link that is an email address agrees to the processing of their data...",
+          "context": "privacy/data-processing legal notice in the site footer"
+        },
+        {
+          "original": "Treści tekstowe publikowane w serwisie... są udostępniane na licencji typu Creative Commons: uznanie autorstwa - na tych samych warunkach 4.0",
+          "english": "Text content published on the site... is made available under a Creative Commons license: attribution - share alike 4.0",
+          "context": "copyright/licensing clause in footer"
+        }
+      ],
+      "css_snippet": "/* based on real gov.pl markup structure observed in fetched HTML */\nbody {\n  font-family: 'Roboto', Arial, sans-serif;\n  color: #1E1E1E;\n  background-color: #FFFFFF;\n  margin: 0;\n}\n.top-utility-bar {\n  background-color: #00478F;\n  color: #FFFFFF;\n  font-size: 12px;\n  display: flex;\n  justify-content: flex-end;\n  padding: 4px 16px;\n}\n.site-header h1 a {\n  color: #00478F;\n  font-family: 'Roboto Condensed', sans-serif;\n  font-weight: 700;\n  text-decoration: none;\n}\n.main-menu {\n  background-color: #FFFFFF;\n  border-bottom: 2px solid #DC143C;\n}\n.news-card {\n  background-color: #F5F6F7;\n  border-radius: 2px;\n  overflow: hidden;\n}\n.news-card time {\n  color: #0056A4;\n  font-size: 12px;\n  font-weight: 600;\n}\na { color: #0056A4; }\n.footer-govpl { background-color: #00478F; color: #FFFFFF; }",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Centralne Biuro Antykorupcyjne (Central Anticorruption Bureau, CBA)",
+      "type": "anti-corruption",
+      "url": "https://cba.gov.pl",
+      "fonts": [
+        {
+          "family": "LatoBold",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "LatoRegular",
+          "usage": "body",
+          "source": "web font",
+          "share": 82
+        },
+        {
+          "family": "LatoSemiBold",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 12
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#B90022",
+          "role": "primary",
+          "share": 0
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 77
+        },
+        {
+          "hex": "#EDEDED",
+          "role": "surface",
+          "share": 15
+        },
+        {
+          "hex": "#010101",
+          "role": "text"
+        }
+      ],
+      "layout": "CBA's homepage opens with skip-links (menu, content, search, sitemap) followed by a dark masthead bearing the full agency name and a contrast-mode and font-size toolbar for accessibility. A top-right strip holds the English-language switch and a direct BIP link. The primary menu is a dense vertical/horizontal hybrid listing O nas, Aktualnosci, Kontrole, Projekty, Rekrutacja, Foto, Antykorupcja, and Kontakt, several with flyout sub-items. The body is dominated by a rotating Topnews carousel of enforcement-action headlines with dates, a numeric Statystyki panel showing training counts, followed by a stacked list of dated Aktualnosci CBA press items describing arrests and investigations, then a Kalendarium date-picker widget and a prominent 'Zgloc korupcje' (Report corruption) call-to-action block with phone/form/written options. The footer repeats the full menu tree plus the Warsaw address, corruption hotline number, and links to the accessibility declaration, sitemap, and privacy policy.",
+      "ui_patterns": [
+        "skip-menu accessibility links at page top",
+        "contrast-mode toggle and font-size (normal/medium/large) accessibility toolbar",
+        "direct BIP (Biuletyn Informacji Publicznej) link in header",
+        "rotating Topnews carousel of enforcement/arrest headlines with publish dates",
+        "'Zglos korupcje' (Report corruption) prominent CTA block with phone/form/in-person options",
+        "Kalendarium (calendar) date-picker widget for archived announcements",
+        "numeric statistics panel (training counts, e-learning participants)",
+        "PDF/DOCX 'tekst odczytywalny maszynowo' (machine-readable text) download blocks for accessibility",
+        "official crest/patron emblem references (Archaniol Gabriel patron saint of the service)"
+      ],
+      "language_samples": [
+        {
+          "original": "Zgłoś korupcję",
+          "english": "Report corruption",
+          "context": "main call-to-action button/section on the homepage"
+        },
+        {
+          "original": "Nieprawidłowości przy zakupach autobusów elektrycznych",
+          "english": "Irregularities in the purchase of electric buses",
+          "context": "Topnews/Aktualnosci headline about a CBA enforcement action"
+        },
+        {
+          "original": "Centralne Biuro Antykorupcyjne (CBA) jest służbą specjalną powołaną do zwalczania korupcji w życiu publicznym i gospodarczym",
+          "english": "The Central Anticorruption Bureau (CBA) is a special service established to combat corruption in public and economic life",
+          "context": "official mission statement on the O nas (About us) page"
+        },
+        {
+          "original": "Funkcjonariusze Centralnego Biura Antykorupcyjnego zatrzymali cztery osoby w związku ze śledztwem dotyczącym nieprawidłowości przy organizacji i przeprowadzaniu postępowań o udzielenie zamówień publicznych",
+          "english": "Officers of the Central Anticorruption Bureau detained four people in connection with an investigation into irregularities in the organization and conduct of public procurement proceedings",
+          "context": "body text of a press-release news item on the homepage"
+        }
+      ],
+      "css_snippet": "/* based on real markup/structure observed in fetched cba.gov.pl HTML */\nbody {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #333333;\n  background-color: #FFFFFF;\n  margin: 0;\n  font-size: 14px;\n}\n.site-header {\n  background-color: #7A0000;\n  color: #FFFFFF;\n  padding: 14px 20px;\n}\n.site-header a {\n  color: #FFFFFF;\n  text-decoration: none;\n  font-weight: bold;\n}\n.accessibility-toolbar {\n  background-color: #1B1B1B;\n  color: #F0F0F0;\n  font-size: 11px;\n  padding: 4px 12px;\n}\n.main-nav {\n  background-color: #F0F0F0;\n  border-bottom: 3px solid #B22222;\n}\n.topnews-carousel .headline {\n  color: #7A0000;\n  font-weight: 700;\n}\n.report-corruption-cta {\n  background-color: #8C1D1D;\n  color: #FFFFFF;\n  padding: 16px;\n  border-radius: 2px;\n}\na { color: #8C1D1D; }\n.footer { background-color: #1B1B1B; color: #F0F0F0; font-size: 12px; }",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

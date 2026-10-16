@@ -1,0 +1,222 @@
+{
+  "country": "Netherlands",
+  "flag": "🇳🇱",
+  "bodies": [
+    {
+      "name": "Tweede Kamer der Staten-Generaal (House of Representatives)",
+      "type": "parliament",
+      "url": "https://www.tweedekamer.nl",
+      "fonts": [
+        {
+          "family": "Corpid",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#121469",
+          "role": "primary",
+          "share": 20
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 47
+        },
+        {
+          "hex": "#E0E7EA",
+          "role": "surface",
+          "share": 28
+        },
+        {
+          "hex": "#132439",
+          "role": "text"
+        },
+        {
+          "hex": "#6EADB3",
+          "role": "secondary",
+          "share": 2
+        }
+      ],
+      "layout": "A Drupal 10-powered site with a self-hosted 'Corpid' webfont preloaded via woff2 for performance, built with an accessibility-first structure: skip links to main content, main menu, search, and footer menu are the very first interactive elements in the DOM. The header carries a deep-indigo (#121469) utility bar with an NL/EN language dropdown linking to the separate houseofrepresentatives.nl English mirror, beneath which sits a centered Tweede Kamer wordmark logo and a prominent search bar. The hamburger-collapsible main menu exposes deeply nested multi-level menus (Debat en vergadering > Reglement van Orde, Livestreams, etc.), and the homepage body runs modular card sections — a livestream hero for the current plenary debate, 'Nieuws uit de Kamer' (News from the Chamber), 'Uitgelicht' (Highlighted), 'Debatten in het kort' (Debates in brief), and 'Wetsvoorstellen' (Bills) — closing with embedded social-media feed cards.",
+      "ui_patterns": [
+        "explicit ARIA skip-links block ('Direct naar inhoud', 'Direct naar hoofdnavigatie') as the first DOM elements",
+        "self-hosted Corpid webfont preloaded with font-display optimization for regular/bold/italic weights",
+        "live-debate modal/hero block linking to real-time plenary session livestreams",
+        "deeply nested multi-level hamburger menu (Debat en vergadering > sub-items) collapsing on mobile",
+        "separate English-language mirror domain (houseofrepresentatives.nl) linked via a dedicated language dropdown rather than a path prefix",
+        "modular homepage card sections each with a uniform 'u-mt-0' utility-class heading pattern",
+        "Drupal-generated hashed/versioned CSS aggregation files (css_<hash>.css?delta=N) for cache busting",
+        "dedicated 'Wetsvoorstellen' (Bills) card module distinct from general news, reflecting legislative-tracking function"
+      ],
+      "language_samples": [
+        {
+          "original": "Debat over de sluiting van twee zorgvilla's van ExpertCare",
+          "english": "Debate on the closure of two ExpertCare care villas",
+          "context": "livestream modal title for a current plenary debate"
+        },
+        {
+          "original": "Nieuws uit de Kamer",
+          "english": "News from the Chamber",
+          "context": "homepage section heading for parliamentary news"
+        },
+        {
+          "original": "Debatten in het kort",
+          "english": "Debates in brief",
+          "context": "homepage section heading summarizing recent plenary debates"
+        },
+        {
+          "original": "Reglement van Orde",
+          "english": "Standing Orders (Rules of Procedure)",
+          "context": "sub-menu link under 'Debat en vergadering'"
+        }
+      ],
+      "css_snippet": "html {\n  --theme-color: #121469;\n}\nbody {\n  font-family: 'Corpid', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  color: #565b5e;\n  background-color: #ffffff;\n}\n.o-header {\n  background-color: #121469;\n}\n.m-menu-main__link {\n  color: #ffffff;\n  font-weight: 600;\n}\n.m-search-bar__input {\n  border: 1px solid #eff3f4;\n  border-radius: 4px;\n}\na {\n  color: #236ba0;\n  text-decoration: underline;\n}\n.m-logo__image {\n  width: 254px;\n  height: 72px;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Rijksoverheid (Central Government / Ministries)",
+      "type": "central-government",
+      "url": "https://www.rijksoverheid.nl",
+      "fonts": [
+        {
+          "family": "RijksSans",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#154273",
+          "role": "primary",
+          "share": 11
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 51
+        },
+        {
+          "hex": "#0F172A",
+          "role": "link"
+        },
+        {
+          "hex": "#01689B",
+          "role": "secondary",
+          "share": 0
+        }
+      ],
+      "layout": "The canonical Rijkshuisstijl (National Government House Style) implementation, rebuilt on Next.js/React (visible via _next/static chunk URLs) but preserving the classic Dutch government visual identity: a centered blue ribbon logo lockup at the very top of the header rendered against the signature dark Rijksoverheid blue (#154273), with the self-hosted RijksSans/RO Sans typeface family loaded for both UI text and a dedicated serif (RO Serif) for editorial long-form content. The homepage opens with a large seasonal hero image block ('Veel bekeken' — Frequently viewed) followed by a dense 'editorial-nav' grid of 13 topic tiles (Belastingen/Taxes, Bouwen en wonen/Housing, Recht veiligheid en defensie/Justice-safety-defense, etc.) each styled as a plain-text card rather than an icon-led tile. Below that sit 'Uitgelicht' (Highlighted) and 'Direct naar' (Direct to) card modules linking to Actueel (Current affairs), Ministeries (Ministries), and Regering (Government), reflecting the site's role as the umbrella portal federating all individual ministry sub-sites.",
+      "ui_patterns": [
+        "centered Rijkshuisstijl blue ribbon/logo lockup fixed at the top of every page (the signature Dutch government header pattern)",
+        "self-hosted RijksSans/RO Sans and RO Serif type families loaded as first-class design-system fonts, not just body text",
+        "flat plain-text topic-tile grid (editorial-nav) with no icons, organized by 13 broad life/policy domains",
+        "federated portal architecture linking out to per-ministry sub-domains under a single unified identity",
+        "seasonal/contextual hero imagery swapped based on time of year (e.g. summer-holiday banner)",
+        "'Direct naar' quick-link card module as a persistent wayfinding shortcut to Actueel/Ministeries/Regering",
+        "Next.js image optimization pipeline (_next/image with responsive srcset) for all editorial imagery",
+        "yellow (#ffb612) reserved strictly as a small accent/highlight color against the dominant blue field, per official Rijkshuisstijl color rules"
+      ],
+      "language_samples": [
+        {
+          "original": "Informatie van de Rijksoverheid",
+          "english": "Information from the Central Government",
+          "context": "page title / site tagline"
+        },
+        {
+          "original": "Veel bekeken",
+          "english": "Frequently viewed",
+          "context": "homepage hero section heading"
+        },
+        {
+          "original": "Recht, veiligheid en defensie",
+          "english": "Justice, security and defense",
+          "context": "one of the 13 topic tiles in the editorial menu grid"
+        },
+        {
+          "original": "Gedeeld slavernijverleden",
+          "english": "Shared history of slavery",
+          "context": "featured 'Direct naar' card headline on the homepage"
+        }
+      ],
+      "css_snippet": ".header-logo {\n  background-color: #154273;\n}\nbody {\n  font-family: RijksSans, 'RO Sans', Calibri, Verdana, Arial, sans-serif;\n  color: #000000;\n  background-color: #ffffff;\n}\nh1, h2, h3 {\n  font-family: 'RO Serif', 'Noto Serif', 'Times New Roman', serif;\n}\na {\n  color: #007bc7;\n  text-decoration: underline;\n}\n.editorial-nav__title {\n  color: #154273;\n  font-weight: 700;\n}\n.hero-block__title {\n  color: #ffffff;\n}\n.accent-highlight {\n  background-color: #ffb612;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Politie (National Police of the Netherlands)",
+      "type": "police",
+      "url": "https://www.politie.nl",
+      "fonts": [
+        {
+          "family": "Politie Text",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 98
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#004682",
+          "role": "primary",
+          "share": 11
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 82
+        },
+        {
+          "hex": "#F0F3F5",
+          "role": "surface",
+          "share": 1
+        },
+        {
+          "hex": "#266295",
+          "role": "secondary",
+          "share": 6
+        }
+      ],
+      "layout": "A modern Nuxt.js (Vue) application using Tailwind CSS utility classes throughout (visible in raw class names like 'text-blue-500', 'group-hover:text-light-blue-500') with a dedicated self-hosted 'Politie Text' brand typeface and custom 'Politie Material Icons' icon font. The homepage opens with a conversational, time-aware greeting hero ('Goedemiddag, waarmee kunnen wij u helpen?' — Good afternoon, how can we help you?) set against the deep police-blue (#004682) background, followed by a row of large service-shortcut tiles (Aangifte of melding doen/File a report, Check je hack, Word politieagent/Become a police officer, Vermiste personen/Missing persons, Skimmen, Demonstraties). Below that a 'Uitgelicht' (Highlighted) news grid surfaces a mix of community-relations and operational-crime stories, and the footer closes with social-media channel links, a service block, and an 'Over deze site' (About this site) section.",
+      "ui_patterns": [
+        "time-of-day-aware conversational greeting hero ('Goedemiddag...') rather than a static institutional headline",
+        "self-hosted brand typeface ('Politie Text') plus a custom icon font ('Politie Material Icons') for full design-system control",
+        "Tailwind CSS utility-class architecture exposed directly in markup (bg-blue-500, text-light-blue-500, etc.)",
+        "large service-shortcut tile row prioritizing citizen self-service actions (file a report, check if you've been hacked) above news",
+        "Matomo self-hosted analytics (not Google Analytics) reflecting Dutch public-sector privacy preferences",
+        "mixed news stream blending community/cultural content (Keti Koti Day recognition) with hard crime-bulletin stories in the same 'Uitgelicht' grid",
+        "'Check je hack' cybersecurity self-service tool promoted as a top-level homepage shortcut alongside traditional policing functions",
+        "purple visited-link state (group-visited:text-purple-500) as a deliberate Tailwind-driven design choice rather than browser default"
+      ],
+      "language_samples": [
+        {
+          "original": "Goedemiddag, waarmee kunnen wij u helpen?",
+          "english": "Good afternoon, how can we help you?",
+          "context": "time-aware hero greeting on the homepage"
+        },
+        {
+          "original": "Aangifte of melding doen",
+          "english": "File a report or report an incident",
+          "context": "primary service-shortcut tile on the homepage"
+        },
+        {
+          "original": "Vijf vrachtwagens vol nep merkkleding onderschept, waarde 1,5 miljoen euro",
+          "english": "Five truckloads of counterfeit branded clothing intercepted, worth 1.5 million euros",
+          "context": "featured news headline in the 'Uitgelicht' section"
+        },
+        {
+          "original": "Verdachte aangehouden na DNA-match in cold case zedenzaak Lisserbroek",
+          "english": "Suspect arrested after DNA match in cold case sex-offense investigation in Lisserbroek",
+          "context": "featured news headline in the 'Uitgelicht' section"
+        }
+      ],
+      "css_snippet": ":root {\n  --blue-500: #004682;\n  --light-blue-500: #0073d6;\n}\nbody {\n  font-family: 'Politie Text', Arial, sans-serif;\n  color: #202020;\n  background-color: #ffffff;\n}\n.hero {\n  background-color: var(--blue-500);\n  color: #ffffff;\n}\n.group-hover\\:text-light-blue-500:hover {\n  color: var(--light-blue-500);\n}\n.group-visited\\:text-purple-500:visited {\n  color: #8b5cf6;\n}\n.accent {\n  background-color: #fdc61e;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

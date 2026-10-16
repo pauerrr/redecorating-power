@@ -1,0 +1,216 @@
+{
+  "country": "Austria",
+  "flag": "🇦🇹",
+  "bodies": [
+    {
+      "name": "Österreichisches Parlament (Austrian Parliament)",
+      "type": "parliament",
+      "url": "https://www.parlament.gv.at",
+      "fonts": [
+        {
+          "family": "Lato",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#132943",
+          "role": "primary",
+          "share": 2
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 45
+        },
+        {
+          "hex": "#F2F2F4",
+          "role": "surface",
+          "share": 17
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        }
+      ],
+      "layout": "The homepage opens with an accessibility-menu link and a slim utility row (full-text search, English language toggle, Mediathek/livestream link, Hilfe, Login, 'Zielgruppe' audience-selector) sitting above a masthead carrying the 'Parlament Österreich' wordmark logo. A first-load cookie-consent panel ('Hinweise zu Cookies') gates the page with granular accept-all / functional-only / settings options, consistent with Austrian federal privacy practice. The hero is a large full-bleed photograph of the Nationalratssaal (plenary chamber) with a modal image-credit overlay, followed by a four-item top-level content nav (Aktuelles, Beteiligen, Erleben, Jahresschwerpunkt). Below that sit modular bands: a News teaser grid, an events/agenda module with tabs for Plenum & Ausschüsse, Führungen, Veranstaltungen & Pressetermine and Besuch von Plenarsitzungen, then a three-card visual teaser row (guided tours 'Besuchen Sie uns', the Nationalfonds Holocaust-remembrance body, and the in-house Parlamentsrestaurant KELSEN) using large photographic imagery reminiscent of the historic Hohes Haus building. A second four-item nav (Verstehen, Recherchieren, Fachinfos, EU & Internationales) precedes a compact Kontakt/footer band with the white parliament crest logo, address (Dr.-Karl-Renner-Ring 3, 1017 Wien), phone and social links. Overall the visual tone leans editorial and civic-educational, mixing institutional dignity (Theophil Hansen-era historicist imagery) with a fairly modern, card-driven CMS layout.",
+      "ui_patterns": [
+        "Accessibility-menu quick link surfaced above the masthead ('Accessibility Menu anzeigen')",
+        "Granular first-load cookie-consent panel (Alle Akzeptieren / Nur funktionale Cookies / Einstellungen)",
+        "'Zielgruppe' (target-audience) selector alongside language toggle in the utility bar",
+        "Modal lightbox image-credit overlays on hero photography (photographer attribution, close button)",
+        "Tabbed agenda/events module (Plenum & Ausschüsse, Führungen, Veranstaltungen & Pressetermine, Besuch von Plenarsitzungen)",
+        "Large photographic three-card teaser row promoting visits, the Nationalfonds, and the in-house restaurant",
+        "Two parallel four-item topic navs bracketing the content (Aktuelles/Beteiligen/Erleben/Jahresschwerpunkt and Verstehen/Recherchieren/Fachinfos/EU & Internationales)",
+        "'News in einfacher Sprache' (plain-language news) link for accessibility/comprehension"
+      ],
+      "language_samples": [
+        {
+          "original": "Startseite des österreichischen Parlaments",
+          "english": "Homepage of the Austrian Parliament",
+          "context": "H1 headline"
+        },
+        {
+          "original": "Die Webseite verwendet Cookies: Zum einen sind sie erforderlich für die Herstellung der Funktionalität.",
+          "english": "The website uses cookies: firstly, they are required to enable functionality.",
+          "context": "cookie-consent banner body text"
+        },
+        {
+          "original": "Erkunden Sie das Hohe Haus bei einer Führung, nehmen Sie an einer Sitzung teil oder entdecken Sie das neue \"Demokratikum - Erlebnis Parlament\".",
+          "english": "Explore the High House on a guided tour, attend a session, or see the new 'Demokratikum - Experience Parliament'.",
+          "context": "visit-us teaser card body"
+        },
+        {
+          "original": "News in einfacher Sprache",
+          "english": "News in plain/simple language",
+          "context": "accessibility-oriented menu link"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Lato\", Arial, sans-serif; color: #000000; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Lato\", Arial, sans-serif; }\na { color: #132943; }\n.site-header, .main-menu { background: #132943; color: #FFFFFF; }\n.footer { background: #132943; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Bundeskanzleramt Österreich (Federal Chancellery of Austria)",
+      "type": "central-government",
+      "url": "https://www.bundeskanzleramt.gv.at",
+      "fonts": [
+        {
+          "family": "Source Sans Pro",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#104166",
+          "role": "primary",
+          "share": 40
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 54
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        },
+        {
+          "hex": "#286F9C",
+          "role": "secondary",
+          "share": 7
+        }
+      ],
+      "layout": "The Bundeskanzleramt homepage opens with skip-links (Zum Inhalt, Zum Hauptmenü, Zur Suche) for accessibility, above a masthead pairing the BKA logo lockup with a horizontal 'Hauptnavigation' (Service, Themen, Bundeskanzleramt, Agenda, Medien) each expanding into dense multi-item flyout sub-menus. A slim secondary row offers the DE/EN language switch and a search toggle. The hero is an auto-playing/pausable slider ('Slider pausieren/fortsetzen') cycling large photographic news items about the Bundeskanzler (Chancellor) and ministers, each slide pairing a portrait/event photo with a bold headline linking to a news article. Below the slider, a slim utility row surfaces Nachrichten, Videos (YouTube), Fotos, Live and a media-transparency-law disclosure link, followed by a 'Servicetelefon' contact band (phone/email) and a dense card grid of topic teasers (Österreich im Gespräch, the Ballhausplatz podcast, Stimmen für den Aufschwung, the government's one-year anniversary campaign, an anti-antisemitism campaign, the Europe state prize, Bürgerservice, and a youth journalism programme). The footer is organized into accordion-style 'Direkt zu' (quick links), Organisation, Geschichte und Wissenswertes, and Globale Services (ID Austria, oesterreich.gv.at, RIS, USP) sections, closing with legal links (Impressum, Datenschutzinformation, Barrierefreiheitserklärung, Kontakt) and social icons. The overall system is red-and-white federal-Austria branding (matching the flag), applied through the shared 'Corporate Design des Bundes' template used across Austrian ministries.",
+      "ui_patterns": [
+        "Keyboard accesskey skip-links exposed at the very top of the DOM (Zum Inhalt [1], Zum Hauptmenü [2], Zur Suche [4])",
+        "Auto-rotating hero slider with explicit pause/resume control for accessibility",
+        "Deep multi-level flyout mega-menu under each top-level Hauptnavigation item",
+        "Accordion-style footer sections ('Inhalt aufklappen') for Direkt zu / Organisation / Geschichte / Globale Services",
+        "Cross-links to shared federal identity platforms (ID Austria, oesterreich.gv.at, RIS, USP) as 'Globale Services'",
+        "Media/press transparency-law disclosure link (MedKF-TG publication requirement) surfaced in main menu",
+        "Dense red/white 'Corporate Design des Bundes' chrome shared across Austrian federal ministry sites",
+        "Servicetelefon contact band with dedicated Bürgerservice phone and email directly on the homepage"
+      ],
+      "language_samples": [
+        {
+          "original": "Bundeskanzler Christian Stocker ist im Sommer in Österreich unterwegs und Sie können ihn treffen. Melden Sie Ihr Interesse für einen Termin an.",
+          "english": "Chancellor Christian Stocker is traveling around Austria this summer and you can meet him. Register your interest in an appointment.",
+          "context": "hero slider caption"
+        },
+        {
+          "original": "Unser Bürgerservice mit dem Ziel, Ihre Fragen und Anliegen zur Arbeit des Bundeskanzleramtes kompetent zu beantworten – kontaktieren Sie uns gerne.",
+          "english": "Our citizen service aims to competently answer your questions and concerns about the work of the Federal Chancellery – feel free to contact us.",
+          "context": "Bürgerservice teaser card"
+        },
+        {
+          "original": "Corporate Design des Bundes",
+          "english": "Corporate design of the federal government",
+          "context": "service menu link"
+        },
+        {
+          "original": "Niemals wieder ist jetzt!",
+          "english": "Never again is now!",
+          "context": "anti-antisemitism campaign teaser headline"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Source Sans Pro\", Arial, sans-serif; color: #000000; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Source Sans Pro\", Arial, sans-serif; }\na { color: #104166; }\n.site-header, .main-menu { background: #104166; color: #FFFFFF; }\n.footer { background: #104166; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Bundeskriminalamt (Austrian Federal Criminal Police Office / BK)",
+      "type": "police",
+      "url": "https://www.bundeskriminalamt.at",
+      "fonts": [
+        {
+          "family": "Helvetica Neue",
+          "usage": "body + headings",
+          "source": "web font / local",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#A22C1C",
+          "role": "primary",
+          "share": 2
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 62
+        },
+        {
+          "hex": "#E9ECEF",
+          "role": "surface",
+          "share": 22
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        }
+      ],
+      "layout": "The Bundeskriminalamt (BK) homepage, built on the same BMI (Bundesministerium für Inneres) CMS template family used across Austrian interior-ministry sites, opens with a social-icon row (Facebook, Instagram, X/Twitter, YouTube, TikTok) and a print/reload utility above a compact DE/EN language toggle. The masthead carries the 'Logo BK Bundeskriminalamt' lockup alongside a quick-access row (Kontakt, Notruf/emergency numbers, Presse, Links) and a dense multi-level menu covering Das BK im Überblick, Prävention & Opferhilfe, Delikte & Ermittlungen, Fahndung & Internationales, Grafiken & Statistiken, and Kontakte & Meldestellen. The hero area is a rotating photo-led news carousel (leadership announcements, international cooperation, cybercrime takedown operations) each tagged with a category label (Allgemeines, Kriminalitätsbekämpfung, Kooperation) and photo credit. Below sit an 'AKTUELLES' dated press-release list (prevention tips like phone-theft awareness and QR-code 'quishing' warnings, international arrest news) and a 'Termine' (events) list for public outreach events. A social-media consent gate ('BMI für mehr Datenschutz') blocks embedded Facebook/Twitter widgets until explicitly activated, reflecting strict federal data-protection practice. The footer includes a partner-logo strip (BMI, Landespolizeidirektionen, GEMEINSAM.SICHER, Europol, Interpol, German BKA) followed by a dense SITEMAP link block mirroring the main nav, and closes with legal links (Impressum, Datenschutz, Barrierefreiheitserklärung). The overall tone is austere, text/list-forward, and authority-driven, using federal blue as the dominant chrome with red reserved for alerts/CTAs, consistent with Austrian law-enforcement branding.",
+      "ui_patterns": [
+        "Click-to-activate social-media embed gate ('BMI für mehr Datenschutz') blocking third-party widgets by default",
+        "Dated press-release list style ('AKTUELLES') with timestamp, category tag, and teaser text rather than glossy cards",
+        "Category-tagged news carousel (Allgemeines / Kriminalitätsbekämpfung / Kooperation / Internationales) with photo credit lines",
+        "Partner/affiliate logo strip in the footer (BMI, Landespolizeidirektionen, GEMEINSAM.SICHER, Europol, Interpol, German BKA)",
+        "Dense SITEMAP footer block mirroring the full primary menu hierarchy",
+        "Quick-access utility row surfacing Notruf (emergency numbers) directly beside Kontakt/Presse/Links",
+        "Public 'Termine' (events/outreach) list module distinct from the press-release feed",
+        "Shared BMI (Interior Ministry) CMS footprint reused across affiliated Austrian police/law-enforcement sub-sites"
+      ],
+      "language_samples": [
+        {
+          "original": "In ganz Österreich werden täglich über 1.000 Straftaten verübt.",
+          "english": "Across Austria, more than 1,000 crimes are committed every day.",
+          "context": "BK image-film hero caption"
+        },
+        {
+          "original": "Mobiltelefone sind beliebte Beute - besonders schlecht verwahrte oder augenscheinlich herumliegende Geräte.",
+          "english": "Mobile phones are popular targets for theft - especially poorly secured or visibly unattended devices.",
+          "context": "prevention news teaser (Smartphone geklaut – was nun?)"
+        },
+        {
+          "original": "Erst wenn Sie einen der folgenden Links aktivieren, wird die Verbindung zu YouTube, Twitter oder Facebook hergestellt.",
+          "english": "The connection to YouTube, Twitter, or Facebook is only established once you activate one of the following links.",
+          "context": "social-media data-protection consent notice"
+        },
+        {
+          "original": "Neue Betrugsmasche: QR-Codes werden von Kriminellen manipuliert und führen auf gefälschte Internetseiten",
+          "english": "New fraud scheme: QR codes are manipulated by criminals and lead to fake websites",
+          "context": "quishing warning news teaser"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Helvetica Neue\", Arial, sans-serif; color: #000000; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Helvetica Neue\", Arial, sans-serif; }\na { color: #A22C1C; }\n.site-header, .main-menu { background: #A22C1C; color: #FFFFFF; }\n.footer { background: #A22C1C; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    }
+  ]
+}

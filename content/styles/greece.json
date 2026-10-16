@@ -1,0 +1,238 @@
+{
+  "country": "Greece",
+  "flag": "🇬🇷",
+  "bodies": [
+    {
+      "name": "Βουλή των Ελλήνων (Hellenic Parliament)",
+      "type": "parliament",
+      "url": "https://www.hellenicparliament.gr",
+      "fonts": [
+        {
+          "family": "Verdana",
+          "usage": "body + headings",
+          "source": "system",
+          "share": 97
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#416890",
+          "role": "primary",
+          "share": 12
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 57
+        },
+        {
+          "hex": "#EEF1F4",
+          "role": "surface",
+          "share": 26
+        },
+        {
+          "hex": "#575757",
+          "role": "text"
+        },
+        {
+          "hex": "#000000",
+          "role": "link"
+        }
+      ],
+      "layout": "A dense, multi-tier institutional homepage: a top utility strip carries language toggles (English/Français/Ελληνικά), contact, sitemap, and 'Open Data' links, above a masthead with the Hellenic Parliament wordmark logo and a search box. A wide horizontal mega-menu ('Η Βουλή', 'Οργάνωση & Λειτουργία', 'Βουλευτές', 'Διοικητική Οργάνωση', 'Διεθνείς Δραστηριότητες', 'Ενημέρωση') sits under a large photographic banner. Below that is a grid of thematic campaign banners (constitutional revision, transparency portal, EU future conference, disability access), followed by a 'ΣΗΜΕΡΑ ΣΤΗ ΒΟΥΛΗ' (Today in Parliament) three-column status board, a legislative-activity table with title/phase columns, and a chronological 'ΝΕΑ ΚΑΙ ΑΝΑΚΟΙΝΩΣΕΙΣ' news river with thumbnail, date-stamp, headline, and summary. The footer stacks webmail/collaboration tool links, legal/accessibility notices, social icons, and WCAG/EU accreditation badges.",
+      "ui_patterns": [
+        "top utility bar with EN/FR/EL language switcher and 'Open Data' link",
+        "horizontal mega-menu with six broad institutional categories and deep sub-menu",
+        "campaign/microsite banner grid linking to spun-off subdomains (diafaneia.hellenicparliament.gr, foundation.parliament.gr)",
+        "legislative-status table pairing bill title with current parliamentary phase (e.g. 'Επεξεργασία στις Επιτροπές')",
+        "date-prefixed news river (DD | MM | YYYY format) mixing hard news with condolence/obituary statements for deceased MPs",
+        "dedicated e-magazine module ('Επί του... περιστυλίου!') embedded as flipbook-style ebook link",
+        "accessibility badge and WCAG1AA conformance seal displayed in the footer",
+        "cookie consent banner with granular 'Ενημέρωση και επιλογή' settings link"
+      ],
+      "language_samples": [
+        {
+          "original": "ΣΗΜΕΡΑ ΣΤΗ ΒΟΥΛΗ",
+          "english": "Today in Parliament",
+          "context": "homepage section header for the daily status board of legislative/committee activity"
+        },
+        {
+          "original": "Νομοθετική Διαδικασία",
+          "english": "Legislative Procedure",
+          "context": "top-level nav link under ΝΟΜΟΘΕΤΙΚΟ ΕΡΓΟ (Legislative Work)"
+        },
+        {
+          "original": "Επεξεργασία στις Επιτροπές",
+          "english": "Under review in Committees",
+          "context": "status label shown next to a bill title in the legislative-activity table"
+        },
+        {
+          "original": "Δήλωση του Προέδρου της Βουλής για την δολοφονική επίθεση κατά στελεχών της ΝΔ",
+          "english": "Statement by the Speaker of Parliament on the murderous attack against New Democracy officials",
+          "context": "top news headline on the homepage news river"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Verdana\", Arial, sans-serif; color: #575757; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Verdana\", Arial, sans-serif; }\na { color: #000000; }\n.site-header, .main-menu { background: #416890; color: #FFFFFF; }\n.footer { background: #416890; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Ελληνική Κυβέρνηση (Government of the Hellenic Republic)",
+      "type": "central-government",
+      "url": "https://www.government.gov.gr",
+      "fonts": [
+        {
+          "family": "Roboto",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#004B8D",
+          "role": "primary",
+          "share": 0
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 85
+        },
+        {
+          "hex": "#E5E5E5",
+          "role": "surface",
+          "share": 14
+        },
+        {
+          "hex": "#767676",
+          "role": "text"
+        },
+        {
+          "hex": "#111111",
+          "role": "link"
+        }
+      ],
+      "layout": "A WordPress/WPBakery-built news portal (visible in the page generator meta tag) for the Greek government's official communications. A slim top bar holds social icons repeated twice (top and footer), while the main header shows the 'ΕΛΛΗΝΙΚΗ ΚΥΒΕΡΝΗΣΗ' wordmark and a compact four-item nav (ΕΠΙΚΑΙΡΟΤΗΤΑ, ΕΡΓΟ, ΠΡΩΘΥΠΟΥΡΓΟΣ linking out to primeminister.gr, ΚΥΒΕΡΝΗΣΗ). The body is a chronological two-column news list of dated press-office bulletins (spokesperson briefings, Council of Ministers announcements), each with a thumbnail, headline, and lede paragraph, mirrored in a narrower 'Υπόλοιπη επικαιρότητα' (Further news) column. A right-hand 'Εκπρόσωπος' (Spokesperson) module duplicates the latest briefings. The footer includes a machine-translation disclaimer, a month/year archive dropdown reaching back to 2015, and legal links.",
+      "ui_patterns": [
+        "dual-column chronological press-bulletin feed (main + 'Υπόλοιπη επικαιρότητα' overflow column)",
+        "dedicated 'Εκπρόσωπος' (Government Spokesperson) sidebar module surfacing daily briefings",
+        "cross-domain nav item linking directly to the separate Prime Minister microsite (primeminister.gr)",
+        "machine-translation disclaimer notice ('Η μετάφραση τελείται με μηχανικό τρόπο και δεν αποτελεί επίσημη εκδοχή')",
+        "long-tail monthly archive dropdown spanning back to September 2015",
+        "'Φόρτωση περισσότερων' (Load more) pagination button instead of numbered pages",
+        "date-stamped headlines in DD/MM/YYYY format prefixing every bulletin",
+        "WPBakery/WordPress page-builder markup exposed via generator meta tag"
+      ],
+      "language_samples": [
+        {
+          "original": "Καλό μεσημέρι και καλή εβδομάδα",
+          "english": "Good afternoon and have a good week",
+          "context": "recurring salutation opening the spokesperson's press briefing bulletins"
+        },
+        {
+          "original": "Συνεδρίασε σήμερα... το Υπουργικό Συμβούλιο",
+          "english": "The Council of Ministers convened today...",
+          "context": "standard opening line of Council of Ministers meeting summaries"
+        },
+        {
+          "original": "Η μετάφραση τελείται με μηχανικό τρόπο και δεν αποτελεί επίσημη εκδοχή",
+          "english": "The translation is performed automatically and does not constitute an official version",
+          "context": "footer disclaimer above the language-switcher archive area"
+        },
+        {
+          "original": "Κύρια θέματα",
+          "english": "Main topics",
+          "context": "section header above the featured/lead news items on the homepage"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: 'Roboto', Arial, sans-serif;\n  color: #222222;\n  background-color: #FFFFFF;\n}\n.main-nav {\n  background-color: #FFFFFF;\n  border-bottom: 2px solid #0D3B66;\n}\n.main-nav a {\n  color: #0D3B66;\n  font-weight: 700;\n  letter-spacing: 0.5px;\n  padding: 12px 16px;\n}\n.news-post {\n  border-bottom: 1px solid #F4F4F4;\n  padding: 16px 0;\n}\n.news-post .date {\n  color: #1E88C7;\n  font-size: 12px;\n  font-weight: 700;\n}\n.spokesperson-widget {\n  background-color: #F4F4F4;\n  padding: 20px;\n  border-left: 3px solid #0D3B66;\n}\n.load-more-btn {\n  background-color: #0D3B66;\n  color: #FFFFFF;\n  padding: 10px 24px;\n  border: none;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Ελληνική Αστυνομία (Hellenic Police)",
+      "type": "police",
+      "url": "https://www.astynomia.gr",
+      "fonts": [
+        {
+          "family": "Roboto",
+          "usage": "headings",
+          "source": "web font / local"
+        },
+        {
+          "family": "Fira Sans",
+          "usage": "body",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#28449A",
+          "role": "primary",
+          "share": 38
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 55
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        },
+        {
+          "hex": "#111111",
+          "role": "link"
+        },
+        {
+          "hex": "#0528D2",
+          "role": "secondary",
+          "share": 6
+        },
+        {
+          "hex": "#0F054C",
+          "role": "accent",
+          "share": 1
+        }
+      ],
+      "layout": "A modern portal for the Ministry of Citizen Protection / Hellenic Police, opening with a top utility bar of social icons and an EL/EN language flag toggle, above a primary nav (Αρχική, Το Υπουργείο, Ελληνική Αστυνομία, Τύπος και Μ.Μ.Ε., Οδηγός του Πολίτη, Άμεση Επικοινωνία) with deep dropdowns for leadership, org charts, and citizen guidance. The hero is a full-bleed autoplaying background video promoting the domestic-violence awareness campaign 'Μαζί σπάμε τη σιωπή'. Below it sits a row of icon-based quick-access tiles (Useful Tips, Recruitment, Traffic, Domestic Violence, Missing Minors, Identity Disclosures/Wanted Notices) leading into a two-track news area combining 'Σημαντικά Δελτία Τύπου' (Important Press Releases) with a continuous regional-bulletin feed and a recruitment-notice carousel. The footer is a dense quick-menu grid of institutional links plus a banner strip of EU/national program funding logos (ESPA, Horizon 2020, CERV).",
+      "ui_patterns": [
+        "full-bleed autoplaying hero video for public-awareness campaigns (domestic violence, safety)",
+        "icon-grid quick-access tiles linking to citizen services (traffic fines, missing persons, recruitment)",
+        "identity-disclosure / wanted-persons notice tile framed as a citizen-guide feature rather than a standalone module",
+        "dual-track news area: curated 'important' releases plus an unfiltered chronological bulletin feed",
+        "deep nav sub-items for 'Θανόντες στο καθήκον Αστυνομικοί' (Officers who died in the line of duty) as a standing institutional honor page",
+        "EU/national funding-program logo banner strip in the footer (ESPA, Horizon 2020, ISF Police, CERV)",
+        "language toggle rendered as flag icons (el.png / en.png) rather than text labels",
+        "dedicated in-house magazine cross-link ('Αστυνομική Ανασκόπηση' / Police Review)"
+      ],
+      "language_samples": [
+        {
+          "original": "Μαζί σπάμε τη σιωπή",
+          "english": "Together we break the silence",
+          "context": "hero video campaign title promoting domestic-violence reporting"
+        },
+        {
+          "original": "13 πόλεις, ένα μέτωπο κατά της ενδοοικογενειακής βίας",
+          "english": "13 cities, one front against domestic violence",
+          "context": "hero campaign subtitle beneath the video banner"
+        },
+        {
+          "original": "Δημοσιοποιήσεις Στοιχείων Ταυτότητας",
+          "english": "Public Disclosure of Identity Details",
+          "context": "quick-access tile label for wanted-persons/appeal-for-help notices"
+        },
+        {
+          "original": "Ροή Δελτίων Τύπου - Ανακοινώσεων",
+          "english": "Press Release / Announcements Feed",
+          "context": "homepage section header above the chronological bulletin list"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Fira Sans\", Arial, sans-serif; color: #000000; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Roboto\", Arial, sans-serif; }\na { color: #111111; }\n.site-header, .main-menu { background: #28449A; color: #FFFFFF; }\n.footer { background: #28449A; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "country": "Spain",
+  "flag": "🇪🇸",
+  "bodies": [
+    {
+      "name": "Congreso de los Diputados (Spanish Congress of Deputies)",
+      "type": "parliament",
+      "url": "https://www.congreso.es",
+      "fonts": [
+        {
+          "family": "Crimson Text",
+          "usage": "headings",
+          "source": "web font / local"
+        },
+        {
+          "family": "Roboto",
+          "usage": "body",
+          "source": "web font / local",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#0D357B",
+          "role": "primary",
+          "share": 19
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 57
+        },
+        {
+          "hex": "#E6E6E6",
+          "role": "surface",
+          "share": 2
+        },
+        {
+          "hex": "#5E5E5E",
+          "role": "text"
+        },
+        {
+          "hex": "#F1D136",
+          "role": "secondary",
+          "share": 5
+        },
+        {
+          "hex": "#333333",
+          "role": "dark band",
+          "share": 2
+        }
+      ],
+      "layout": "The header carries the Congreso de los Diputados wordmark logo plus a language selector (Castellano/Català/Euskara/Galego) and a prominent search box icon. Below it sits a mega-menu top nav with five sections — 'Actividad Parlamentaria', 'Organización de la Cámara', 'La Institución', 'Información y Publicaciones', 'Sala de Prensa' — each expanding into multi-column dropdown lists of sub-links. The homepage hero is an image carousel ('Imágenes del Día') cycling institutional photos, followed by a row of icon-tile shortcuts ('Hoy en el Congreso', 'Diputadas y Diputados', 'Iniciativas Parlamentarias', 'Visita virtual') and a Presidenta spotlight card. Lower sections use a dense grid of card modules: 'Destacados', 'Notas de prensa' (press releases list), and footer utility links for 'Transparencia', 'Igualdad', 'Datos abiertos', ending in a legalistic footer with the physical address (Plaza de las Cortes, núm. 1 - 28014 MADRID).",
+      "ui_patterns": [
+        "Cookie consent banner citing specific legal article (Ley 34/2002, art. 22.2) with granular accept options ('Aceptar seleccionadas' / 'Aceptar todas' / 'Más información')",
+        "Mega-menu dropdown menu with 4-5 nested columns per top-level item",
+        "Multilingual co-official language selector (Castellano, Català, Euskara, Galego) in header",
+        "Homepage image carousel driving to an institutional blog ('Fuera de Agenda')",
+        "Named official portrait card for the sitting Presidenta linking to a bio page",
+        "Numbered/dated press release list format ('Notas de prensa') with full-sentence institutional headlines",
+        "Persistent footer utility bar: Contacto, Sugerencias, Accesibilidad, Mapa Web, Preguntas Frecuentes, Aviso legal, Protección de datos, Política de Cookies",
+        "Open data / transparency portal shortcuts surfaced as dedicated homepage tiles ('Transparencia', 'Datos abiertos', 'Igualdad')"
+      ],
+      "language_samples": [
+        {
+          "original": "Esta web utiliza cookies de terceros y propias para optimizar el servicio, no recaba ni cede datos de carácter personal de los usuarios sin su conocimiento.",
+          "english": "This website uses third-party and first-party cookies to optimize the service; it does not collect or transfer personal data of users without their knowledge.",
+          "context": "Cookie consent banner"
+        },
+        {
+          "original": "Conforme a lo dispuesto en el artículo 22.2 de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, pedimos su permiso para obtener datos estadísticos de su navegación por el sitio web",
+          "english": "In accordance with Article 22.2 of Law 34/2002 of July 11 on information society services and electronic commerce, we ask your permission to obtain statistical data on your browsing of the website",
+          "context": "Cookie consent legal disclaimer"
+        },
+        {
+          "original": "El Congreso convalida un decreto-ley sobre ayudas al transporte público para jóvenes y deroga otro para autorizar operaciones de crédito extraordinarias al sector público institucional estatal",
+          "english": "Congress ratifies a decree-law on public transport aid for young people and repeals another authorizing extraordinary credit operations for the state institutional public sector",
+          "context": "Press release headline (Notas de prensa)"
+        },
+        {
+          "original": "Saltar al contenido",
+          "english": "Skip to content",
+          "context": "Accessibility skip-link at top of page"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Roboto\", Arial, sans-serif; color: #5E5E5E; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Crimson Text\", Arial, sans-serif; }\na { color: #0D357B; }\n.site-header, .main-menu { background: #0D357B; color: #FFFFFF; }\n.footer { background: #0D357B; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "La Moncloa - Gobierno de España (Spanish Government / Prime Minister's Office)",
+      "type": "central-government",
+      "url": "https://www.lamoncloa.gob.es",
+      "fonts": [
+        {
+          "family": "OpenSans-Bold",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "OpenSans-Regular",
+          "usage": "body",
+          "source": "web font",
+          "share": 53
+        },
+        {
+          "family": "OpenSans-SemiBold",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 9
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#1A3850",
+          "role": "primary",
+          "share": 3
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 83
+        },
+        {
+          "hex": "#F5F5F5",
+          "role": "surface",
+          "share": 13
+        },
+        {
+          "hex": "#1D1D1B",
+          "role": "text"
+        }
+      ],
+      "layout": "The theme is internally named 'RYellow' (visible in asset paths like /Theme/RYellow/img/logo-header.svg), pairing a red/gold institutional skin with the state coat of arms motif. Header includes a sticky logo, a co-official language switcher (Castellano/Català/Galego/Euskara/Valencià/English), a search icon, and a dark-mode toggle. Primary nav has six top items — Presidente, Gobierno, Consejo de Ministros, Prensa, España, Info DANA — each opening a flyout with sub-items and one-line descriptions. The hero is a large single-story lead card followed by a horizontal 'Actividad del presidente' rail of photo-cards, a 'Consejo de Ministros' summary block, and a live 'Hoy en la agenda del Gobierno' timetable listing ministers' appointments by hour. Below that are dense card grids: 'Te puede interesar', 'Noticias de los ministerios' (one card per ministry), 'Destacados' banner tiles, and 'Sitios de interés' linking out to BOE, Punto de acceso general, and Portal de la Transparencia.",
+      "ui_patterns": [
+        "Named theme folder in asset URLs signaling an institutional color scheme (Theme/RYellow)",
+        "Dark-mode toggle icon in the persistent header",
+        "Live hourly 'Agenda' ticker listing named ministers, their exact title, and verb-first activity descriptions",
+        "Per-ministry news module pattern — one photo, one headline, one 'Ver más' link, repeated for every ministerial department",
+        "Outbound tiles to sibling official domains (boe.es, transparencia.gob.es, administracion.gob.es) styled as homepage banners",
+        "Newsletter subscription block with its own banner illustration",
+        "Cookie banner offering only binary Aceptar/Rechazar (Accept/Reject), simpler than Congreso's granular version",
+        "Escudo de España (state coat of arms) reused as a generic placeholder image across unrelated news banners"
+      ],
+      "language_samples": [
+        {
+          "original": "Página web oficial del Presidente del Gobierno y el Consejo de Ministros.",
+          "english": "Official website of the President of the Government and the Council of Ministers.",
+          "context": "Meta description / site tagline"
+        },
+        {
+          "original": "Este sitio web utiliza cookies propias y de terceros para mantener la sesión, ofrecerle una mejor experiencia de usuario y obtener datos estadísticos de navegación de los usuarios.",
+          "english": "This website uses first-party and third-party cookies to maintain the session, offer you a better user experience, and obtain user browsing statistics.",
+          "context": "Cookie consent banner"
+        },
+        {
+          "original": "El paro baja en 28.739 personas en junio y deja el total por debajo de los 2,3 millones por primera vez desde enero de 2008",
+          "english": "Unemployment falls by 28,739 people in June, bringing the total below 2.3 million for the first time since January 2008",
+          "context": "Ministry news headline (Trabajo y Economía Social)"
+        },
+        {
+          "original": "Vamos a seguir gobernando para que quienes más lo necesitan tengan el apoyo de su Gobierno",
+          "english": "We will keep governing so that those who need it most have the support of their Government",
+          "context": "Quoted statement from the President in an activity headline"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"OpenSans-Regular\", Arial, sans-serif; color: #1D1D1B; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"OpenSans-Bold\", Arial, sans-serif; }\na { color: #1A3850; }\n.site-header, .main-menu { background: #1A3850; color: #FFFFFF; }\n.footer { background: #1A3850; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Policía Nacional - Dirección General de la Policía (National Police - Directorate-General of Police)",
+      "type": "police",
+      "url": "https://www.policia.es",
+      "fonts": [
+        {
+          "family": "Roboto Condensed",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 78
+        },
+        {
+          "family": "Roboto",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 13
+        },
+        {
+          "family": "roboto Condensed",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 10
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#001538",
+          "role": "primary",
+          "share": 16
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 70
+        },
+        {
+          "hex": "#E9ECEF",
+          "role": "surface",
+          "share": 4
+        },
+        {
+          "hex": "#212529",
+          "role": "text"
+        },
+        {
+          "hex": "#B7B7B7",
+          "role": "link"
+        },
+        {
+          "hex": "#002056",
+          "role": "secondary",
+          "share": 6
+        },
+        {
+          "hex": "#003399",
+          "role": "accent",
+          "share": 2
+        },
+        {
+          "hex": "#002B73",
+          "role": "accent",
+          "share": 0
+        }
+      ],
+      "layout": "Header stacks the Policía Nacional badge/shield logo above the full institutional lockup 'Gobierno de España. Ministerio del Interior. Policía Nacional', signaling the strict ministry-hierarchy branding common to security bodies. Utility icons for 'Dependencias' (station locator), 'Buscar' (search), and 'Contacta' sit top-right, plus external quick links to 'DNI electrónico' and 'Cita previa DNI y pasaporte'. Primary nav is a flat single-row bar: Denuncias, Colabora, Comunicación, Tu Policía, Extranjería, Fondos Europeos, Sede electrónica. The homepage hero is a 'Destacados' image-card carousel followed by an 'Es Noticia' dated headline list and a topical shortcut rail ('Consejos al ciudadano', 'Familia y mujer', 'Trata de seres humanos', 'Más buscados', 'Personas desaparecidas', 'Portal del aspirante'). Footer is organized into four labeled columns (Tus trámites, Colabora, Comunicación, Tu policía) plus legal links and social icons.",
+      "ui_patterns": [
+        "Dual-logo header pattern: police badge graphic stacked above the full Gobierno de España/Ministerio del Interior institutional lockup",
+        "Simple technical-cookies-only banner ('únicamente utiliza cookies propias con finalidad técnica')",
+        "Emergency/public-safety alert strip above the fold styled like a persistent announcement bar",
+        "Direct outbound links to sibling e-government micro-sites (dnielectronico.es, citapreviadnie.es, sede.policia.gob.es) styled as first-class nav items rather than footer links",
+        "Dated press-release list format (DD/MM/YY) under 'Es Noticia' using terse crime-bulletin headlines",
+        "Topic shortcut menu specifically for vulnerable-population services (Familia y mujer, Trata de seres humanos, Personas desaparecidas)",
+        "Four-column categorized footer sitemap (Tus trámites / Colabora / Comunicación / Tu policía) mirroring top-nav taxonomy",
+        "Accessibility shortcut link ('Ver accesibilidad') placed immediately after the skip-to-content link, ahead of any branding"
+      ],
+      "language_samples": [
+        {
+          "original": "Este portal web únicamente utiliza cookies propias con finalidad técnica, no recaba ni cede datos de carácter personal de los usuarios sin su conocimiento.",
+          "english": "This web portal uses only its own cookies for technical purposes; it does not collect or transfer users' personal data without their knowledge.",
+          "context": "Cookie consent banner"
+        },
+        {
+          "original": "Sólo llame al 091 si es una emergencia. Si no es una emergencia, use nuestros servicios en línea.",
+          "english": "Only call 091 if it is an emergency. If it is not an emergency, use our online services.",
+          "context": "Public safety alert banner"
+        },
+        {
+          "original": "La Policía Nacional desarticula en Almería la mayor plataforma de distribución ilícita online de manga en español",
+          "english": "The National Police dismantles in Almería the largest illegal online Spanish-language manga distribution platform",
+          "context": "News headline (Es Noticia)"
+        },
+        {
+          "original": "Información sobre cita previa para DNI y Pasaporte, trámites de extranjería, denuncias, procesos selectivos y consejos de seguridad ciudadana.",
+          "english": "Information on appointments for ID card and Passport, immigration procedures, filing complaints, recruitment processes, and public safety advice.",
+          "context": "Meta description / site purpose statement"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Roboto Condensed\", Arial, sans-serif; color: #212529; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Roboto Condensed\", Arial, sans-serif; }\na { color: #B7B7B7; }\n.site-header, .main-menu { background: #001538; color: #FFFFFF; }\n.footer { background: #001538; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "country": "Portugal",
+  "flag": "🇵🇹",
+  "bodies": [
+    {
+      "name": "Assembleia da República (Portuguese Parliament)",
+      "type": "parliament",
+      "url": "https://www.parlamento.pt",
+      "fonts": [
+        {
+          "family": "Segoe UI Light",
+          "usage": "headings",
+          "source": "web font / local"
+        },
+        {
+          "family": "Roboto",
+          "usage": "body",
+          "source": "web font",
+          "share": 69
+        },
+        {
+          "family": "sans-serif",
+          "usage": "secondary",
+          "source": "system",
+          "share": 13
+        },
+        {
+          "family": "Segoe UI",
+          "usage": "secondary",
+          "source": "system",
+          "share": 13
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#00828A",
+          "role": "primary",
+          "share": 99
+        },
+        {
+          "hex": "#444444",
+          "role": "text"
+        },
+        {
+          "hex": "#0072C6",
+          "role": "link"
+        },
+        {
+          "hex": "#C55A11",
+          "role": "secondary",
+          "share": 1
+        },
+        {
+          "hex": "#92D050",
+          "role": "accent",
+          "share": 1
+        }
+      ],
+      "layout": "Legacy ASP.NET/SharePoint institutional portal: a thin accessibility/skip-nav utility bar sits above a language switcher (English, Français, Versão áudio) and Contactos link, followed by a header with the AR crest logo and a mega-menu style main nav (Parlamento, Deputados, Atividade parlamentar, Comissões, UE e Internacional) that expands into nested Bootstrap-style accordions. Below the header is a large rotating image carousel promoting prizes, exhibitions and events, followed by three small square promo tiles (Consulta pública, Cidadania e participação, Comunicação). A DESTAQUES (Highlights) section lists dated announcement links, and the page ends in a tabbed live-agenda dashboard widget with tabs for TRABALHOS DO DIA, VOTAÇÕES, INICIATIVAS ENTRADAS and EM APRECIAÇÃO PÚBLICA.",
+      "ui_patterns": [
+        "Accessibility skip-menu note announcing keyboard shortcuts before any visual content",
+        "Nested multi-level Bootstrap accordion mega-menu for parliamentary sub-sections",
+        "Dated 'DESTAQUES' (highlights) carousel mixing prizes, hearings, ceremonies and consultations as undifferentiated announcement tiles",
+        "Tabbed 'live business' dashboard (TRABALHOS DO DIA / VOTAÇÕES / INICIATIVAS ENTRADAS / EM APRECIAÇÃO PÚBLICA) styled like a legislative status board",
+        "Per-committee microsites addressed by legislature-and-committee-code URL paths (e.g. /sites/com/XVIILeg/1CACDLG)",
+        "ASP.NET WebForms postback control naming exposed in the DOM",
+        "Archive/arquivo pattern for superseding 'current' content with a historical listing link",
+        "Trilingual utility bar (PT/English/Français) plus an 'audio version' accessibility toggle"
+      ],
+      "language_samples": [
+        {
+          "original": "Bem-vindo à página oficial da Assembleia da República",
+          "english": "Welcome to the official page of the Assembly of the Republic",
+          "context": "main page heading"
+        },
+        {
+          "original": "Nesta página encontra 2 elementos auxiliares de navegação: motor de busca (tecla de atalho 1) | Saltar para o conteúdo (tecla de atalho 2)",
+          "english": "On this page you will find 2 auxiliary menu elements: search engine (shortcut key 1) | Skip to content (shortcut key 2)",
+          "context": "accessibility skip-menu note at top of page"
+        },
+        {
+          "original": "Prémio Direitos Humanos 2026 | Prazo para candidaturas | até 31 de julho",
+          "english": "Human Rights Prize 2026 | Application deadline | until 31 July",
+          "context": "homepage highlights (DESTAQUES) carousel banner"
+        },
+        {
+          "original": "Executar a pesquisa",
+          "english": "Run the search",
+          "context": "tooltip on search submit button"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Roboto\", Arial, sans-serif; color: #444444; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Segoe UI Light\", Arial, sans-serif; }\na { color: #0072C6; }\n.site-header, .main-menu { background: #00828A; color: #FFFFFF; }\n.footer { background: #00828A; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Governo de Portugal / XXV Governo Constitucional (Portuguese Government / PM Office)",
+      "type": "central-government",
+      "url": "https://www.portugal.gov.pt",
+      "fonts": [
+        {
+          "family": "Portuguesa Sans",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 85
+        },
+        {
+          "family": "Portuguesa Serif",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 15
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#0D447C",
+          "role": "primary",
+          "share": 14
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 45
+        },
+        {
+          "hex": "#F2F2F2",
+          "role": "surface",
+          "share": 8
+        },
+        {
+          "hex": "#2B363C",
+          "role": "text"
+        },
+        {
+          "hex": "#034AD8",
+          "role": "secondary",
+          "share": 0
+        },
+        {
+          "hex": "#0C244B",
+          "role": "accent",
+          "share": 0
+        },
+        {
+          "hex": "#000000",
+          "role": "dark band",
+          "share": 7
+        }
+      ],
+      "layout": "Modern Next.js-rendered portal (assets served from /_next/) themed as the 'XXV Governo Constitucional' site. The header carries the Government of Portugal wordmark/logo linking to the 25th Constitutional Government hub, beneath which sits a full-width rotating banner carousel of current news/alerts (e.g. heat-wave alert, national mourning notice, PRR presentation, armed forces reinforcement). A 'Nas Redes Sociais' (On Social Media) section embeds an Instagram post and a link to Council of Ministers communiqués/briefings. A 'Programas' section highlights flagship initiatives like the Orçamento do Estado (State Budget). The footer-adjacent 'Serviços do Estado' section links out to the unified citizen services portal (gov.pt), health service (SNS), tax authority (Finanças), social security and justice portals, and the page closes with PRR/NextGenerationEU/República Portuguesa co-branding logos.",
+      "ui_patterns": [
+        "Full-bleed rotating alert/news carousel immediately below the masthead used for both routine news and emergency civil-protection alerts (heat-wave, national mourning)",
+        "'Nas Redes Sociais' embedded social-media proof-of-activity module (Instagram post preview)",
+        "'Serviços do Estado' cross-portal link grid federating out to independently-branded sibling government domains (gov.pt, sns.gov.pt, portaldasfinancas.gov.pt, seg-social.pt, justica.gov.pt)",
+        "EU funding co-branding footer strip (PRR, República Portuguesa, NextGenerationEU logos shown together)",
+        "Constitutional-government versioning baked into the URL/branding (gc25 = 25th Constitutional Government) so the whole site identity resets each government term",
+        "'Comunicados e Briefings do Conselho de Ministros' as a persistent sidebar promo linking to Council of Ministers press output",
+        "Next.js image proxy pattern (/_next/image?url=...) wrapping all editorial imagery served from a headless CMS backend"
+      ],
+      "language_samples": [
+        {
+          "original": "Governo decreta situação de alerta em Portugal devido às altas temperaturas",
+          "english": "Government declares alert situation in Portugal due to high temperatures",
+          "context": "homepage carousel banner headline"
+        },
+        {
+          "original": "Governo decreta um dia de luto nacional pelas vítimas dos sismos na Venezuela",
+          "english": "Government decrees a day of national mourning for the victims of the earthquakes in Venezuela",
+          "context": "homepage carousel banner headline"
+        },
+        {
+          "original": "Onda de calor: Governo reforça prevenção e mobiliza municípios para proteger populações",
+          "english": "Heat wave: Government reinforces prevention and mobilizes municipalities to protect populations",
+          "context": "homepage carousel banner headline"
+        },
+        {
+          "original": "Saltar para o conteúdo principal",
+          "english": "Skip to main content",
+          "context": "accessibility skip-link at top of page"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Portuguesa Sans\", Arial, sans-serif; color: #2B363C; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Portuguesa Sans\", Arial, sans-serif; }\na { color: #0D447C; }\n.site-header, .main-menu { background: #0D447C; color: #FFFFFF; }\n.footer { background: #0D447C; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Procuradoria-Geral da República / Ministério Público (Public Prosecution Service) - used as replacement for Polícia Judiciária (pj.pt), which returned no content after two attempts",
+      "type": "police",
+      "url": "https://www.ministeriopublico.pt",
+      "fonts": [
+        {
+          "family": "Roboto",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 55
+        },
+        {
+          "family": "Roboto Slab",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 45
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#C92123",
+          "role": "primary",
+          "share": 1
+        },
+        {
+          "hex": "#F6F6F6",
+          "role": "background",
+          "share": 37
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "surface",
+          "share": 31
+        },
+        {
+          "hex": "#2D2D2D",
+          "role": "text"
+        },
+        {
+          "hex": "#373737",
+          "role": "dark band",
+          "share": 21
+        }
+      ],
+      "layout": "Drupal 10 institutional portal (theme: javali_theme) for the Procuradoria-Geral da República / Ministério Público. Header holds the PGR/MP logo, a search field, and a PT/English/Español language switcher, above a deep multi-level dropdown mega-menu (Ministério Público, Procuradoria-Geral da República, MP no país, O que fazemos, Cidadão, Legislação Documentação) that fans out into órgãos, magistrados and per-district/comarca sub-pages. The body opens with an institutional mission paragraph, then two parallel news rails — 'Notícias - Atividade do MP' and 'Últimas - MP no País' — listing dated press items with 'Saber mais' read-more links, followed by a quick-action strip (Corrupção/denúncia, Apostila services) and an 'Agenda da Procuradoria-Geral da República' block. The footer is a structured link grid (Imprensa, Legislação, Informação, Mais sobre nós) plus a physical address/contact card and closes with Área Reservada, Acessibilidade, Política de Privacidade and Mapa do Site legal links.",
+      "ui_patterns": [
+        "Institutional mission-statement paragraph placed directly on the homepage above the news feed",
+        "Dual parallel news rails distinguishing central-office news from nationwide/district-office news ('Notícias - Atividade do MP' vs 'Últimas - MP no País')",
+        "Anonymous corruption-reporting call-to-action tile ('Corrupção — Faça a sua denúncia aqui') placed as a first-class homepage widget, not buried in menu",
+        "District/comarca structure exposed as an enormous flat list of regional sub-domain links (comarca-braga.ministeriopublico.pt, comarca-faro.ministeriopublico.pt, etc.)",
+        "Numbered 'Boletim Informativo n.º X/2026' bulletin format used repeatedly for governance-body meeting minutes",
+        "'Operação [Codename]' press-release naming convention for law-enforcement actions (e.g. Operação Eclipse, Operação Jet Lag)",
+        "Consistent four-item legal/meta footer bar: Área Reservada, Acessibilidade, Política de Privacidade, Mapa do Site",
+        "Developer credit line in the footer attributing the Drupal build to an external agency"
+      ],
+      "language_samples": [
+        {
+          "original": "O Ministério Público (MP) é um órgão constitucional com competência para exercer a ação penal, participar na execução da política criminal definida pelos órgãos de soberania, representar o Estado e defender a legalidade democrática.",
+          "english": "The Public Prosecution Service (MP) is a constitutional body with competence to exercise criminal prosecution, participate in the execution of the criminal policy defined by the sovereign bodies, represent the State and defend democratic legality.",
+          "context": "homepage institutional mission statement"
+        },
+        {
+          "original": "Corrupção. Fraude à Segurança Social. Falsificação de Documento. Burla Qualificada. Buscas.",
+          "english": "Corruption. Social Security fraud. Document forgery. Aggravated fraud. Searches.",
+          "context": "DIAP Lisboa press-release headline in the 'MP no País' news rail"
+        },
+        {
+          "original": "Passar para o conteúdo principal",
+          "english": "Skip to main content",
+          "context": "accessibility skip-link at top of page"
+        },
+        {
+          "original": "Corrupção Faça a sua denúncia aqui",
+          "english": "Corruption — File your complaint here",
+          "context": "homepage quick-action call-to-action tile linking to the SIMP/DCIAP complaints portal"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Roboto\", Arial, sans-serif; color: #2D2D2D; background: #F6F6F6; }\nh1, h2, h3 { font-family: \"Roboto\", Arial, sans-serif; }\na { color: #C92123; }\n.site-header, .main-menu { background: #C92123; color: #FFFFFF; }\n.footer { background: #C92123; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    }
+  ]
+}

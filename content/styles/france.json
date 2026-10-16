@@ -1,0 +1,240 @@
+{
+  "country": "France",
+  "flag": "🇫🇷",
+  "bodies": [
+    {
+      "name": "Assemblée nationale (French National Assembly)",
+      "type": "parliament",
+      "url": "https://www.assemblee-nationale.fr",
+      "fonts": [
+        {
+          "family": "Lato-Light",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "Lato-Regular",
+          "usage": "body",
+          "source": "web font",
+          "share": 73
+        },
+        {
+          "family": "Lato-Bold",
+          "usage": "secondary",
+          "source": "web font",
+          "share": 12
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#206BA7",
+          "role": "primary",
+          "share": 7
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 67
+        },
+        {
+          "hex": "#D1D2D4",
+          "role": "surface",
+          "share": 9
+        },
+        {
+          "hex": "#233F6B",
+          "role": "text"
+        },
+        {
+          "hex": "#000000",
+          "role": "link"
+        }
+      ],
+      "layout": "The homepage opens with a dark utility bar (language switcher, search, account login) above a mega-menu menu bar covering 'Vos députés', 'Travaux parlementaires', 'Connaître l'Assemblée' and 'Découvrir les lieux'. Below that sits a rotating news carousel of committee hearings and plenary session updates, dated and tagged by category (Commissions, Séance publique, Présidence). A large embedded video/livestream module ('L'Assemblée en vidéo') follows, then a two-column block pairing 'La Présidence' with an interactive députés search map of France. Further down are dense grids of legislative-document shortcuts (textes adoptés, rapports, pétitions) and a dark-red-accented footer with legal mentions, RSS feeds and cookie management links.",
+      "ui_patterns": [
+        "Mega-dropdown menu with icon-labeled top-level categories",
+        "Dated news/agenda cards tagged by parliamentary body (Commissions, Séance publique)",
+        "Embedded live video/hemicycle streaming module",
+        "Interactive clickable SVG maps for finding elected representatives by region",
+        "Dense sitemap-style footer with legal/accessibility/RSS/cookie links",
+        "Newsletter subscription block with GDPR data-usage notice",
+        "Legislature-numbered URL routing (e.g. /dyn/17/...) reflecting the current session",
+        "Utility bar for account login/registration separate from main nav"
+      ],
+      "language_samples": [
+        {
+          "original": "Les députés, le vote de la loi, le Parlement français",
+          "english": "The deputies, the vote on the law, the French Parliament",
+          "context": "homepage meta title/tagline"
+        },
+        {
+          "original": "L'Assemblée nationale se situe au cœur de notre démocratie.",
+          "english": "The National Assembly sits at the heart of our democracy.",
+          "context": "'Découvrir l'Assemblée nationale' introductory paragraph"
+        },
+        {
+          "original": "Mentions légales",
+          "english": "Legal notice",
+          "context": "footer legal link"
+        },
+        {
+          "original": "Votre adresse de messagerie est uniquement utilisée pour vous envoyer les lettres de l'Assemblée nationale.",
+          "english": "Your email address is used only to send you the National Assembly's newsletters.",
+          "context": "newsletter sign-up data-privacy disclaimer"
+        }
+      ],
+      "css_snippet": "body{font-family:Arial,Helvetica,sans-serif;color:#15181e;background-color:#f8f8f8}\n.an-header{background-color:#233f6b}\na{color:#3f75af;text-decoration:none}\na:hover{border-bottom:2px solid var(--color-primary)}\n#an-actualite-agenda{background-color:var(--color-fadered);display:flex}\n.block-text{font-family:Lato-Medium,Arial,sans-serif;font-size:1.2em}\n.btn-primary{background-color:#af2227;color:#fff;border-radius:2px;padding:.5rem 1rem}\n#an-grid-actualite{display:grid;grid-template-columns:repeat(4,25%);grid-gap:2rem 0}\nfooter{background-color:#15181e;color:#d1d2d4;font-size:.85rem}\n.skip-link{position:absolute;left:-9999px}\n.skip-link:focus{position:static}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Gouvernement français / info.gouv.fr — Site officiel du Gouvernement (French Government official site)",
+      "type": "central-government",
+      "url": "https://www.info.gouv.fr",
+      "fonts": [
+        {
+          "family": "Marianne",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 98
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#000091",
+          "role": "primary",
+          "share": 0
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 84
+        },
+        {
+          "hex": "#F6F6F6",
+          "role": "surface",
+          "share": 4
+        },
+        {
+          "hex": "#3A3A3A",
+          "role": "text"
+        },
+        {
+          "hex": "#21242D",
+          "role": "link"
+        },
+        {
+          "hex": "#8735C9",
+          "role": "secondary",
+          "share": 0
+        }
+      ],
+      "layout": "Note: exact CSS could not be retrieved (site returns 403 to non-browser requests), so layout is based on the rendered page content and known DSFR conventions. The homepage (gouvernement.fr redirects to info.gouv.fr) opens with a slim header bar offering 'Espace presse' and a display-theme toggle (light/dark/system), sitting above a search overlay and simple top menu. A large 'À la Une' (Headlines) section presents 5-6 news story cards in a grid with photo, category tag, and headline. This is followed by a horizontal-scrolling video reel ('À regarder'), a themed campaign banner (e.g. anti-narcotrafic campaign) with its own sub-cards, an editorial picks section ('Le choix de la rédaction'), and a 'Grands dossiers' section presenting major cross-government policy programs as large image tiles. The footer closes with a two-column 'Gouvernement et institutions' block linking to the Prime Minister's office and government composition pages.",
+      "ui_patterns": [
+        "Light/dark/system theme picker exposed directly in the header",
+        "Full-page search overlay triggered from a magnifying-glass icon",
+        "News headline grid ('À la Une') mixing photo cards and category tags",
+        "Government dossier/campaign banners promoting flagship policy initiatives",
+        "Newsletter opt-in modules embedded mid-page ('Point Gouv.')",
+        "Browser push-notification opt-in prompt for site updates",
+        "DSFR-style Marianne-crest usage implied via 'République Française' masthead branding",
+        "Institutional footer segmented into 'Le Premier ministre' and 'À propos du Gouvernement' link columns"
+      ],
+      "language_samples": [
+        {
+          "original": "Retrouvez toute l'actualité sur l'action du Gouvernement, les résultats des politiques publiques, et les services essentiels à tous les citoyens.",
+          "english": "Find all the news on the Government's action, public policy results, and essential services for all citizens.",
+          "context": "homepage meta description"
+        },
+        {
+          "original": "République Française — Liberté, Égalité, Fraternité",
+          "english": "French Republic — Liberty, Equality, Fraternity",
+          "context": "standard DSFR masthead/header block used across gouv.fr sites (inferred from DSFR conventions, not directly captured in fetch)"
+        },
+        {
+          "original": "Consulter le traitement des données personnelles",
+          "english": "View how personal data is processed",
+          "context": "cookie/notifications consent panel"
+        },
+        {
+          "original": "Sauf mention contraire, les contenus de ce site sont proposés sous licence etalab-2.0.",
+          "english": "Unless otherwise stated, the content of this site is provided under the etalab-2.0 open licence.",
+          "context": "standard footer licensing notice used across gouv.fr family sites (inferred from sibling site police-nationale.interieur.gouv.fr, which displays this exact line)"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Marianne\", Arial, sans-serif; color: #3A3A3A; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Marianne\", Arial, sans-serif; }\na { color: #21242D; }\n.site-header, .main-menu { background: #000091; color: #FFFFFF; }\n.footer { background: #000091; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Police nationale — Ministère de l'Intérieur (French National Police)",
+      "type": "police",
+      "url": "https://www.police-nationale.interieur.gouv.fr",
+      "fonts": [
+        {
+          "family": "Marianne",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#000091",
+          "role": "primary",
+          "share": 0
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 75
+        },
+        {
+          "hex": "#F6F6F6",
+          "role": "surface",
+          "share": 5
+        },
+        {
+          "hex": "#3A3A3A",
+          "role": "text"
+        }
+      ],
+      "layout": "Note: raw CSS was blocked (Cloudflare returns 403 to non-browser clients), so styling detail is estimated from confirmed DSFR class names seen in the rendered HTML (e.g. image style path 'styles/dsfr_16_9') plus known DSFR tokens. The homepage is built on Drupal 11 with the DSFR template: a top identity bar reads 'Ministère de l'Intérieur — Liberté, Égalité, Fraternité' linking back to the homepage, above a search toggle and a 'police.tv' utility link. A three-item primary nav ('Vos démarches', 'Nous découvrir', 'Vous informer', 'Nous rejoindre') expands into dropdown submenus. The hero section shows the Police nationale crest/logo, a bold H1 welcome headline, and three CTA buttons (online procedures, cadet recruitment, join the force). Below that is a vertical feed of dated news/dossier cards (recruitment campaigns, the G7 Évian summit security operation, in-memoriam tributes) each with a 16:9 photo, topical tags, and publication date. The footer lists social-media icons, cross-links to sibling gouv.fr sites (legifrance, data.gouv.fr, service-public.gouv.fr), and standard legal/accessibility/cookie links plus an Etalab open-licence notice.",
+      "ui_patterns": [
+        "DSFR identity bar with 'Liberté, Égalité, Fraternité' motto linking to home",
+        "Dropdown mega-nav split into démarches / découvrir / informer / rejoindre sections",
+        "Prominent recruitment CTA buttons ('Rejoindre la police nationale') on the hero",
+        "Dated news/dossier cards tagged with topic keywords (recrutement, hommage, sécurité publique)",
+        "16:9 DSFR-standard image aspect ratio class (dsfr_16_9) applied to all content thumbnails",
+        "Cross-institutional footer linking to sibling gouv.fr portals (legifrance, data.gouv.fr)",
+        "Light/dark/system display-theme toggle in header",
+        "Etalab open-licence (etalab-2.0) attribution notice in footer"
+      ],
+      "language_samples": [
+        {
+          "original": "Ministère de l'Intérieur — Liberté, Égalité, Fraternité",
+          "english": "Ministry of the Interior — Liberty, Equality, Fraternity",
+          "context": "header identity bar / masthead"
+        },
+        {
+          "original": "La police nationale à votre service",
+          "english": "The National Police at your service",
+          "context": "homepage hero subheading"
+        },
+        {
+          "original": "Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous licence etalab-2.0.",
+          "english": "Unless explicitly stated that intellectual property is held by third parties, the content of this site is provided under the etalab-2.0 licence.",
+          "context": "footer licensing/legal notice"
+        },
+        {
+          "original": "Accessibilité : partiellement conforme",
+          "english": "Accessibility: partially compliant",
+          "context": "footer accessibility statement link"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Marianne\", Arial, sans-serif; color: #3A3A3A; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Marianne\", Arial, sans-serif; }\na { color: #000091; }\n.site-header, .main-menu { background: #000091; color: #FFFFFF; }\n.footer { background: #000091; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    }
+  ]
+}

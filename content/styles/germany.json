@@ -1,0 +1,226 @@
+{
+  "country": "Germany",
+  "flag": "🇩🇪",
+  "bodies": [
+    {
+      "name": "Deutscher Bundestag (German Parliament / Federal Diet)",
+      "type": "parliament",
+      "url": "https://www.bundestag.de",
+      "fonts": [
+        {
+          "family": "Noto Serif",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "Noto Sans Display",
+          "usage": "body",
+          "source": "web font",
+          "share": 68
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#FFE300",
+          "role": "primary",
+          "share": 1
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 54
+        },
+        {
+          "hex": "#F6F6F6",
+          "role": "surface",
+          "share": 42
+        },
+        {
+          "hex": "#191919",
+          "role": "text"
+        },
+        {
+          "hex": "#8CD000",
+          "role": "secondary",
+          "share": 1
+        },
+        {
+          "hex": "#E70097",
+          "role": "accent",
+          "share": 0
+        }
+      ],
+      "layout": "The homepage opens with a dense utility bar (language switcher with flags/scripts for Arabic, Bulgarian, Chinese etc., accessibility and search links) above a masthead carrying the Bundestag name and the stylized Bundesadler (federal eagle) crest. Below the sticky main menu (a long horizontal mega-menu covering Bundestag, Abgeordnete, Ausschüsse, Parlamentsfernsehen, Dokumente, Besuche, Presse) sits a large editorial teaser grid mixing plenary-session photography with an orange (#ff7100) call-to-action accent used sparingly against a mostly black-and-white photographic palette. The page is organized into modular horizontal 'bt-module-row' bands: livestream/agenda widgets, a scrolling news teaser carousel, committee-meeting listings, and a multi-column footer with sitemap-style link clusters. Typography is a mix of a humanist sans (Noto Sans Display) for UI chrome and a serif (Noto Serif) for longer editorial headlines, reinforcing a print-derived parliamentary-gazette feel. Overall density is high, favoring information scent and deep-linking over visual whitespace.",
+      "ui_patterns": [
+        "Multi-language top utility bar with script-native language labels (Arabic, Bulgarian, Chinese, etc.)",
+        "Mega-menu style primary menu with nested sub-flyouts per committee/topic",
+        "Sticky masthead with federal eagle (Bundesadler) crest lockup",
+        "Modular 'bt-module-row' content bands (agenda, livestream, news, committee sessions)",
+        "Session/plenary calendar widget with date-picker ('Bitte Tag auswählen')",
+        "Accreditation and accessibility (Barrierefreiheit) links surfaced in primary chrome",
+        "Dense footer sitemap with categorized link columns (Datenschutz, Bibliothek, Datenhandbuch)",
+        "Orange (#ff7100) single-accent color used only for interactive/CTA elements against a black/white photo grid"
+      ],
+      "language_samples": [
+        {
+          "original": "Deutscher Bundestag - Startseite",
+          "english": "German Bundestag - Home page",
+          "context": "browser tab title"
+        },
+        {
+          "original": "Informationen über das Parlament und die Abgeordneten, Tagesordnungen, Livestreams und Service-Angebote",
+          "english": "Information about the parliament and its members, agendas, livestreams and service offerings",
+          "context": "meta description"
+        },
+        {
+          "original": "Bitte Tag auswählen",
+          "english": "Please select a day",
+          "context": "plenary calendar widget placeholder"
+        },
+        {
+          "original": "Barrierefreier Besuch",
+          "english": "Accessible visit",
+          "context": "visitor services menu link"
+        }
+      ],
+      "css_snippet": "body{font-family:\"Noto Sans Display\",Arial,Helv,Helvetica,Verdana,sans-serif;color:#191919;background:#fff}\n.bt-header{background:#fff;border-bottom:1px solid #e6e6e6}\n.bt-main-nav a{color:#191919;text-decoration:none;font-weight:600}\n.bt-main-nav a:hover,.bt-main-nav a:focus{color:#ff7100}\n.bt-teaser-headline{font-family:\"Noto Serif\",Georgia,\"Times New Roman\",Times,serif;font-weight:700}\n.bt-btn-primary{background-color:#ff7100;color:#fff;border:none;padding:.6rem 1.2rem}\n.bt-btn-primary:hover{background-color:#e6660a}\n.bt-module-row{background:#f6f6f6;padding:2rem 0}\n.bt-footer{background:#191919;color:#f6f6f6}\n.bt-footer a{color:#e6e6e6}\n.bt-alert-danger{color:#a94442;background-color:#f2dede}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Die Bundesregierung / Presse- und Informationsamt der Bundesregierung (Federal Government / Federal Press Office)",
+      "type": "central-government",
+      "url": "https://www.bundesregierung.de",
+      "fonts": [
+        {
+          "family": "BundesSansWeb",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 100
+        },
+        {
+          "hex": "#111314",
+          "role": "text"
+        }
+      ],
+      "layout": "The site (served from the /breg-de path after redirect) opens with a slim top bar offering language toggles (English, French) and a search icon, above a masthead that pairs the 'Die Bundesregierung' wordmark with federal blue accenting. The 'Hauptnavigation' is a horizontal bar with dropdown mega-menus for Aktuelles, Themen, Bundeskanzler, Bundesregierung, Service, each opening large flyout panels with editorial sub-teasers. The hero area below is a large photographic feature (often of the Chancellor or a cabinet event) paired with a bold BundesSerifWeb headline, followed by a card-based teaser grid summarizing news, videos, and policy explainers rendered with the corporate blue (#0071ad/#004b76) as the dominant chrome color and red/green/gold used sparingly as topic-tag accents. A persistent cookie-consent overlay ('Hinweis zum Datenschutz') appears on first load, and the footer is organized into dense multi-column link clusters (Impressum, Datenschutz, Barrierefreiheit, Sitemap) consistent with federal accessibility (BITV) requirements. The visual system uses the official 'Corporate Design der Bundesregierung' typefaces BundesSansWeb and BundesSerifWeb throughout.",
+      "ui_patterns": [
+        "First-load cookie/consent modal referencing 'Hinweis zum Datenschutz' with granular accept/reject toggles",
+        "Mega-menu 'Hauptnavigation' with large flyout panels per top-level topic",
+        "Federal-blue (#004b76/#0071ad) dominant corporate color system with topic-color tagging (red/green/gold)",
+        "Hero photographic module featuring the Bundeskanzler or cabinet events with serif headline overlay",
+        "Language-switcher exposing English/French versions ('Open page in English', 'Lien vers version française')",
+        "Card/teaser grid layout for Aktuelles (news) with category-colored tag pills",
+        "Rich-text CMS utility classes (cm-richtext) exposing full inline font/color pickers, indicating a heavily templated CMS backend",
+        "Dense footer sitemap segmented into legal/service link columns (Impressum, Barrierefreiheit, Datenschutz)"
+      ],
+      "language_samples": [
+        {
+          "original": "Hinweis zum Datenschutz",
+          "english": "Notice on data protection",
+          "context": "cookie-consent banner heading"
+        },
+        {
+          "original": "Wir verwenden Cookies, um Ihnen die optimale Nutzung unserer Webseite zu ermöglichen.",
+          "english": "We use cookies to enable you to make optimal use of our website.",
+          "context": "cookie-consent banner body text"
+        },
+        {
+          "original": "Einige Cookies sind notwendig, um Ihnen die grundlegenden Funktionen dieser Webseite bereitzustellen und können daher nicht deaktiviert werden.",
+          "english": "Some cookies are necessary to provide you with the basic functions of this website and therefore cannot be disabled.",
+          "context": "cookie-consent banner legal detail"
+        },
+        {
+          "original": "Zur Datenschutzerklärung",
+          "english": "To the privacy policy",
+          "context": "cookie banner link"
+        }
+      ],
+      "css_snippet": "body{font-family:BundesSansWeb,Calibri,Verdana,Arial,Helvetica,sans-serif;color:#111314;background:#fff}\nh1,h2,h3{font-family:\"BundesSerifWeb\",Cambria,Georgia,\"Times New Roman\",serif}\n.header-main{background:#fff;border-bottom:3px solid #004b76}\n.main-nav a{color:#111314;font-family:\"Fira Sans\",Arial,Helvetica,sans-serif}\n.main-nav a:hover{color:#0071ad}\n.btn-primary{background-color:#0071ad;color:#fff;border-radius:2px;padding:.5rem 1.25rem}\n.btn-primary:hover{background-color:#004b76}\n.teaser-card{background:#eeeff1;border-left:4px solid #0071ad}\n.tag--rot{background-color:#c0003c;color:#fff}\n.tag--gruen{background-color:#00854a;color:#fff}\n.cookie-banner{background:#111314;color:#fff}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Bundeskriminalamt (Federal Criminal Police Office / BKA)",
+      "type": "police",
+      "url": "https://www.bka.de",
+      "fonts": [
+        {
+          "family": "bundesserifweb",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "bundessansweb",
+          "usage": "body",
+          "source": "web font",
+          "share": 98
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#0055A5",
+          "role": "primary",
+          "share": 19
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 58
+        },
+        {
+          "hex": "#EEEFF0",
+          "role": "surface",
+          "share": 23
+        },
+        {
+          "hex": "#133C75",
+          "role": "text"
+        }
+      ],
+      "layout": "Built on the 'Government Site Builder' CMS (a framework shared across several German federal agencies), the BKA homepage opens with a compact utility row (English toggle, sitemap 'Inhalt' link, search) above a masthead carrying the BKA wordmark and federal-blue banding. The 'Hauptmenü' is a sober horizontal menu (Über das BKA, Aufgaben, Kriminalität, Presse, Karriere) with no imagery in the menu itself, reflecting a restrained law-enforcement tone. The hero zone is dominated by an urgent 'Fahndungen' (wanted/most-wanted) module inviting public tips, styled with a red/orange alert accent (#eb5802) against the otherwise blue-and-grey palette. Below that, 'Aktuelle Meldungen' (current press releases) and 'Aktuelle Publikationen' (current publications, e.g. the Bundeslagebild Cybercrime report) are presented as plain text-forward list modules rather than glossy photo cards, and a 'Karriere' (careers) band promotes recruitment. The footer is minimal and legally-oriented (Impressum, Datenschutz, Barrierefreiheitserklärung), and the overall visual density is low-ornamentation, high-authority, favoring accessible/BITV-conformant markup over decorative styling.",
+      "ui_patterns": [
+        "Public 'Fahndungen' (wanted-persons) module with call-to-action styled in an urgent orange/red accent",
+        "Government Site Builder CMS footprint (shared modular CSS files: normalize/small/medium/large/xlarge breakpoints)",
+        "Sober text-first 'Aktuelle Meldungen' press-release list with minimal imagery",
+        "'Blätterfunktion' (browse/paging) control for cycling through news items",
+        "Strict BITV/accessibility-statement conformance footer link",
+        "Careers ('Arbeiten beim BKA') promoted as a persistent homepage band",
+        "Two-tone federal-blue (#0055a5 / #133c75) chrome with grey neutral surfaces, no decorative gradients",
+        "Aural-only headings (class=\"aural\") for screen-reader section landmarks, indicating strict accessibility compliance"
+      ],
+      "language_samples": [
+        {
+          "original": "Fahndungen - wir bitten um Ihre Mithilfe",
+          "english": "Wanted notices - we ask for your assistance",
+          "context": "homepage hero module heading"
+        },
+        {
+          "original": "Bundeslagebild Cybercrime 2025",
+          "english": "Federal situation report: Cybercrime 2025",
+          "context": "featured publication headline"
+        },
+        {
+          "original": "Arbeiten beim BKA",
+          "english": "Working at the BKA",
+          "context": "careers menu link"
+        },
+        {
+          "original": "Einblicke in unsere Arbeit",
+          "english": "Insights into our work",
+          "context": "homepage section heading"
+        }
+      ],
+      "css_snippet": "body{font-family:\"bundessansweb\",\"Droid Sans\",Arial,\"Helvetica Neue\",Helvetica,sans-serif;color:#333;background:#fff}\nh1,h2,h3{font-family:\"bundesserifweb\",Georgia,\"Droid Serif\",\"Times New Roman\",serif}\n.header{background:#fff;border-bottom:2px solid #0055a5}\n.hauptmenu a{color:#333;text-decoration:none}\n.hauptmenu a:hover{color:#0055a5}\n.fahndung-teaser{background:#eeeff0;border-left:4px solid #eb5802}\n.fahndung-teaser .btn{background:#eb5802;color:#fff;padding:.5rem 1rem}\n.meldung-liste li{border-bottom:1px solid #cdcdcd;padding:.75rem 0}\n.footer{background:#133c75;color:#fff;font-size:.85rem}\n.aural{position:absolute;left:-9999px}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

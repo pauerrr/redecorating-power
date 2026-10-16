@@ -1,0 +1,281 @@
+{
+  "country": "Bulgaria",
+  "flag": "🇧🇬",
+  "bodies": [
+    {
+      "name": "Народно събрание (National Assembly of Bulgaria)",
+      "type": "parliament",
+      "url": "https://www.parliament.bg",
+      "fonts": [
+        {
+          "family": "-apple-system",
+          "usage": "headings",
+          "source": "system"
+        },
+        {
+          "family": "Nunito",
+          "usage": "body",
+          "source": "web font",
+          "share": 99
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#142954",
+          "role": "primary",
+          "share": 5
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 76
+        },
+        {
+          "hex": "#212529",
+          "role": "text"
+        },
+        {
+          "hex": "#607393",
+          "role": "link"
+        },
+        {
+          "hex": "#339AFF",
+          "role": "secondary",
+          "share": 0
+        },
+        {
+          "hex": "#38C172",
+          "role": "accent",
+          "share": 0
+        },
+        {
+          "hex": "#000000",
+          "role": "dark band",
+          "share": 13
+        }
+      ],
+      "layout": "A modern single-page application built on Vue.js (evidenced by the `<v-header>`, `<v-footer>`, and `<router-view>` custom elements in the served markup), meaning all substantive content — news, bill text, session agendas — is rendered client-side after JavaScript execution rather than present in the initial HTML response. The static shell reveals a `v-header-top` utility bar and `v-header` main menu wrapping a router outlet, styled through a UIkit-based design system (uikit.min.css) layered with a custom app.css theme using a dark navy-and-sky-blue institutional palette. RSS feed alternates in the document head (news, bills, laws, decisions, plenary schedule) indicate the underlying content model mirrors a traditional legislative tracking site even though the presentation layer is a modern SPA.",
+      "ui_patterns": [
+        "Vue.js single-page app shell with router-view content injection (no server-rendered article text)",
+        "UIkit component framework as the base design system, overlaid with custom theming",
+        "extensive RSS/Atom feed alternates exposed in <head> for news, bills, laws, decisions, and plenary agenda",
+        "F5 BIG-IP anti-bot / performance cookie script embedded directly in page markup (f5_cspm)",
+        "RTL stylesheet variant (uikit-rtl.min.css) loaded defensively alongside the LTR default",
+        "hashed/versioned asset URLs (app.css?id=..., app.js?id=...) for cache-busting on each deploy",
+        "separate manifest/vendor/app JS bundle split typical of a Webpack-built Vue application",
+        "SEO meta tags (robots, googlebot, revisit-after) suggesting active indexing concerns despite JS-rendered content"
+      ],
+      "language_samples": [
+        {
+          "original": "Народно събрание",
+          "english": "National Assembly",
+          "context": "institution name in the page title and header branding"
+        },
+        {
+          "original": "Последни законопроекти от Народно събрание",
+          "english": "Latest bills from the National Assembly",
+          "context": "RSS feed title for the bill-tracking feed"
+        },
+        {
+          "original": "Програма за работата на Народното събрание",
+          "english": "Work program of the National Assembly",
+          "context": "RSS feed title for the plenary session schedule"
+        },
+        {
+          "original": "Последни решения от Народно събрание",
+          "english": "Latest decisions from the National Assembly",
+          "context": "RSS feed title for adopted parliamentary decisions"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Nunito\", Arial, sans-serif; color: #212529; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"-apple-system\", Arial, sans-serif; }\na { color: #607393; }\n.site-header, .main-menu { background: #142954; color: #FFFFFF; }\n.footer { background: #142954; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Министерски съвет (Council of Ministers / PM Office)",
+      "type": "central-government",
+      "url": "https://www.gov.bg",
+      "fonts": [
+        {
+          "family": "SSP-Semibold",
+          "usage": "headings",
+          "source": "web font / local"
+        },
+        {
+          "family": "Calibri-Regular",
+          "usage": "body",
+          "source": "web font",
+          "share": 62
+        },
+        {
+          "family": "SSP-Regular",
+          "usage": "secondary",
+          "source": "web font / local",
+          "share": 12
+        },
+        {
+          "family": "sans-serif",
+          "usage": "secondary",
+          "source": "system",
+          "share": 6
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#2E345F",
+          "role": "primary",
+          "share": 3
+        },
+        {
+          "hex": "#EFEFEF",
+          "role": "background",
+          "share": 67
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "surface",
+          "share": 8
+        },
+        {
+          "hex": "#333333",
+          "role": "text"
+        },
+        {
+          "hex": "#222222",
+          "role": "link"
+        },
+        {
+          "hex": "#0159A1",
+          "role": "secondary",
+          "share": 0
+        },
+        {
+          "hex": "#434343",
+          "role": "dark band",
+          "share": 17
+        }
+      ],
+      "layout": "A Bootstrap-based server-rendered site with a fixed-position header bar carrying a Ukraine-solidarity banner, a centered 'Министерски съвет Република България' wordmark logo, and an EU-co-funding badge stacked above a dark-navy horizontal nav bar (Правителство, Пресцентър, Администрация, Антикорупция) that expands into full-width flyout panels on hover. Below a full-bleed LightSlider hero carousel of the current news lead, a 'Новини' (News) section splits into an asymmetric two-thirds/one-third grid of image-led story cards with publication dates and short descriptions. A parallax background section follows with two centered call-to-action buttons ('Заседания на МС' / 'Система за правна информация'), and the footer is a dense four-column block of contact details, office addresses, and an OECD partnership logo.",
+      "ui_patterns": [
+        "dedicated top-level 'Антикорупция' (Anti-corruption) nav item with a 24-hour hotline and email for reporting abuse of power",
+        "Ukraine-solidarity banner ('BGforUkraine') and euro-adoption campaign banner ('evroto.bg') both pinned in the header",
+        "EU co-funding disclosure badge (Съфинансирано от Европейския съюз) embedded directly in the header chrome",
+        "LightSlider jQuery carousel for the homepage hero news item",
+        "parallax scroll section housing two centered pill-shaped CTA buttons",
+        "asymmetric 2/3 + 1/3 news-card grid rather than uniform equal-width cards",
+        "accessibility shortcut link 'За намалено зрение' (For reduced vision) in the footer utility column",
+        "government session communique archive (Заседания и решения на МС) as a persistent nav sub-item"
+      ],
+      "language_samples": [
+        {
+          "original": "Министерски съвет Република България",
+          "english": "Council of Ministers of the Republic of Bulgaria",
+          "context": "header wordmark / institutional title"
+        },
+        {
+          "original": "Подаване на сигнали за нарушения, злоупотреба с власт, корупционни прояви и конфликт на интереси",
+          "english": "Submitting reports of violations, abuse of power, corrupt practices, and conflict of interest",
+          "context": "anti-corruption nav sub-item"
+        },
+        {
+          "original": "Румен Радев: От днес в Министерския съвет работят денонощен горещ телефон и имейл за сигнали за злоупотреба с власт, корупция и конфликт на интереси",
+          "english": "Rumen Radev: As of today, a 24-hour hotline and email are operating at the Council of Ministers for reports of abuse of power, corruption, and conflict of interest",
+          "context": "front-page news headline"
+        },
+        {
+          "original": "Заседания на МС",
+          "english": "Council of Ministers sessions",
+          "context": "call-to-action button label on the homepage parallax section"
+        }
+      ],
+      "css_snippet": "header {\n  height: 189px;\n}\n.header-wrapper {\n  left: 0;\n  top: 0;\n  width: 100%;\n  position: fixed;\n  z-index: 1030;\n}\nheader .navigation {\n  font-family: 'SSP-Regular';\n  font-weight: 600;\n  background-color: #2e345f;\n  text-transform: uppercase;\n}\nheader .navigation .menu li > a {\n  color: #ffffff;\n  padding: 22px 0;\n}\n.btn.purple {\n  background-color: #41385a;\n  color: #ffffff;\n  border-radius: 3px;\n}\n.top-news h3 {\n  font-family: Calibri-Bold, sans-serif;\n  color: #222222;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Министерство на вътрешните работи (Ministry of Interior / National Police)",
+      "type": "police",
+      "url": "https://www.mvr.bg",
+      "fonts": [
+        {
+          "family": "Gilam",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#04375E",
+          "role": "primary",
+          "share": 14
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 50
+        },
+        {
+          "hex": "#F2F2F4",
+          "role": "surface",
+          "share": 28
+        },
+        {
+          "hex": "#1C2831",
+          "role": "text"
+        },
+        {
+          "hex": "#4A6484",
+          "role": "secondary",
+          "share": 1
+        },
+        {
+          "hex": "#FF0000",
+          "role": "accent",
+          "share": 0
+        },
+        {
+          "hex": "#3A3A3A",
+          "role": "dark band",
+          "share": 0
+        }
+      ],
+      "layout": "A modern Bootstrap 5 site with a deep-navy fixed header holding a slim utility strip (e-Services, government.bg, sitemap, contacts) above a centered ribbon-style logo lockup reading 'Република България / Министерство на вътрешните работи' in the self-hosted Gilam typeface, echoing the Rijkshuisstijl-style centered crest convention seen across EU institutional sites. The main nav is a hamburger-collapsible mega-menu with deeply nested multi-level flyouts (Министерството → За министерството → Ръководство/Министър/Главен секретар, etc.) reflecting the ministry's large organizational hierarchy. The homepage body splits into a two-column widget layout: a left 'Пресцентър' (Press office) news list mixing major operational stories (drug raids, cigarette factory busts) with routine traffic-police bulletins, and a right sidebar of administrative-service widgets (e-services portal, document validity lookup, appointment booking) plus quick-link cards to Traffic Police and MVR recruitment.",
+      "ui_patterns": [
+        "deeply nested multi-level flyout mega-menu (4+ levels deep) reflecting complex ministry org chart",
+        "centered ribbon-style institutional logo lockup with stacked country/ministry name text",
+        "mixed news stream blending major crime-bulletin headlines with routine daily border-crossing traffic reports",
+        "dedicated administrative self-service widget cluster (document validity checks, appointment scheduling, fine payment lookup)",
+        "accessibility stylesheet loaded as a separate dedicated file (accessibility.css) rather than inline toggle",
+        "leaflet.js interactive map library pre-loaded, likely for station/checkpoint locators",
+        "e-Services portal linked externally (e-uslugi.mvr.bg) rather than integrated into the main domain",
+        "traffic/border-crossing wait-time bulletins published on a near-daily cadence as first-class news items"
+      ],
+      "language_samples": [
+        {
+          "original": "Министерство на вътрешните работи",
+          "english": "Ministry of Interior",
+          "context": "site title and header institutional name"
+        },
+        {
+          "original": "ГДБОП разкри фабрика за цигари в гр. Мизия",
+          "english": "GDCOC uncovered a cigarette factory in the city of Mizia",
+          "context": "press-office news headline about the organized-crime directorate"
+        },
+        {
+          "original": "Трафикът на българските гранични контролно-пропускателни пунктове на 2 юли 2026 г.",
+          "english": "Traffic at Bulgarian border checkpoints on July 2, 2026",
+          "context": "recurring daily border-traffic bulletin headline"
+        },
+        {
+          "original": "Междинни резултати от специализираната полицейска операция за спазване Закона за движение по пътищата",
+          "english": "Interim results of the specialized police operation for compliance with the Road Traffic Act",
+          "context": "recurring traffic-enforcement operation update"
+        }
+      ],
+      "css_snippet": "header .navigation {\n  font-size: 15px;\n  font-family: 'SSP-Regular';\n  font-weight: 600;\n  background-color: #2e345f;\n  text-transform: uppercase;\n}\nbody {\n  font-family: 'Gilam', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n}\n.branding {\n  background-color: #04375e;\n}\n.rbg-logo__name span {\n  color: #ffffff;\n}\n.main-nav__link {\n  color: #1c2831;\n}\n.list-title {\n  color: #0e6b9d;\n  font-weight: 600;\n}\n.widget-title {\n  background-color: #f2f2f4;\n  color: #032946;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

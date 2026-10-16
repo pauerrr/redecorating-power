@@ -1,0 +1,212 @@
+{
+  "country": "Hungary",
+  "flag": "🇭🇺",
+  "bodies": [
+    {
+      "name": "Országgyűlés (National Assembly of Hungary)",
+      "type": "parliament",
+      "url": "https://www.parlament.hu",
+      "fonts": [
+        {
+          "family": "Georgia",
+          "usage": "body + headings",
+          "source": "system",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#CDAC8B",
+          "role": "primary",
+          "share": 1
+        },
+        {
+          "hex": "#083852",
+          "role": "text"
+        },
+        {
+          "hex": "#B2804C",
+          "role": "secondary",
+          "share": 0
+        }
+      ],
+      "layout": "A traditional, text-dense institutional homepage organized into stacked content blocks rather than a modern grid. The top holds a masthead with the Parliament name/crest, followed by an 'Aktuális' (Current/Latest) hero-style news item with a photo and long-form caption text. Below that runs a 'Hírek, események' (News, events) river of thumbnail-plus-headline-plus-summary items, each quite text-heavy in the traditional Hungarian institutional style. Further down are dedicated sections for 'Törvényalkotás' (Legislation) with sub-links to legislative process flowcharts, adopted laws, and house rules, plus a session calendar and a live-stream link. A sidebar/footer area promotes the 'Virtuális Országház' (Virtual Parliament House) tour and the Országház Könyvkiadó (House Publishing) book catalog.",
+      "ui_patterns": [
+        "dense chronological news river with thumbnail + headline + long summary",
+        "legislative process flowchart link (Törvényalkotási folyamátra)",
+        "live stream ('Élő közvetítés') embed link for plenary sessions",
+        "PDF/document download blocks for laws, statutes, and session agendas",
+        "commemorative/obituary announcements for deceased MPs treated as official news",
+        "virtual tour / 3D building display module (Virtuális Országház)",
+        "thematic search tool for legislative archives (Tematikus kereső)",
+        "institutional publishing house storefront embedded in the homepage"
+      ],
+      "language_samples": [
+        {
+          "original": "Törvényalkotás",
+          "english": "Legislation / Law-making",
+          "context": "main homepage section header linking to legislative process pages"
+        },
+        {
+          "original": "Sarkalatos törvények",
+          "english": "Cardinal laws",
+          "context": "link under the Legislation section referencing Hungary's constitutionally entrenched laws"
+        },
+        {
+          "original": "Az Országgyűlés 2022. évi október - november havi ülesterve",
+          "english": "The National Assembly's October-November 2022 session schedule",
+          "context": "news-style headline announcing the sitting calendar"
+        },
+        {
+          "original": "Élő közvetítés",
+          "english": "Live broadcast",
+          "context": "label on the link to the live video stream of plenary sessions"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Georgia\", Arial, sans-serif; color: #083852; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Georgia\", Arial, sans-serif; }\na { color: #CDAC8B; }\n.site-header, .main-menu { background: #CDAC8B; color: #FFFFFF; }\n.footer { background: #CDAC8B; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured",
+      "note": "parlament.hu answered every capture attempt with a CAPTCHA page. The screenshot and the measured tokens come from that CAPTCHA page, which carries the parliament's own crest, colours and type. Open the original to see the full site."
+    },
+    {
+      "name": "Magyarország Kormánya (Government of Hungary)",
+      "type": "central-government",
+      "url": "https://kormany.hu",
+      "fonts": [
+        {
+          "family": "fieldwork",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#0050A0",
+          "role": "primary",
+          "share": 0
+        },
+        {
+          "hex": "#EDF0F4",
+          "role": "background",
+          "share": 1
+        },
+        {
+          "hex": "#3A404A",
+          "role": "link"
+        }
+      ],
+      "layout": "A modern card-based news portal built on kormany.hu's redesigned template (redirects from www.kormany.hu to kormany.hu). The header holds the 'Magyarország Kormánya' logo plus a slim main nav with only three top items (Hírek, Kormányzat, Dokumentumtár) and a persistent 'EN' language-switch link to abouthungary.hu. Below a rotating 'Kiemelt tartalmak' (featured content) bar sits a large hero news card, followed by a three-item 'Kiemelt hírek' (featured news) grid, then a 'Kiemelt témák' (featured topics) module and an embedded YouTube video carousel. The page ends with a 'Legfrissebb hírek' (latest news) list, a newsletter sign-up block, and a dense footer of legal/contact links plus social icons.",
+      "ui_patterns": [
+        "rotating featured-content ticker bar at the very top of the page",
+        "card-grid of featured news with date-stamped headlines (formatted as 2026. 07. 01.)",
+        "embedded official YouTube video carousel of press briefings",
+        "newsletter subscription call-to-action ('Iratkozzon fel a kormány hírlevélére!')",
+        "PDF download link for privacy/data-handling policy (Adatkezelési tájékoztató)",
+        "persistent EN language-switcher pointing to a separate international domain (abouthungary.hu)",
+        "archived-site link in the footer (Archív kormany.hu 2020-2025)",
+        "dense legal footer: Impresszum, Közérdekű adatok, Nemzeti Jogszabálytár, Nyilvántartások"
+      ],
+      "language_samples": [
+        {
+          "original": "Iratkozzon fel a kormány hírlevélére!",
+          "english": "Subscribe to the government newsletter!",
+          "context": "newsletter call-to-action block on the homepage"
+        },
+        {
+          "original": "Megkezdődött a közérdekű vagyonkezelő alapítványok átalakítása",
+          "english": "The transformation of public interest asset management foundations has begun",
+          "context": "top featured news headline on the homepage"
+        },
+        {
+          "original": "Adátkezelési tájékoztató",
+          "english": "Data handling / privacy notice",
+          "context": "footer link to the site's PDF privacy policy document"
+        },
+        {
+          "original": "Kiemelt hírek",
+          "english": "Featured news",
+          "context": "section header above the main news card grid"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: 'Roboto', Arial, sans-serif;\n  color: #1A1A1A;\n  background-color: #FFFFFF;\n}\n.main-nav {\n  background-color: #FFFFFF;\n  border-bottom: 1px solid #E0E0E0;\n}\n.main-nav a {\n  color: #1A1A1A;\n  font-weight: 500;\n  padding: 14px 18px;\n}\n.featured-ticker {\n  background-color: #CE1126;\n  color: #FFFFFF;\n  font-size: 13px;\n}\n.news-card {\n  background-color: #F5F5F5;\n  border-radius: 4px;\n  overflow: hidden;\n}\n.news-card .date {\n  color: #1B3D6D;\n  font-size: 12px;\n  font-weight: 700;\n}\n.newsletter-cta {\n  background-color: #1B3D6D;\n  color: #FFFFFF;\n  padding: 32px;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Rendőrség (National Police of Hungary / Országos Rendőr-főkapitányság)",
+      "type": "police",
+      "url": "https://www.police.hu",
+      "fonts": [
+        {
+          "family": "Palatino Linotype",
+          "usage": "body + headings",
+          "source": "web font / local",
+          "share": 100
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#0B2D6C",
+          "role": "primary",
+          "share": 1
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 94
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        },
+        {
+          "hex": "#001D47",
+          "role": "secondary",
+          "share": 0
+        },
+        {
+          "hex": "#0082DA",
+          "role": "accent",
+          "share": 0
+        }
+      ],
+      "layout": "A dense, Drupal 8-powered portal (visible in the page generator meta tag) with a mega-menu menu system covering Hírek és információk, Ügyintézés, and A Rendőrségről, each with dozens of nested sub-links (e.g., per-county 'Vármegye' pages under Távoltartás). A slim top utility bar carries social icons, an accessible-version link, and an emergency 'Bajban van?' (Are you in trouble?) shortcut plus a 'TELEFONTANÚ' hotline number. Below a rotating photo slider sits an 'Aktualitások' (Current affairs) news grid of regional police headquarters reports, followed by a most-wanted persons ('Körözési toplista') photo grid, a 'Zsaru Magazin' (Police Magazine) feature section, and a live-updated border-crossing wait-time and illegal-migration statistics widget. The footer repeats the mega-menu structure in condensed link columns.",
+      "ui_patterns": [
+        "most-wanted persons photo grid (Körözési toplista) with dozens of case thumbnails",
+        "emergency hotline shortcuts (112 segélyhívó, TELEFONTANÚ +36-80/555-111)",
+        "accessible/barrier-free alternate site link (akadálymentes.police.hu)",
+        "live weekly statistics widget for border crossings and illegal migration",
+        "multi-level mega-menu with per-county (vármegye) sub-menu",
+        "dedicated crime-news taxonomy (Bűnügyek, Közrendvédelem, Határrendeszet, etc.)",
+        "internal magazine/PR content stream (Zsaru Magazin) blended with hard news",
+        "EN/HU language switcher plus separate e-ügyintézés (e-government) portal link"
+      ],
+      "language_samples": [
+        {
+          "original": "Bajban van?",
+          "english": "Are you in trouble?",
+          "context": "utility-bar shortcut link to guidance on what to do in an emergency"
+        },
+        {
+          "original": "Azonnali intézkedést igénylő esetben keresse fel a legközelebbi rendőrkapitányságot, vagy hívja a 112 segélykérő számot!",
+          "english": "In cases requiring immediate action, contact the nearest police station or call the 112 emergency number!",
+          "context": "call-to-action text under the 'Segítségre van szüksége' crime-help section"
+        },
+        {
+          "original": "Milliárdos kárt okozó bűnszervezetet számolt fel a Békés vármegyei rendőrség",
+          "english": "Békés county police broke up a criminal organization that caused billions of forints in damage",
+          "context": "front-page news headline summary"
+        },
+        {
+          "original": "Szolgálunk és védünk",
+          "english": "We serve and protect",
+          "context": "site logo tagline/slogan (visible in the logo image alt text 'szolgalunk_vedunk_logo')"
+        }
+      ],
+      "css_snippet": "body {\n  font-family: Arial, Helvetica, sans-serif;\n  color: #1D1D1B;\n  background-color: #FFFFFF;\n}\n.site-header {\n  background-color: #FFFFFF;\n  border-bottom: 4px solid #00376E;\n}\n.mega-menu > li > a {\n  color: #00376E;\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 13px;\n}\n.emergency-bar {\n  background-color: #FFB81C;\n  color: #1D1D1B;\n  font-weight: 700;\n  padding: 6px 12px;\n}\n.wanted-grid img {\n  width: 100px;\n  height: 130px;\n  object-fit: cover;\n  border: 1px solid #EEF2F6;\n}\n.news-card .kicker {\n  color: #00376E;\n  font-size: 11px;\n  text-transform: uppercase;\n}",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}

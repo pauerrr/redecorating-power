@@ -1,0 +1,266 @@
+{
+  "country": "Italy",
+  "flag": "🇮🇹",
+  "bodies": [
+    {
+      "name": "Camera dei Deputati (Chamber of Deputies)",
+      "type": "parliament",
+      "url": "https://www.camera.it",
+      "fonts": [
+        {
+          "family": "Roboto",
+          "usage": "headings",
+          "source": "web font"
+        },
+        {
+          "family": "Titillium Web",
+          "usage": "body",
+          "source": "web font",
+          "share": 81
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#285493",
+          "role": "primary",
+          "share": 1
+        },
+        {
+          "hex": "#EEEEEE",
+          "role": "background",
+          "share": 52
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "surface",
+          "share": 43
+        },
+        {
+          "hex": "#000000",
+          "role": "text"
+        },
+        {
+          "hex": "#B71C1C",
+          "role": "secondary",
+          "share": 0
+        },
+        {
+          "hex": "#224B9F",
+          "role": "accent",
+          "share": 0
+        },
+        {
+          "hex": "#3A3A3A",
+          "role": "dark band",
+          "share": 4
+        }
+      ],
+      "layout": "A dense, institutional homepage led by a top utility bar with language and accessibility links, beneath which sits a masthead bearing the parliamentary crest and a mega-menu menu bar. The body is organized into a multi-column river of news items, session schedules, and committee updates, resembling a news portal more than a modern service site. A right-hand rail typically surfaces live/ongoing session status ('Aula' broadcasts) and quick links to bill tracking. The footer is dense with institutional links, legal notices, and social icons, reflecting the older Codice dell'Amministrazione Digitale-era design common to legacy .it parliamentary sites.",
+      "ui_patterns": [
+        "bot/browser-check interstitial ('Checking your browser before accessing...')",
+        "top utility bar with language switcher and accessibility toolbar",
+        "mega-menu with multi-level dropdown menu",
+        "live session/plenary status widget",
+        "breadcrumb trail on interior pages",
+        "dense multi-column news river layout",
+        "cookie consent banner with legal citation to Italian privacy code",
+        "footer link cluster to related institutional sites (Senato, Governo, Quirinale)"
+      ],
+      "language_samples": [
+        {
+          "original": "Questo sito utilizza cookie tecnici e, previo Suo consenso, cookie di profilazione, anche di terze parti, al fine di inviarLe messaggi pubblicitari in linea con le preferenze da Lei manifestate nell'ambito della navigazione in rete",
+          "english": "This site uses technical cookies and, with your consent, profiling cookies, including third-party ones, to send you advertising messages consistent with the preferences you have shown while browsing",
+          "context": "cookie consent banner"
+        },
+        {
+          "original": "Lavori Parlamentari",
+          "english": "Parliamentary Work",
+          "context": "main nav"
+        },
+        {
+          "original": "Deputati",
+          "english": "Deputies",
+          "context": "main nav"
+        },
+        {
+          "original": "Accessibilità",
+          "english": "Accessibility",
+          "context": "footer/utility bar"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Titillium Web\", Arial, sans-serif; color: #000000; background: #EEEEEE; }\nh1, h2, h3 { font-family: \"Roboto\", Arial, sans-serif; }\na { color: #285493; }\n.site-header, .main-menu { background: #285493; color: #FFFFFF; }\n.footer { background: #285493; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Presidenza del Consiglio dei Ministri (Governo Italiano / PM Office)",
+      "type": "government",
+      "url": "https://www.governo.it",
+      "fonts": [
+        {
+          "family": "Titillium Web",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 99
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#0066CC",
+          "role": "primary",
+          "share": 5
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 40
+        },
+        {
+          "hex": "#EEEEEE",
+          "role": "surface",
+          "share": 36
+        },
+        {
+          "hex": "#5A6772",
+          "role": "text"
+        },
+        {
+          "hex": "#66A5E3",
+          "role": "secondary",
+          "share": 2
+        },
+        {
+          "hex": "#00264D",
+          "role": "accent",
+          "share": 1
+        },
+        {
+          "hex": "#1276DC",
+          "role": "accent",
+          "share": 1
+        },
+        {
+          "hex": "#333333",
+          "role": "dark band",
+          "share": 2
+        }
+      ],
+      "layout": "A news-portal-style homepage split into a primary river of 'Notizie' (news) items on the left with headline, thumbnail, and lede text, alongside secondary sidebars for 'Dai Ministeri' (from the ministries) and an event 'Agenda' calendar widget. Government press releases about the PM's activity dominate the top of the page. The overall structure predates the newer Bootstrap Italia component system in places, mixing older Palazzo Chigi templates with newer .italia-style elements sitewide. Footer aggregates links to all ministries and related institutional portals ('Siti di interesse').",
+      "ui_patterns": [
+        "ministry-by-ministry news aggregation blocks",
+        "PM activity/agenda calendar widget",
+        "breadcrumb trail",
+        "top utility bar with language switcher",
+        "cookie consent banner citing Garante Privacy",
+        "footer sitemap of all ministries",
+        "press office / 'Ufficio stampa' dedicated section",
+        "RSS and social feed icons in header"
+      ],
+      "language_samples": [
+        {
+          "original": "Questo sito o gli strumenti terzi da questo utilizzati si avvalgono di cookie necessari al funzionamento ed utili alle finalità illustrate nella cookie policy",
+          "english": "This site or third-party tools it uses employ cookies necessary for operation and useful for the purposes described in the cookie policy",
+          "context": "cookie consent banner"
+        },
+        {
+          "original": "Dai Ministeri",
+          "english": "From the Ministries",
+          "context": "homepage section nav"
+        },
+        {
+          "original": "Notizie",
+          "english": "News",
+          "context": "main nav"
+        },
+        {
+          "original": "Agenda del Presidente",
+          "english": "President's Agenda",
+          "context": "sidebar widget"
+        }
+      ],
+      "css_snippet": "/* reconstructed from measured tokens */\nbody { font-family: \"Titillium Web\", Arial, sans-serif; color: #5A6772; background: #FFFFFF; }\nh1, h2, h3 { font-family: \"Titillium Web\", Arial, sans-serif; }\na { color: #0066CC; }\n.site-header, .main-menu { background: #0066CC; color: #FFFFFF; }\n.footer { background: #0066CC; color: #FFFFFF; }",
+      "fetch_status": "partial",
+      "tokens_source": "measured"
+    },
+    {
+      "name": "Autorità Nazionale Anticorruzione (ANAC - National Anti-Corruption Authority)",
+      "type": "anti-corruption",
+      "url": "https://www.anticorruzione.it",
+      "fonts": [
+        {
+          "family": "Titillium Web",
+          "usage": "body + headings",
+          "source": "web font",
+          "share": 98
+        }
+      ],
+      "colors": [
+        {
+          "hex": "#0077BE",
+          "role": "primary",
+          "share": 7
+        },
+        {
+          "hex": "#FFFFFF",
+          "role": "background",
+          "share": 33
+        },
+        {
+          "hex": "#005586",
+          "role": "text"
+        },
+        {
+          "hex": "#2770B7",
+          "role": "link"
+        },
+        {
+          "hex": "#0066CC",
+          "role": "secondary",
+          "share": 7
+        },
+        {
+          "hex": "#000000",
+          "role": "dark band",
+          "share": 0
+        }
+      ],
+      "layout": "A clean, card-based homepage clearly built on the Bootstrap Italia / .italia design system, opening with a full-width hero image and mission statement, followed by three large 'settori di intervento' (intervention areas) cards in an asymmetric layout (Trasparenza, Anticorruzione, Contratti pubblici). Below that is an 'In evidenza' news grid with dated category tags (Focus atti Anac, Primo piano, Notizie), then a live usage-statistics widget showing daily counts of CIG codes issued and tender notices. The footer is organized into clearly labeled columns (Argomenti, Contatti, Trasparenza, Link Utili) per the national design system pattern.",
+      "ui_patterns": [
+        "mega-menu with multi-column dropdown (Bootstrap Italia component)",
+        "hero banner with mission statement overlay",
+        "asymmetric 3-card 'settori di intervento' grid",
+        "dated news tags (category + date) on article cards",
+        "live usage-statistics dashboard widget",
+        "whistleblowing/'Segnalazioni' dedicated CTA button in header",
+        "breadcrumb trail",
+        "footer organized into Argomenti/Contatti/Trasparenza/Link Utili columns per AGID standard",
+        "accessibility declaration link in skip-nav area"
+      ],
+      "language_samples": [
+        {
+          "original": "Questo sito o gli strumenti terzi da questo utilizzati si avvalgono di cookie necessari al funzionamento e utili alle finalità illustrate nella cookie policy",
+          "english": "This site or third-party tools used by it employ cookies necessary for operation and useful for the purposes outlined in the cookie policy",
+          "context": "cookie consent banner"
+        },
+        {
+          "original": "Amministrazione Trasparente",
+          "english": "Transparent Administration",
+          "context": "main nav"
+        },
+        {
+          "original": "Segnala",
+          "english": "Report (a violation)",
+          "context": "header CTA / whistleblowing"
+        },
+        {
+          "original": "Prevenire la corruzione, promuovere la trasparenza e la cultura della legalità",
+          "english": "Preventing corruption, promoting transparency and a culture of legality",
+          "context": "hero headline"
+        }
+      ],
+      "css_snippet": "/* Bootstrap Italia / designers.italia.it derived tokens, confirmed via theme-color meta */\n:root {\n  --bs-primary: #0066CC;\n  --bs-primary-dark: #0059B3;\n  --bs-body-font: 'Titillium Web', sans-serif;\n  --bs-body-color: #212529;\n  --bs-body-bg: #FFFFFF;\n}\nbody {\n  font-family: var(--bs-body-font);\n  color: var(--bs-body-color);\n  background-color: var(--bs-body-bg);\n}\n.navbar { background-color: var(--bs-primary); }\n.navbar a { color: #FFFFFF; font-weight: 600; }\n.card-sector {\n  background-color: #F8F9FA;\n  border-radius: 8px;\n  padding: 24px;\n}\n.card-sector h3 { color: var(--bs-primary); }\n.badge-category {\n  background-color: var(--bs-primary-dark);\n  color: #FFFFFF;\n  font-size: 0.75rem;\n  padding: 2px 8px;\n  border-radius: 4px;\n}\na { color: var(--bs-primary); }",
+      "fetch_status": "ok",
+      "tokens_source": "measured"
+    }
+  ]
+}
