@@ -8,8 +8,8 @@
 <style>
   html,body{height:100%;overflow:hidden;background:#0B0C0C}
   body{display:grid;place-items:center}
-  #viewport{position:fixed;inset:0;display:grid;place-items:center}
-  #stage{width:1600px;height:900px;position:relative;transform-origin:center center;flex-shrink:0}
+  #viewport{position:fixed;inset:0;overflow:hidden}
+  #stage{width:1600px;height:900px;position:absolute;left:50%;top:50%;transform-origin:center center}
   .slide{position:absolute;inset:0;background:var(--cream);color:var(--ink);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .45s var(--ease)}
   .slide.on{opacity:1;pointer-events:auto}
   .slide .in{position:absolute;inset:0;padding:64px 72px}
@@ -327,7 +327,7 @@ S.forEach((s,i)=>{
 const slides=[...stage.children];
 
 /* scale */
-function fit(){ const k=Math.min(innerWidth/1600, innerHeight/900); stage.style.transform=`scale(${k})`; }
+function fit(){ const k=Math.min(innerWidth/1600, innerHeight/900); stage.style.transform=`translate(-50%,-50%) scale(${k})`; }
 addEventListener("resize",fit); fit();
 
 /* nav */
